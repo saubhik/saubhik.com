@@ -12,4 +12,3 @@ I blog about software development, math, artificial neural networks & AI.
 
 I plan on blogging on deep learning as well as on data science.
 
-If you plan on reaching me, [email](@saubhik.mukherjee@gmail.com) me.
