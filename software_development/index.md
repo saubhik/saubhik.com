@@ -1,4 +1,4 @@
-## n00bd3v
+## Software Development
 
 A set of pages on stuff taught in a post graduate diploma in 
 software development course. Only the key concepts.
@@ -8,3 +8,7 @@ software development course. Only the key concepts.
 * [MVC architecture](mvc_architecture/mvc.md)
 * [Unit Testing](unit_testing/unit_testing_and_tdd.md)
 * [Version Control & Git](version_control_and_git/version_control.md)
+* [API Backend](api_backend/api_backend.md)
+* [Databases & ORM](databases_and_orm/databases_and_orm.md)
+* [Design Patterns](design_patterns_and_UML_diagrams/design_patterns_and_UML_diagrams.md)
+* [Distributed Systems & Scalable Architecture](distributed_systems_and_scalable_architecture/distributed_systems_and_scalable_architecture.md)
