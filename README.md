@@ -4,12 +4,12 @@
 Hi there!
 Welcome to my personal space in the web.
 
-I blog about software development, algorithms etc.
+I blog about development, data science, algorithms.
 
 #### Blogs
-* [algospy - algorithms in python](https://saubhik.github.io/algospy)
-* [n00bd3v - tech blog](/software_development/index.md)
+* [algorithms blog](https://saubhik.github.io/algospy)
+* [development blog](/software_development/index.md)
+* Data Science Pages
+    * [Discrete Choice Modelling: Mixed Logit & Hierarchical Bayesian Estimation](/data_science/Discrete Choice Models: Mixed Logit/mixed_logit.md)
 
-I plan on blogging on deep learning as well as on data science
-very soon.
 
