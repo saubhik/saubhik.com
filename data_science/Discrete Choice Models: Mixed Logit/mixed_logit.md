@@ -1,5 +1,15 @@
-
 # Mixed Logit
+
+Some notes for people already familiar with multinomial logit model
+also known as softmax regression or multinomial logistic models.
+
+These models are known as Discrete Choice Models, mostly studied
+in Econometrics.
+
+These notes are from Kenneth Train's book on [Discrete Choice Methods
+with Simulation](https://eml.berkeley.edu/books/choice2.html).
+
+**************
 
 Three limitations of standard logit:
 
