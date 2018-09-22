@@ -15,3 +15,5 @@ These serve more as notes than stand-alone material for the concerned topics. I 
 * [Design Patterns](design_patterns_and_UML_diagrams/design_patterns_and_UML_diagrams.md)
 * [Distributed Systems & Scalable Architecture](distributed_systems_and_scalable_architecture/distributed_systems_and_scalable_architecture.md)
 * [Software Requirements](software_requirements/software_requirements.md)
+* [Javascript](javascript/javascript.md)
+* [Advanced Javascript](advanced_javascript/advanced_javascript.md)
