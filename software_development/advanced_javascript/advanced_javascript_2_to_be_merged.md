@@ -422,3 +422,137 @@ async function printLetters() {
 
 printLetters()
 ```
+
+## Difference between ES5 & ES6 & Babel
+
+`ECMAScript` is a coding language standard & JS is simply the implementation of that standard. `ES` denotes `ECMAScript`. The digit after `ES` denotes the version of `ES`.
+
+Notable differences between `ES5` & `ES6` are:
+1. `=>` arrow functions
+2. `let` & `const`
+3. spread operator
+4. string manipulation
+5. import/export commands
+
+Many old browsers don't support JS written in ES6. Therefore, `Babel` was created which is a `transpiler`, a type of compiler that takes source code of a program written in one programming language as its input & produces the equivalent source code in another programming language (also known as a `source-to-source compiler`). 
+
+`Babel` converts `ES6` to `ES5` code.
+
+1. `let` & `const` is introduced in `ES6`. These are not hoisted unlike `var`.
+2. Arrow functions, `=>`. 
+
+```javascript
+numbers.map(x => x + 2);
+``` 
+
+is equivalent to
+
+```javascript
+numbers.map(function (x) {
+  return x + 2;
+});
+```
+3. spread operators, `...` in `ES6`
+
+```javascript
+let numbers = [12, 33, 87, 63];
+let numberNew = [45];
+[numberNew, ...numbers]
+```
+
+is equivalent to
+
+```javascript
+var numbers = [12, 33, 87, 63];
+var numberNew = [45];
+[numberNew].concat(numbers);
+```
+
+So to copy one array to another array, we can do
+
+```javascript
+let numbers = [12, 33, 87, 63];
+let newArray = [...numbers];
+```
+
+which is equivalent to
+
+```javascript
+var numbers = [12, 33, 87, 63];
+var newArray = [].concat(numbers);
+```
+
+4. String manipulation using template literals
+
+```javascript
+const name = "new"
+function func(x) {
+  return x + "Hello!";
+};
+let helloString = `This is a ${name} string: ${name} ${func(name)}`;
+```
+
+Use backtick (`).
+
+The above is equivalent to:
+
+```javascript
+var name = "new";
+function func(x) {
+  return x + "Hello!";
+};
+var helloString = "This is a " + name + " string: " + name + " " + func(name);
+```
+
+5. `ES6` has introduced modular import & export.
+
+## Lexical Scoping in ES6
+
+```javascript
+// ES5
+var name = "hello board";
+var boards = {
+    name: "new board";
+    print: function() {
+        console.log(this.name);
+    }
+};
+// this prints "new board"
+boards.print();
+
+// ES6
+var name = "hello board";
+var boards = {
+    name: "new board";
+    print: () => console.log(this.name);
+};
+// this prints "hello board"
+// this takes global scope
+boards.print();
+```
+
+## OOP in JS
+
+OOP in JS is not a full-fledged feature: the classes are merely functions themselves.
+
+Javascript is basically a functional programming language. Even though the class keyword has been introduced in JS as well, but internally the “class” is just a function! So, it is not a true or robust object oriented programming language.
+
+```javascript
+class Boards {
+    constructor() {
+        this.name = "This is a boards class";
+    }
+}
+
+class Projects extends Boards {
+    constructor() {
+        // super must be declared within constructor
+        super(name);
+    }
+}
+
+var results = new Projects();
+console.log(results.name);
+```
+
+That's it for JS for now!
