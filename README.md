@@ -1,12 +1,10 @@
-# Saubhik Mukherjee
-
-`Hello World!`
+# `Hello World!`
 
 [Resume](resume/resume.pdf)
 
 I write code. Interested in writing software implementing deep learning algorithms, among other things.
 
-#### Pages
+## Pages
 * [EPI commentary](/epi/index.md)
 * [Development](/software_development/index.md)
 * [Utilities](/utilities/index.md)
