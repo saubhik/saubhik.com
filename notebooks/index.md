@@ -5,4 +5,4 @@ Links to notebooks implementing different modelling algorithms, ranging from reg
 Helpful in extracting bits & pieces of techniques implemented in some of these notebooks.
 
 ## Links
-* [Retailer Demand Analysis for beverages](retailer_demand_analysis.ipynb)
+* [Retailer Demand Analysis for beverages](https://github.com/saubhik/saubhik.github.io/blob/master/notebooks/retailer_demand_analysis.ipynb)
