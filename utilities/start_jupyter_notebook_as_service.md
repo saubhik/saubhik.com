@@ -8,6 +8,7 @@ Steps:
 1. Create the systemd unit file as root: `sudo vim /usr/lib/systemd/system/jupyter-notebook.service`
 
 2. Write the following into it:
+
 ```
 [Unit]
 Description=jupyter notebook
@@ -25,12 +26,15 @@ WantedBy=multi-user.target
 ```
 
 3. Create the user `ipynb`:
+
 ```
 sudo useradd ipynb
 ``` 
+
 Set password using `sudo passwd ipynb` and login as `ipynb` & do `mkdir notebooks`.
 
 4. Start the jupyter notebook service.
+
 ```
 sudo systemctl daemon-reload
 sudo systemctl enable jupyter-notebook
