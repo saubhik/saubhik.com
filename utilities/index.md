@@ -3,4 +3,4 @@
 Some scripts to automate repetitive tasks in daily workflow.
 
 ## Links
-* [jupyter notebook as a service](start_jupyter_notebook_as_service.md)
+* [Start jupyter as a service in Linux](start_jupyter_notebook_as_service.md)
