@@ -13,3 +13,4 @@ I think of myself as an **engineer**, implementing brilliant ideas (*standing on
 * [Algorithms in python](/algos_py/index.md)
 * [Data Science](/data_science/index.md)
 * [Jupyter Notebooks](/notebooks/index.md)
+* [Deep Learning](/deep_learning/index.md)
