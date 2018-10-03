@@ -17,7 +17,7 @@ EIP2 | Session 1 | Batch 8.
 
 ### Feature Maps
 
-### Feature Engineering
+### Feature Engineering (older Computer Vision concept)
 
 ### Activation Function
 
