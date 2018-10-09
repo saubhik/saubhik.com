@@ -1,6 +1,6 @@
 # Deep Learning
 
-Notes on deep learning.
+Notes on deep learning. 
 
 ## Links
-* [Definitions](EIP_session_1_assignment.md) 
+* [Some topics in Deep Learning](EIP_session_1_assignment.md) 
