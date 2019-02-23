@@ -2,9 +2,9 @@
 
 [Resume](resume/resume.pdf)
 
-I write code. Interested in writing software implementing deep learning algorithms, among other things.
+Hi. My name is Saubhik.
 
-I think of myself as an **engineer**, implementing brilliant ideas (*standing on the shoulders of giants*) on machines.
+I am a computer programmer.
 
 ## Pages
 * [EPI commentary](/epi/index.md)
