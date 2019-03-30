@@ -1,0 +1,135 @@
+% LaTeX file for resume 
+% This file uses the resume document class (res.cls)
+
+\documentclass[margin]{res} 
+% the margin option causes section titles to appear to the left of body text 
+\textwidth=5.3in % increase text width to get smaller right margin
+\usepackage{bookman}   % uses new century schoolbook postscript font
+\usepackage{fontaxes}
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+\begin{document} 
+ 
+\name{Saubhik Mukherjee} % the \\[12pt] adds a blank line after name
+
+\address
+{ 
+    \href{mailto:saubhik.mukherjee@gmail.com}{e-mail} | 
+    \href{https://github.com/saubhik/}{github} | 
+    \href{https://www.linkedin.com/in/saubhikm/}{linkedin} \\
+    \vspace*{\stretch{1}}
+    \textbf{phone}: +81 070 1594 0101 \\
+    \textbf{date of birth}: 15 June 1993
+    \vspace*{\stretch{1}}
+}
+ 
+\begin{resume}
+
+
+
+
+\section{Experience}
+
+
+\textbf{Engineer} \hfill \textit{Jan '19 - present}\\
+\textit{Solutions, AlpacaJapan} \hfill \textit{Tokyo, Japan}\\
+\\
+{\small
+    Software development of machine learning systems \& production systems.
+}
+
+\textbf{Data Scientist} \hfill \textit{Jun '17 - Dec '18}\\
+\textit{Pricing, Anheuser-Busch InBev} \hfill \textit{Bangalore, India}\\
+\\
+{\small 
+    Responsibilities included automating modelling pipelines, building dashboards, Linux system administration.
+    \begin{itemize} \itemsep -2pt
+    \item Designed optimization models to find optimal pricing strategy, using parallelized non-linear optimization techniques in Python and R
+    \item Built a simulation tool in RShiny as a dashboard for pricing studies for different countries
+    \item Used nested multinomial logit models and other Hierarchical Bayesian mixed models to model market demand for beer SKUs
+    \item Built a recommendation system which combined the region-specific demand models into a country-wide demand model
+    \end{itemize}
+}
+
+
+
+
+\section{Education}
+
+
+{\bf Post Graduate Program (Software Development)} \hfill \textit{Dec '17 - Dec '18}\\
+\textit{International Institute of Information Technology} \hfill \textit{Bangalore, India}\\
+{
+    \small
+    \emph{Topics}: algorithms, data structures, OOP in Java, software design, javascript, web development with ReactJS, SpringMVC, Hibernate, PostgreSQL.
+}
+
+
+{\bf Master of Science (Quantitative Economics)} \hfill \textit{Jul '15 - Jun '17}\\
+\textit{Indian Statistical Institute} \hfill \textit{Calcutta, India}\\
+{
+    \small
+    \emph{Topics}: micro-economics, game theory, computational bayesian statistics, optimization techniques, econometrics.
+}
+
+
+{\bf Bachelor of Science (Mathematics \& Computer Science)} \hfill \textit{Aug '12 - Jul '15} \\
+\textit{Chennai Mathematical Institute} \hfill  \textit{Chennai, India}\\
+{
+    \small
+    \emph{Topics}: linear algebra, calculus, discrete math, probability theory, algorithm design, theory of computation, programming language concepts, logic.
+}
+
+{\bf High School} \hfill  \textit{May '11} \\
+\textit{Bharatiya Vidya Bhavan} \hfill \textit{Calcutta, India}\\
+{\small
+    \begin{itemize} \itemsep -2pt %reduce space between items
+    \item 94.17\% in Senior School Certificate Examination (Central Board of Secondary Education), 2011 (12th standard), with 100\% in mathematics. \\
+    \item 93.5\% in Secondary School Examination (Central Board of Secondary Education), 2009 (10th standard), with 100\% in mathematics. \\
+    \end{itemize}
+}
+
+
+
+\section{Massive Open Online Courses (MOOCs)}
+{\bf Deep Learning Specialization} \hfill \textit{May '18 - Jul '18}\\
+\textit{deeplearning.ai}\\\\
+
+
+
+
+\section{Technologies}
+\begin{itemize} 
+\item \textbf{Interpreted languages}: Python, JavaScript, R
+\item \textbf{Compiled languages:} Java, C++
+\item \textbf{Environment:} Linux, macOS
+\end{itemize}
+
+
+
+
+\section{Recent Achievements}
+\begin{itemize}
+\item[\textbf{2018}] Top performance in \textbf{OpenHack Machine Learning} by Microsoft. Also, winner of several AB-InBev internal hackathons focussing on Machine Learning.\\
+\item[\textbf{2017}] Awarded \textbf{Innovation Impact Award} from AB-InBev for developing Game Theory \& Optimization capabilities.\\
+\item[\textbf{2016}] Winner (second runner-up) of \textbf{Capital One Business Case Study Competition} in Analytics, among student teams of ISI.\\
+\item[\textbf{2015}] Selected for \textbf{ACM-ICPC} (Inter Collegiate Programming Contest) 2015 Asia Pacific Regionals.\\
+\end{itemize}
+
+
+
+
+\section{Languages} English (TOEFL: 108/120)
+
+
+
+
+\end{resume} 
+\end{document}
