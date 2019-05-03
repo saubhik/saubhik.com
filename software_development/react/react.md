@@ -110,7 +110,7 @@ We don't need to configure tools like `Babel`, `Webpack` and `ESLint` if we use 
 
 - It should be committed into the repository to share ignore rules with other users who clone the repository.
 
-- The *node_modules*  folder is included inside the *.gitignore* file so that the user who clones the application is not required to clone this folder. The user simply needs to run the command 
+- The *node_modules*  folder is included inside the *.gitignore* file so that the user who clones the application is not required to clone this folder. The user simply needs to run the command
 
   ```
   npm install
@@ -154,7 +154,7 @@ We don't need to configure tools like `Babel`, `Webpack` and `ESLint` if we use 
 **src** folder
 
 - It consists of the real application code.
-- It consists of all the files that are needed to get bundled by *Webpack*. 
+- It consists of all the files that are needed to get bundled by *Webpack*.
 
 **index.js** file
 
@@ -202,11 +202,11 @@ We need to clean up some unnecessary code before we actually move on to building
 
    - Remove all the code written inside the *div*  of the return statement of *render*  method inside the *App*  class.
 
-   - Remove the *className="App"*  from the outer *div*  while leaving the outer *div*  as it is. 
+   - Remove the *className="App"*  from the outer *div*  while leaving the outer *div*  as it is.
 
    - Remove the import statements at the top of the file for the *logo.svg* and *App.css* files. After doing this, the *App.js*  file looks like this:
 
-      
+
 
      ![img](https://images.upgrad.com/c05f5458-76ac-4937-858e-fcbbdb7b6912-Code%20Cleanup%20App.js%20file.png)
 
@@ -257,7 +257,7 @@ Differences between JSX and HTML:
    ```javascript
    return (
    	<Fragment>
-           <div> 
+           <div>
        		Phone Directory 			</div>
            <button> Add </button>
            <div>
@@ -287,7 +287,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 ReactDOM.render(
-  <div>    
+  <div>
       <label htmlFor="username">Username: </label> <br/>
       <input id="username" type="text" /> <br/> <br/>
       <label htmlFor="password">Password: </label><br/>
@@ -544,7 +544,7 @@ const Header = function() {
         color: '#fff',
         textTransform: 'uppercase'
      };
-     
+
      <div style={headerStyle}>
         Phone Directory
      </div>
@@ -559,25 +559,25 @@ Internal Styling:
 
 1. The property names must be written in camelCase. Unlike CSS, hyphens are not allowed in JSX because the JSX code gets converted to JavaScript code, and hyphens are not allowed in JavaScript identifiers.
 
-   ```javascript
-   <div style={{textTransform: 'uppercase'}}>
-      Phone Directory
-   </div>
-   ```
+```javascript
+<div style=\{\{textTransform: 'uppercase'}}>
+Phone Directory
+</div>
+```
 
    This is the reason why textTransform is written in camelCase in JSX unlike text-transform in CSS. In case you fail to follow this, you will get an error saying “*Uncaught SyntaxError: Inline Babel script: Unexpected token*”.
-    
+
 
 2. The property values look like CSS property values, but they are not exactly like them. These values can be considered the values corresponding to the keys (or properties) in a JavaScript object. Since all the values in JavaScript must be of a valid datatype, care must be taken regarding each value correctly mapping to a valid datatype in JavaScript.
 
-   ```javascript
-   <div style={{background: '#000'}}>
-      Phone Directory
-   </div>
-   ```
+```javascript
+<div style=\{\{background: '#000'}}>
+Phone Directory
+</div>
+```
 
    This is the reason why *'#000'* is written inside quotes, because it corresponds to a string value. In CSS, you must write it without quotes in order to make it work.
-    
+
 
 3. All property-value pairs are separated using the comma operator. The reason is that the *style*  property accepts a JavaScript object where a comma should be used in contrast to a CSS style, where a semicolon is used instead.
 
@@ -588,7 +588,7 @@ import React from 'react';
 import "./Header.css"
 
 const Header = function() {
-     
+
     return (
         <div className="header">
             Phone Directory
@@ -613,7 +613,7 @@ where `Header.css` contains:
 
 ## Rendering Content Dynamically
 
-JavaScript’s `map()` method can be used to iterate over an array and inject data into the React components or elements dynamically. 
+JavaScript’s `map()` method can be used to iterate over an array and inject data into the React components or elements dynamically.
 
 An example:
 
@@ -624,7 +624,7 @@ import "./App.css";
 
 class App extends Component {
   render() {
-    
+
     let subscribers = [
       {
         id: 1,
@@ -676,7 +676,7 @@ The `key={sub.id}` is important.
 
 ## Key Points
 
-Note that 
+Note that
 
 ```javascript
 React.createElement('div', {className: "main-container"}, "h1", "UpGrad", "p", "Building Careers of Tomorrow!");
@@ -705,13 +705,13 @@ React.createElement("div", {className: "container"}, // Line 1
 );
 ```
 
-`Line 2` and `Line 4` contains errors. The correct way to write `style` is `React.createElement("p", {style:{color: "#aaa"}}, "Welcome User!"), `. 
+`Line 2` and `Line 4` contains errors. The correct way to write `style` is `React.createElement("p", {style:{color: "#aaa"}}, "Welcome User!"), `.
 
-`Line 4` throws an error saying, `input is a void element tag and must neither have 'children' nor use 'dangerouslySetInnerHTML`. `input` is a self-closing tag. No self-closing tag in React can contain any child element. However, for a tag that is not self-closing, it is optional to contain a child element. For example, the second `div` in the code, which is below `Line 3`, works perfectly. Although, this `div`  doesn't serve any purpose here, it is included just to make this point clear. 
+`Line 4` throws an error saying, `input is a void element tag and must neither have 'children' nor use 'dangerouslySetInnerHTML`. `input` is a self-closing tag. No self-closing tag in React can contain any child element. However, for a tag that is not self-closing, it is optional to contain a child element. For example, the second `div` in the code, which is below `Line 3`, works perfectly. Although, this `div`  doesn't serve any purpose here, it is included just to make this point clear.
 
 ```react
 ReactDOM.render(
-    <App></App>, 
+    <App></App>,
     document.getElementById('root')
 );
 ```
