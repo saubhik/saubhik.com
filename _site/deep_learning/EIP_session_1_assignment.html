@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Some Topics on Deep Learning | saubhik</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Some Topics on Deep Learning" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Welcome to my space on the web. Everything is open source." />
+<meta property="og:description" content="Welcome to my space on the web. Everything is open source." />
+<link rel="canonical" href="http://localhost:4000/deep_learning/EIP_session_1_assignment.html" />
+<meta property="og:url" content="http://localhost:4000/deep_learning/EIP_session_1_assignment.html" />
+<meta property="og:site_name" content="saubhik" />
+<script type="application/ld+json">
+{"description":"Welcome to my space on the web. Everything is open source.","@type":"WebPage","url":"http://localhost:4000/deep_learning/EIP_session_1_assignment.html","headline":"Some Topics on Deep Learning","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="saubhik" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper">
+    <!---->
+    <!---->
+    <!-- <a class="site-title" rel="author" href="/">saubhik</a> -->
+		<a class="site-title" rel="author" href="/">saubhik's
+			web space</a>
+
+    <!---->
+    <!--   <nav class="site-nav"> -->
+    <!--     <input type="checkbox" id="nav-trigger" class="nav-trigger" /> -->
+    <!--     <label for="nav-trigger"> -->
+    <!--       <span class="menu-icon"> -->
+    <!--         <svg viewBox="0 0 18 15" width="18px" height="15px"> -->
+    <!--           <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/> -->
+    <!--         </svg> -->
+    <!--       </span> -->
+    <!--     </label> -->
+
+    <!--     <div class="trigger"> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/about/">About</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/">Hello there!</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/posts.html">Personal Blog</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/coursework/">Course Notes</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/coursework/introduction_to_graduate_algorithms/notes/lessons.html">Notes</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/coursework/machine_learning_for_trading/notes/lesson.html">notes - stuff I didn’t know!</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/data_science/Discrete%20Choice%20Models:%20Mixed%20Logit/mixed_logit.html">Mixed Logit</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/data_science/">Data Science</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/deep_learning/EIP_session_1_assignment.html">Some Topics on Deep Learning</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/deep_learning/">Deep Learning</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/epi/">Code commentary on EPI</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/notebooks/">Notebooks</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/papers/EfficientNeuralArchitectureSearchViaParameterSharing.html">Efficient Neural Architecture Search Via Parameter Sharing</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/papers/">Papers</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/advanced_javascript/advanced_javascript.html">Advanced Javascript</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/advanced_javascript/advanced_javascript_2_to_be_merged.html">Scope &amp;amp; Closure</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/agile_and_extreme_programming/agile_and_extreme_programming.html">Agile &amp;amp; Extreme Programming</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/api_backend/api_backend.html">API backend</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/backend_integration/ajax_calls.html">Ajax Calls</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/databases_and_orm/databases_and_orm.html">Databases and ORM</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/design_patterns_and_UML_diagrams/design_patterns_and_UML_diagrams.html">Design Patterns and UML diagrams</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/devops/devops.html">DevOps</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/distributed_systems_and_scalable_architecture/distributed_systems_and_scalable_architecture.html">Distributed Systems &amp;amp; Scalable Architecture</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/html_css/html_css.html">html and css</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/">Software Development</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/javascript/javascript.html">Javascript</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/linux_commands_for_survival/linux_commands_for_survival.html">Linux commands for survival</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/mvc_architecture/mvc.html">MVC architecture</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/react/react.html">React</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/software_requirements/software_requirements.html">Software Requirements</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/unit_testing/unit_testing_and_tdd.html">Unit Testing</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/version_control_and_git/version_control.html">Version Control</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/this_site/">About this website</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/utilities/">Utilities</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/utilities/start_jupyter_notebook_as_service.html">Start jupyter notebook server as service on boot</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--     </div> -->
+    <!--   </nav> -->
+    <!---->
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <!-- <header class="post-header"> -->
+  <!--   <h1 class="post-title">Some Topics on Deep Learning</h1> -->
+  <!-- </header> -->
+
+  <div class="post-content">
+    <h1 id="some-topics-on-deep-learning">Some Topics on Deep Learning</h1>
+
+<p>This is an assignment for External Internship Programme in Deep Learning Techniques in Computer Vision, by MLBLR group in Bangalore.</p>
+
+<h2 id="topics">Topics</h2>
+
+<h3 id="convolution">Convolution</h3>
+<p>A convolution is an operation applied in convolutional layers in convolutional neural networks. Strictly speaking, this operation is a cross-correlation as a convolution means a different operation in mathematics.</p>
+
+<p>«««&lt; HEAD
+A convolution layer accepts as input a volume of size $w_1 x h_1 x d_1$. Typically, this requires 4 hyper-parameters:
+=======
+A convolution layer accepts as input a volume of size $w_1 \times h_1 \times d_1$. Typically, this requires 4 hyper-parameters:</p>
+
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <blockquote>
+        <blockquote>
+          <blockquote>
+            <blockquote>
+              <p>02b9961e847d9fd89ecae34597b7a4f4d879913a</p>
+              <ol>
+                <li>the number of filters, $k$</li>
+                <li>the filter size, $f$</li>
+                <li>the stride, $s$</li>
+                <li>the amount of zero padding, $p$</li>
+              </ol>
+            </blockquote>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<p>«««&lt; HEAD
+This convolution layer produces a volume of size $w_2 x h_2 x d_2$, where:
+$w_2 = (w_1 - f + 2 * p) / s + 1$
+$h2 = $
+=======
+This convolution layer produces a volume of size $w_2 \times h_2 \times d_2$, where:
+$w_2 = (w_1 - f + 2 \times p) / s + 1$, $h_2 = (h_1 - f + 2 \times p) / s + 1$, and $d_2 = k$.</p>
+
+<p>The size of each filter is $f \times f \times d_1$.</p>
+
+<p>The operation performed is a sum of element-wise multiplications between the filter (also known as kernel) &amp; the input volume, with the filter shifting by stride $s$, to the right &amp; then bottom (starting from the left again) when it reached the right end of the input volume.</p>
+
+<p>The values $f = 3$, $s = 1$, $p = 1$ are commonly used.</p>
+
+<p><img src="https://i.stack.imgur.com/f2RiP.gif" alt="A 5x5 convolution" /></p>
+
+<p>So, convolution is the process of adding each element of an image with its neighboring elements, weighted by the kernel.</p>
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <blockquote>
+        <blockquote>
+          <blockquote>
+            <blockquote>
+              <p>02b9961e847d9fd89ecae34597b7a4f4d879913a</p>
+            </blockquote>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<h3 id="filterskernels">Filters/Kernels</h3>
+
+<p>Also known as mask or a convolution matrix. This is used in convolutional layers to carry out the convolution operation with the input volumes. A kernel is used for detecting features in an image which is useful for minimizing the loss between the truth value &amp; the predicted outputs. These features could be edges, colours, shapes, more complex objects like eyes, nose etc. For this reason, they are also known as feature detectors.</p>
+
+<p>In a convolutional layer, the values in a filter are initialised randomly and then updated during back-propagation to minimize the network’s loss. Generally, $3 \times 3$ filters are used in convolutional layers.</p>
+
+<h3 id="epochs">Epochs</h3>
+
+<p>An epoch is the number of times a deep learning model goes through the entire training set. One can do a backpropagation step after every epoch. But in mini-batch optimization algorithms, a backpropagation step is carried out, after every batch of training examples and hence, before a single epoch is completed. A backpropagation step is called a backward pass. In full batch algorithms, a forward pass consists of all training examples, whereas in mini-batch algorithms a forward pass consists of a batch of training examples. An iteration is a single forward and a single backward pass. So, we see that the concepts of an epoch and an iteration are different.</p>
+
+<h3 id="1x1-convolution">1x1 convolution</h3>
+
+<p>A 1x1 convolution is mainly used to decrease the depth (dimensionality reduction) of the input image. This can help in speeding up the computation as it reduces the number of channels, and also may help in diminishing the effect of “unnecessary” features in the final prediction. It can also learn temporal dependencies in images, connecting different channels: like a pair of eyes.</p>
+
+<p>Suppose a convolution layer outputs an image of dimension $(h, w, f)$ where</p>
+<ol>
+  <li>$h, w$ are the height &amp; weight respectively (spatial dimensions)</li>
+  <li>$f$ is the number of convolution filters in the layer.</li>
+</ol>
+
+<p>Now if this output is fed into a convolution layer with $f_1$ $1 \times 1$ filters, then the output image will be of dimension $(h, w, f_1)$. So $1 \times 1$ convolutions changes the dimension in the filter space. If $f_1 &lt; f$, this can be used for dimensionality reduction. So $1 \times 1$ convolutions can be used before computationally expensive $3 \times 3$ convolutions.</p>
+
+<h3 id="3x3-convolution">3x3 convolution</h3>
+
+<p>Using $3 \times 3$ convolution filters is very common in deep learning architectures. If we use $3 \times 3$ convolution twice, to get the same output as we would get from a single $5 \times 5$ convolution, we would be actually using $3 \times 3 + 3 \times 3 = 18$ weights as compared to $5 \times 5 = 25$ weights. This increases computational efficiency. Also, since the number of layers increases, it learns more complex non-linear features. Also $3 \times 3$ kernel is preferred since $3$ is odd number, and with odd-sized kernels, the previous layer pixels would be symmetrically around the output pixel &amp; we can prevent the distortions across the layers.</p>
+
+<h3 id="feature-maps">Feature Maps</h3>
+
+<p>A feature map is also known as activation map. This is the output activations for a given filter. This is the result of the activation function applied on the output of a convolution process. A rectified feature map is the result of the activation function when $ReLU$ is used. Sometimes, the term feature map is used to denote the output of a convolution operation, but this usage is rare.</p>
+
+<h3 id="feature-engineering-older-computer-vision-concept">Feature Engineering (older Computer Vision concept)</h3>
+
+<p>Feature engineering is manual selection &amp; transformation of the features (the $x$’s) in a model. In computer vision, if you provide something other than image pixels into the algorithm, we are doing feature engineering. The new features we might add could be edge orientations, color histograms etc. This could help in building a better classifier. Computer vision researchers used to do a lot of feature engineering before deep learning.</p>
+
+<h3 id="activation-function">Activation Function</h3>
+
+<p>Activation function defines the output of a neuron or node or layer, given a set of inputs. In artificial neural networks, activations are used generally after every fully connected layer or convolution layers to learn non-linearity in the data. Usually $tanh(x)$ or $\sigma(x)$, the sigmoid function, or $softmax(x)$, or $ReLU(x)$ are used as activation functions. In the presence of a non-linear activation function, a 2-layer neural network can be proven to be a universal function approximator.</p>
+
+<h3 id="how-to-create-an-account-on-github-and-upload-a-sample-project">How to create an account on GitHub and upload a sample project</h3>
+
+<p>Steps:</p>
+<ol>
+  <li>Go inside the project folder using <code class="highlighter-rouge">cd</code> and type in <code class="highlighter-rouge">git init</code>. Install <code class="highlighter-rouge">git</code> if not present.</li>
+  <li>Create a empty repository in github.</li>
+  <li>Get a link for the remote repository you just created. It will be something like:
+<code class="highlighter-rouge">https://github.com/your_username/your_repo.git</code>.</li>
+  <li>Back in the command line or terminal type in <code class="highlighter-rouge">git remote add origin [above_link]</code>.</li>
+  <li>Type <code class="highlighter-rouge">git add .</code> to add all content inside the folder to git.</li>
+  <li>Type <code class="highlighter-rouge">git commit -m "give your commit message here"</code> to commit the changes.</li>
+  <li>Finally do <code class="highlighter-rouge">git push -u origin master</code> to push the changes in local repository to the remote repository on github.</li>
+</ol>
+
+<h3 id="receptive-field">Receptive Field</h3>
+
+<p>Receptive field could be thought of as the range of vision. In a convolution operation, if we apply a convolution filter of size $3 \times 3$ then we say that the receptive field of the kernel or filter is $3 \times 3$, since the kernel will only see a $3 \times 3$ block of the input image while computing one pixel value of the output. Notice that we only talk about the width &amp; height of the kernel and not the depth, since the depth is fixed to the depth of input image.</p>
+
+<h3 id="10-examples-of-use-of-mathjax-in-markdown">10 examples of use of <a href="https://support.typora.io/Markdown-Reference/#math-blocks">MathJax</a> in Markdown</h3>
+
+<p>Example 1: Use double dollar <code class="highlighter-rouge">$$</code> and press return for math block and single <code class="highlighter-rouge">$</code> for inline math. 
+<script type="math/tex">y = {-b \pm \sqrt{b^2-4ac} \over 2a}</script>
+Example 2: $exp(i \pi) = -1$</p>
+
+<p>Example 3: $x^n + y^n = z^n$</p>
+
+<p>Example 4: $P(E) = {n \choose k} p^{k} (1 - p)^{n- k}$</p>
+
+<p>Example 5: $A\cos \frac{2\pi}{\lambda} (x) + i A\sin \frac{2\pi}{\lambda} (x)$</p>
+
+<p>Example 6: $y \sim N(\mu, \sigma^{2})$</p>
+
+<p>Example 7: $ (x+y)^m = \sum_{k=0}^{m} {m \choose k} x^{m - k} y^k $</p>
+
+<p>Example 8: $ P(C \mid D) = \frac{P(D \mid C) \, P(C)}{P(D)} $</p>
+
+<p>Example 9:
+<script type="math/tex">\left( \sum_{m=1}^n a_m b_m \right)^2 \leq
+\left( \sum_{m=1}^n a_m^2 \right)
+\left( \sum_{m=1}^n b_m^2 \right)</script></p>
+
+<p>Example 10:
+<script type="math/tex">% <![CDATA[
+\sum_{y < n \le x} f(n) = \int_y^x f(t) dt +  \\
+\int_y^x (t - [t]) f'(t) dt + f(x)([x] - x) - f(y)([y] - y) %]]></script></p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">saubhik</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">saubhik</li><li><a class="u-email" href="mailto:saubhik.mukherjee@gmail.com">saubhik.mukherjee@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/saubhik"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">saubhik</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Welcome to my space on the web. Everything is open source.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

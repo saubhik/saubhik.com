@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Software Requirements | saubhik</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Software Requirements" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Welcome to my space on the web. Everything is open source." />
+<meta property="og:description" content="Welcome to my space on the web. Everything is open source." />
+<link rel="canonical" href="http://localhost:4000/software_development/software_requirements/software_requirements.html" />
+<meta property="og:url" content="http://localhost:4000/software_development/software_requirements/software_requirements.html" />
+<meta property="og:site_name" content="saubhik" />
+<script type="application/ld+json">
+{"description":"Welcome to my space on the web. Everything is open source.","@type":"WebPage","url":"http://localhost:4000/software_development/software_requirements/software_requirements.html","headline":"Software Requirements","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="saubhik" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper">
+    <!---->
+    <!---->
+    <!-- <a class="site-title" rel="author" href="/">saubhik</a> -->
+		<a class="site-title" rel="author" href="/">saubhik's
+			web space</a>
+
+    <!---->
+    <!--   <nav class="site-nav"> -->
+    <!--     <input type="checkbox" id="nav-trigger" class="nav-trigger" /> -->
+    <!--     <label for="nav-trigger"> -->
+    <!--       <span class="menu-icon"> -->
+    <!--         <svg viewBox="0 0 18 15" width="18px" height="15px"> -->
+    <!--           <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/> -->
+    <!--         </svg> -->
+    <!--       </span> -->
+    <!--     </label> -->
+
+    <!--     <div class="trigger"> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/about/">About</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/">Hello there!</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/posts.html">Personal Blog</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/coursework/">Course Notes</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/coursework/introduction_to_graduate_algorithms/notes/lessons.html">Notes</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/coursework/machine_learning_for_trading/notes/lesson.html">notes - stuff I didn’t know!</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/data_science/Discrete%20Choice%20Models:%20Mixed%20Logit/mixed_logit.html">Mixed Logit</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/data_science/">Data Science</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/deep_learning/EIP_session_1_assignment.html">Some Topics on Deep Learning</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/deep_learning/">Deep Learning</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/epi/">Code commentary on EPI</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/notebooks/">Notebooks</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/papers/EfficientNeuralArchitectureSearchViaParameterSharing.html">Efficient Neural Architecture Search Via Parameter Sharing</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/papers/">Papers</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/advanced_javascript/advanced_javascript.html">Advanced Javascript</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/advanced_javascript/advanced_javascript_2_to_be_merged.html">Scope &amp;amp; Closure</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/agile_and_extreme_programming/agile_and_extreme_programming.html">Agile &amp;amp; Extreme Programming</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/api_backend/api_backend.html">API backend</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/backend_integration/ajax_calls.html">Ajax Calls</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/databases_and_orm/databases_and_orm.html">Databases and ORM</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/design_patterns_and_UML_diagrams/design_patterns_and_UML_diagrams.html">Design Patterns and UML diagrams</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/devops/devops.html">DevOps</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/distributed_systems_and_scalable_architecture/distributed_systems_and_scalable_architecture.html">Distributed Systems &amp;amp; Scalable Architecture</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/html_css/html_css.html">html and css</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/">Software Development</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/javascript/javascript.html">Javascript</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/linux_commands_for_survival/linux_commands_for_survival.html">Linux commands for survival</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/mvc_architecture/mvc.html">MVC architecture</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/react/react.html">React</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/software_requirements/software_requirements.html">Software Requirements</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/unit_testing/unit_testing_and_tdd.html">Unit Testing</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/version_control_and_git/version_control.html">Version Control</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/this_site/">About this website</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/utilities/">Utilities</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/utilities/start_jupyter_notebook_as_service.html">Start jupyter notebook server as service on boot</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--     </div> -->
+    <!--   </nav> -->
+    <!---->
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <!-- <header class="post-header"> -->
+  <!--   <h1 class="post-title">Software Requirements</h1> -->
+  <!-- </header> -->
+
+  <div class="post-content">
+    <h2 id="software-requirements">Software Requirements</h2>
+
+<p>How to gather, analyze, and trace requirements through the software development cycle.</p>
+
+<p>System engineering:
+System engineering involves several phases, beginning in conception and ending in the final product, followed by maintenance.</p>
+
+<p>Constituents of a system:</p>
+<ol>
+  <li>Software
+    <ul>
+      <li>Data Structures and Algorithms</li>
+      <li>Design and Architecture</li>
+      <li>Documentation &amp; Test Cases</li>
+    </ul>
+  </li>
+  <li>Hardware</li>
+  <li>People</li>
+  <li>Database</li>
+  <li>Documentation for the system eg. user manual</li>
+</ol>
+
+<p>System requirements can be of 2 types, whether it is a</p>
+<ul>
+  <li>Customer funded project (requirements provided by customer)</li>
+  <li>product for the market (market research is done which leads to market requirements document, potential user base and their preference of technologies like mobile/web interface are researched)</li>
+</ul>
+
+<p>Market requirements document is refined into a system requirements document (example, which OS? Android or iOS or both etc).</p>
+
+<p>System Requirement Document:</p>
+<ol>
+  <li>Product requirements specifications - represent the functionalities of the product as a whole. Example: BookMyShow’s product specification could be to allow booking and cancellation of tickets for movies, events, plays and sports.</li>
+  <li>System requirements specifications - SysRS. System constitutes hardware, software, people, database and documentation.</li>
+  <li>Hardware requirements specifications - example, specifications of the server the website needs to run on.</li>
+  <li>Software requirements specifications - what all features need to be developed for the particular software application</li>
+  <li>Functional requirements specifications - describe the functions of a system.</li>
+</ol>
+
+<p>For example, IRCTC website:</p>
+<ol>
+  <li>Product requirement specification: ticket booking &amp; cancellation, booking accomodation (hotels), catering services booking.</li>
+  <li>System requirement specification: hosted only through a web interface (no mobile app)</li>
+  <li>Functional requirement specification: advance ticket reservation, tatkal reservation etc.</li>
+  <li>Hardware requirement specification: internal memory requirements, number of clients to be supported</li>
+  <li>Software requirement specification: for a selected date &amp; destination, display all existing trains irrespective of seat availability</li>
+</ol>
+
+<p>Focus will be on software requirements.
+These specifiations often overlap. Tatkal booking facility can come under both functional and software requirement specifications.</p>
+
+<p><strong>Software Requirement Specification (SRS)</strong>
+An agreement between all stakeholders about the expectations from the software.</p>
+
+<p>Requirements engineering:</p>
+<ol>
+  <li>use of time-tested established techniques &amp; principles</li>
+  <li>use of languages &amp; tools to document the requirements</li>
+  <li>baselining requirements</li>
+  <li>tracking the requirements</li>
+</ol>
+
+<p>Why?</p>
+<ol>
+  <li>to understand customer’s needs</li>
+  <li>to assess feasibility</li>
+  <li>to negotiate a reasonable solution</li>
+  <li>to specify an unambiguous solution</li>
+  <li>to validate the specifications</li>
+  <li>to manage specifications with ongoing development</li>
+</ol>
+
+<p>4 broad steps in requirements engineering:</p>
+<ol>
+  <li>Requirements gathering
+    <ul>
+      <li>identify elicitation methods:eg. interviews, surveys, brainstorming sessions with stakeholders</li>
+      <li>identify the business &amp; technical needs</li>
+      <li>identify the key people</li>
+      <li>identify the domain &amp; operational constraints (how big the database will be? &amp; so on)</li>
+      <li>create usage scenarios</li>
+    </ul>
+  </li>
+  <li>Requirements organization</li>
+  <li>Negotiation &amp; discussion (requirements analysis)</li>
+  <li>Requirements specifications</li>
+</ol>
+
+<p>Result of requirement gathering process for IRCTC, example:</p>
+<ol>
+  <li>Scope
+    <ul>
+      <li>only online reservation &amp; cancellation</li>
+      <li>can cancel tickets only booked online</li>
+      <li>only desktop version of the website needs to be developed</li>
+    </ul>
+  </li>
+  <li>Technical environment:
+    <ul>
+      <li>single database for both online &amp; offline booking or more?</li>
+    </ul>
+  </li>
+  <li>Usage scenarios:
+    <ul>
+      <li>agent booking features - number of tickets one can book</li>
+      <li>user booking features - number of tickets one can book</li>
+    </ul>
+  </li>
+</ol>
+
+<p>There are multiple ways to document requirements:</p>
+<ol>
+  <li>Using graphical models (uml use-cases, activity diagrams)</li>
+  <li>using formal models (z, finite state machines, B methods)</li>
+  <li>prototypes</li>
+  <li>usage scenarios / user stories</li>
+  <li>text</li>
+</ol>
+
+<p>After requirement elicitation, organise requirements &amp; then analyse them.</p>
+
+<p>Organising requirements:</p>
+<ol>
+  <li>categorise requirements - hardware or product or software requirement</li>
+  <li>prioritse requirements - how critical is each requirement?</li>
+</ol>
+
+<p>Analysing requirements:</p>
+<ol>
+  <li>is requirement consistent with overall objective of the sytem - no contradictory requirements</li>
+  <li>is the requirement complete or incomplete - (fast is 10 ms or 5 secs)</li>
+</ol>
+
+<p><strong>Feature creep</strong>: addition of new features in a product due to customer demands and market competition. This can cause compatibility issues, resulting in addition of features. Can result in bloated software. This is addition of requirements after the development phase has started.</p>
+
+<p>Software requirements can be split into:</p>
+<ol>
+  <li>Functional requirements - behavior of a system in terms of its inputs &amp; outputs.</li>
+  <li>Non-functional requirements - refers to quality aspect of a system. (fast response time, clean website etc.)
+    <ul>
+      <li>secure, safe, usability, maintainable, reliable, scalable</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Example for IRCTC:
+Functional requirements: login should be through user ID, password, captcha. After login, user should be directed to welcome screen with booking options. Check availability before booking confirmation.</p>
+
+<p>Non-functional requirements: welcome screen should be loaded within 3 seconds, system should be able to handle a peak load of 1 million users, card details to be accepted only after bank authorisation (secure system)</p>
+
+<p><strong>Tracking requirements / requirements traceability</strong>
+Popular tool is Requirements Traceability Matrix (RTM).
+Tracks data of requirements through all phases of development, from baselining till test time. It is referred to at very stage of the process to make sure every requirement maps to a feature and every feature maps to a requirement.
+RTM benefits:</p>
+<ol>
+  <li>change impact analysis - which part of the test cases can be reused, which have to re-written</li>
+  <li>regression testing</li>
+  <li>coverage analysis - set of test cases written for requirement 1 can be reused for requirement 2</li>
+</ol>
+
+<p>Start building the RTM after finalising the requirements.</p>
+
+<hr />
+
+<h3 id="use-cases--scenarios">Use Cases &amp; Scenarios</h3>
+
+<p>Use cases are the next step of the design process, after requirements engineering. Use cases integrate the requirements into a comprehensive package that describes the interaction of the user with the system.</p>
+
+<p>Use case is a list of actions or steps of a software system that involve interactions between a user and the system to achieve a specified goal.</p>
+
+<p>We call the users of the software system as actors. It could be humans, sensors, databases, network ports.</p>
+
+<p>Subject of a use case is the functionality that defines and represents boundaries of business, software system, physical system or device. Example: banking system is a subject which includes use cases like transfer funds, manage accounts etc.</p>
+
+<p>Subject or a system boundary is presented by a rectangle with subject’s name. Use cases are inside the rectange and actors are outside the rectangle.</p>
+
+<p>Use Case Analysis:</p>
+<ol>
+  <li>How will the software be used by the users?</li>
+  <li>Who are the users?</li>
+</ol>
+
+<p>Elements of a use case:</p>
+<ol>
+  <li>Actors: any entity interacting with the software/system. Actors can be a person, an organisation, a software/hardware system, another program etc.</li>
+  <li>Goals: functionality that is achieved by the use case</li>
+  <li>Flow: what happens when everything goes right &amp; the use case achieves its goal</li>
+  <li>Associations/relationships: various relationships that relate the system &amp; its components to the actors</li>
+</ol>
+
+<p>Use cases are organised using the following relationships:</p>
+<ol>
+  <li>Generalisation
+<em>Withdraw Cash</em> is a generalisation of <em>Bank ATM transaction</em>. Base use case could be abstract (incomplete) or concrete (complete). Specialised use case is required if base use case is abstract.</li>
+  <li>Extend
+<em>Help</em> is an extended use case of <em>Bank ATM transaction</em>. Base use case is complete (concrete) by itself, defined independently. Extending use case is optional.</li>
+  <li>Include
+<em>Bank ATM transaction</em> includes <em>customer authentication</em>. Base use case is incomplete (abstract use case). Included use case is required.</li>
+</ol>
+
+<p>Good use case:</p>
+<ol>
+  <li>should describe both functionality &amp; result</li>
+  <li>should focus only on requirements &amp; not design elements</li>
+  <li>fix a particular style of writing use cases</li>
+  <li>if there are several flows of the functionality, it is ideal to have a main flow and others as alternate</li>
+  <li>should not have too many CRUD activaties</li>
+</ol>
+
+<p>Styles of writing a use case:</p>
+<ol>
+  <li>graphical style</li>
+  <li>textual style:
+    <ul>
+      <li>title</li>
+      <li>actor(s)</li>
+      <li>scope &amp; description</li>
+      <li>stakeholders</li>
+      <li>pre-conditions (eg. menu showed should be from geographically closer restaurants)&amp; triggers</li>
+      <li>post-conditions (eg. feedback from users)</li>
+      <li>flow</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Use case should not hold the information about the software design. Also, it should not specify the scale &amp; architecture of the project. These are technical details which should be discussed at a later stage after you have written &amp; defined a use case.</p>
+
+<p>Requirements Vs Use Cases:
+A requirement is a general statement that specifies a desired property of a software. A use case is more specific than a requirement. It either implies a requirement or it can be derived from a requirement.
+A requirement can be elaborated into several different use cases. Requirements can be non-functional too. Use cases talk about the functionality of a system as a user interacts with the system.</p>
+
+<p><strong>Scenarios</strong></p>
+<ol>
+  <li>Scenarios capture the system behavior as is viewed from an outsider, from a user’s point of view</li>
+  <li>Captures a real life situation where the end user, a customer, interacts with the system</li>
+  <li>involve the failure aspects &amp; various situations that can happen as the customer interacts &amp; uses the system or a product</li>
+  <li>useful for analysing the requirement because they consider on the flow of how the system agrees &amp; not on a specific functionality</li>
+  <li>can talk about the functionality of the system in a view broader than that of a use case</li>
+</ol>
+
+<p>The Main Success Scenario (MSS) is listed down differently, and the alternate &amp; failure situations are handled differently. MSS is the scenario &amp; steps when everything is going as expected and finally the goal of the use case is achieved.</p>
+
+<p>Use Case vs Scenario:</p>
+<ol>
+  <li>
+    <p>A use case depicts an interaction that a user, as an actor, has with a system. A scenario is the whole sequence of interactions that user has with the system along with the alternates that a use case can go through.</p>
+  </li>
+  <li>
+    <p>A use case involves one main actor &amp; constitutes one functionality that describes how the actor interacts. A scenario may include failure aspects &amp; alternate behavior until the functionality of the system is achieved.</p>
+  </li>
+</ol>
+
+<p><strong>User Stories</strong>
+A very high-level definition of a requirement containing just enough information so that developers can produce a reasonable estimate of the effort to implement it. Used in agile software development to capture a description of a software ffeature from an end-user perspective. The user story describes the type of user, what they want &amp; why.</p>
+
+<p>Example of a user story for authentication &amp; login to a website: “As a user, you should be able to login to a website by your username &amp; password to access the features provided by the website”</p>
+
+<p>Example of a use case for authentication:</p>
+<ol>
+  <li>Use case name: Authenticate on a website</li>
+  <li>Actor: user who wants to login on the website</li>
+  <li>Scope: this use case allows the user to login to the system</li>
+  <li>Stakeholders: None</li>
+  <li>Pre-conditions: the user should have a valid account on the website</li>
+  <li>Post-conditions: the user should see the relevant homepage</li>
+  <li>Flow:
+    <ul>
+      <li>the user types the username</li>
+      <li>the user types the password</li>
+      <li>system checks the login credentials are valid</li>
+      <li>system creates a session for the user and provides access to the user</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Software requirement is required to maintain coherence between initial need for software, the conceptualised design of the software &amp; the final software.</p>
+
+<p>Adding test cases to user requirements increases reliability as you can predict the way of using requirement &amp; by determining the expected behavior of the system. Test cases bring clarity and also uncover the edge cases which can be hard to identify.</p>
+
+<p><strong>Additional Points</strong>
+The significance of using ‘include’ relationship in use case diagram is to isolate redundant events flows that are shared by multiple use cases.
+Refer <a href="https://www.uml-diagrams.org/use-case-include.html">this</a>.</p>
+
+<p>Airbag control can be an optional use case for the software system for driving the car. It is not mandatory for the system to control the airbags but can be provided. So this is “extends” relationship between both the use casses.</p>
+
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">saubhik</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">saubhik</li><li><a class="u-email" href="mailto:saubhik.mukherjee@gmail.com">saubhik.mukherjee@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/saubhik"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">saubhik</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Welcome to my space on the web. Everything is open source.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Scope &amp; Closure | saubhik</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Scope &amp; Closure" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Welcome to my space on the web. Everything is open source." />
+<meta property="og:description" content="Welcome to my space on the web. Everything is open source." />
+<link rel="canonical" href="http://localhost:4000/software_development/advanced_javascript/advanced_javascript_2_to_be_merged.html" />
+<meta property="og:url" content="http://localhost:4000/software_development/advanced_javascript/advanced_javascript_2_to_be_merged.html" />
+<meta property="og:site_name" content="saubhik" />
+<script type="application/ld+json">
+{"description":"Welcome to my space on the web. Everything is open source.","@type":"WebPage","url":"http://localhost:4000/software_development/advanced_javascript/advanced_javascript_2_to_be_merged.html","headline":"Scope &amp; Closure","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="saubhik" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper">
+    <!---->
+    <!---->
+    <!-- <a class="site-title" rel="author" href="/">saubhik</a> -->
+		<a class="site-title" rel="author" href="/">saubhik's
+			web space</a>
+
+    <!---->
+    <!--   <nav class="site-nav"> -->
+    <!--     <input type="checkbox" id="nav-trigger" class="nav-trigger" /> -->
+    <!--     <label for="nav-trigger"> -->
+    <!--       <span class="menu-icon"> -->
+    <!--         <svg viewBox="0 0 18 15" width="18px" height="15px"> -->
+    <!--           <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/> -->
+    <!--         </svg> -->
+    <!--       </span> -->
+    <!--     </label> -->
+
+    <!--     <div class="trigger"> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/about/">About</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/">Hello there!</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/posts.html">Personal Blog</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/coursework/">Course Notes</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/coursework/introduction_to_graduate_algorithms/notes/lessons.html">Notes</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/coursework/machine_learning_for_trading/notes/lesson.html">notes - stuff I didn’t know!</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/data_science/Discrete%20Choice%20Models:%20Mixed%20Logit/mixed_logit.html">Mixed Logit</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/data_science/">Data Science</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/deep_learning/EIP_session_1_assignment.html">Some Topics on Deep Learning</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/deep_learning/">Deep Learning</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/epi/">Code commentary on EPI</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/notebooks/">Notebooks</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/papers/EfficientNeuralArchitectureSearchViaParameterSharing.html">Efficient Neural Architecture Search Via Parameter Sharing</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/papers/">Papers</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/advanced_javascript/advanced_javascript.html">Advanced Javascript</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/advanced_javascript/advanced_javascript_2_to_be_merged.html">Scope &amp;amp; Closure</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/agile_and_extreme_programming/agile_and_extreme_programming.html">Agile &amp;amp; Extreme Programming</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/api_backend/api_backend.html">API backend</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/backend_integration/ajax_calls.html">Ajax Calls</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/databases_and_orm/databases_and_orm.html">Databases and ORM</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/design_patterns_and_UML_diagrams/design_patterns_and_UML_diagrams.html">Design Patterns and UML diagrams</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/devops/devops.html">DevOps</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/distributed_systems_and_scalable_architecture/distributed_systems_and_scalable_architecture.html">Distributed Systems &amp;amp; Scalable Architecture</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/html_css/html_css.html">html and css</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/">Software Development</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/javascript/javascript.html">Javascript</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/linux_commands_for_survival/linux_commands_for_survival.html">Linux commands for survival</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/mvc_architecture/mvc.html">MVC architecture</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/react/react.html">React</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/software_requirements/software_requirements.html">Software Requirements</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/unit_testing/unit_testing_and_tdd.html">Unit Testing</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/version_control_and_git/version_control.html">Version Control</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/this_site/">About this website</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/utilities/">Utilities</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/utilities/start_jupyter_notebook_as_service.html">Start jupyter notebook server as service on boot</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--     </div> -->
+    <!--   </nav> -->
+    <!---->
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <!-- <header class="post-header"> -->
+  <!--   <h1 class="post-title">Scope &amp;amp; Closure</h1> -->
+  <!-- </header> -->
+
+  <div class="post-content">
+    <h2 id="scope--closure">Scope &amp; Closure</h2>
+
+<p>Any variable declared outside any function or method is part of the global scope.</p>
+
+<p>Any variable declared inside a function has its own scope, known as local scope.</p>
+
+<p><code class="highlighter-rouge">Block Scoping</code>: The <code class="highlighter-rouge">let</code> keyword uses block scoping.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="s2">"cookie"</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">dessert</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="s2">"doughnut"</span><span class="p">;</span>
+        <span class="c1">// this prints doughnut</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="c1">// this prints cookie since `let` keyword uses block scoping</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">dessert</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>Some more examples:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">four</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">// this prints 4</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>vs this:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="kd">function</span> <span class="nx">four</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">// this prints 1</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="hoisting">Hoisting</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">f</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// this prints:</span>
+<span class="c1">// undefined</span>
+<span class="c1">// 2</span>
+<span class="nx">f</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>JS always moves variable declarations with var, to the top of the scope making the code equivalent to:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">f</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">x</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+    <span class="nx">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">f</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>But remember that the following:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">f</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// this prints 1</span>
+<span class="nx">f</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>This concept is called <code class="highlighter-rouge">Hoisting</code>. <code class="highlighter-rouge">Hoisting</code> is a process in which JS moves all the variable declarations declared with <code class="highlighter-rouge">var</code> to the top of the program before execution.</p>
+
+<p>JS only hoists declarations, not initialisations.</p>
+
+<p>You can even call functions before they are even declared in the JS code, due to hoisting!</p>
+
+<p>This code works perfectly fine!</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">printName</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">name</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"My name is "</span> <span class="o">+</span> <span class="nx">name</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">name</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// this prints</span>
+<span class="c1">// My name is 5</span>
+<span class="nx">printName</span><span class="p">();</span>
+</code></pre></div></div>
+
+<h2 id="closure">Closure</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">welcome</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">greeting</span> <span class="o">=</span> <span class="s2">"Welcome! "</span> <span class="o">+</span> <span class="nx">name</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">message</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">greeting</span><span class="p">);</span>
+    <span class="p">};</span>
+    <span class="k">return</span> <span class="nx">message</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">sayHello</span> <span class="o">=</span> <span class="nx">welcome</span><span class="p">(</span><span class="s2">"Alice"</span><span class="p">);</span>
+<span class="c1">// this prints</span>
+<span class="c1">// Welcome! Alice</span>
+<span class="nx">sayHello</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>In JS, whenever you declare another function inside an already existing function, you are creating a <code class="highlighter-rouge">closure</code>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">a</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">privatefunction</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="na">publicfunction</span> <span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="nx">privatefunction</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">})();</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">a</code> is now an object, with a method <code class="highlighter-rouge">publicfunction</code> ( <code class="highlighter-rouge">a.publicfunction()</code> ) which calls <code class="highlighter-rouge">privatefunction</code>, which only exists inside the closure. You can NOT call <code class="highlighter-rouge">privatefunction</code> directly (i.e. <code class="highlighter-rouge">a.privatefunction()</code> ), just <code class="highlighter-rouge">publicfunction()</code>.</p>
+
+<p>To count the number of times a user clicked a button,</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">var</span> <span class="nx">updateClickCount</span><span class="o">=</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="kd">var</span> <span class="nx">counter</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="kd">function</span><span class="p">(){</span>
+     <span class="o">++</span><span class="nx">counter</span><span class="p">;</span>
+     <span class="c1">// do something with counter</span>
+    <span class="p">}</span>
+<span class="p">})();</span>
+</code></pre></div></div>
+
+<p>The self-invoking function only runs once. It sets the counter to zero (<code class="highlighter-rouge">0</code>), and returns a function expression.</p>
+
+<p>This way <code class="highlighter-rouge">updateClickCount</code> becomes a function. The “wonderful” part is that it can access the counter in the parent scope.</p>
+
+<p>This is called a JavaScript <code class="highlighter-rouge">closure</code>. It makes it possible for a function to have <code class="highlighter-rouge">"private"</code> variables.</p>
+
+<p>The counter is protected by the scope of the anonymous function, and can only be changed using the add function!</p>
+
+<p><a href="https://stackoverflow.com/questions/2728278/what-is-a-practical-use-for-a-closure-in-javascript">source</a></p>
+
+<h2 id="callbacks">Callbacks</h2>
+
+<p><code class="highlighter-rouge">Callbacks</code> help in imparting an async nature to JS.</p>
+
+<p><code class="highlighter-rouge">Synchronous</code> code means that if you have 2 lines of code (say <code class="highlighter-rouge">s1</code> followed by <code class="highlighter-rouge">s2</code>) then <code class="highlighter-rouge">s2</code> cannot begin to execute until <code class="highlighter-rouge">s1</code> has finished executing. It is like a queue of processes and before a certain process finishes, the next process cannot start running.</p>
+
+<p><code class="highlighter-rouge">Asynchronous</code> code means that you can have 2 lines of code where the second line of code can execute even before the first line executes. This happens through <code class="highlighter-rouge">callbacks</code> &amp; <code class="highlighter-rouge">promises</code>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Begin..."</span><span class="p">);</span>
+<span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"After 2 seconds..."</span><span class="p">);</span>
+<span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"End..."</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The above first prints <code class="highlighter-rouge">Begin...</code> and then <code class="highlighter-rouge">End...</code> and then <code class="highlighter-rouge">After 2 seconds...</code>.</p>
+
+<p>A <code class="highlighter-rouge">callback function</code> is a function passed into another function as an argument, which is invoked inside the outside function to complete some kind of action.</p>
+
+<p>JS is an event-driven language. Instead of waiting for a response before moving on, JS will keep executing while listening for other events. <code class="highlighter-rouge">Callbacks</code> make sure that certain code doesn’t execute before some other code has finished execution.</p>
+
+<h2 id="event-bubbling--capturing">Event Bubbling &amp; Capturing</h2>
+
+<p>In <code class="highlighter-rouge">event bubbling</code>, the event is first captured and handled by the innermost element and then propagated to outer elements.</p>
+
+<p>In <code class="highlighter-rouge">event capturing</code>, the event is first captured by the outermost element &amp; propagated to the inner elements.</p>
+
+<p>Two ways of preventing capturing &amp; bubbling:</p>
+
+<ol>
+  <li><code class="highlighter-rouge">stopPropagation()</code>, prevents further propagation of the current event in the bubbling phase</li>
+  <li><code class="highlighter-rouge">preventDefault()</code>, tells the user that if the event does not get explicitly handled, its default action should not be taken</li>
+</ol>
+
+<h2 id="map-reduce--filter">Map, Reduce &amp; Filter</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">triples</span> <span class="o">=</span> <span class="nx">numbers</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">x</span><span class="o">*</span><span class="mi">3</span> <span class="p">});</span>
+<span class="c1">// this prints [3,6,9,12]</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">triples</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>An anonymous callback function was used above.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">22</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">even</span> <span class="o">=</span> <span class="nx">numbers</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">x</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="p">});</span>
+<span class="c1">// prints [12, 22]</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">even</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">total</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">].</span><span class="nx">reduce</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">sum</span><span class="p">,</span> <span class="nx">currentValue</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">sum</span> <span class="o">+</span> <span class="nx">currentValue</span>
+<span class="p">});</span>
+<span class="c1">// prints 10</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">total</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The first param in the anonymous callback function for <code class="highlighter-rouge">reduce</code> is called the <code class="highlighter-rouge">accumulator</code> (accumulates whatever the return statement defines) and the second param is the <code class="highlighter-rouge">current value</code>.</p>
+
+<h2 id="promises">Promises</h2>
+
+<p><code class="highlighter-rouge">Promises</code> are used to make code synchronous, like callback functions.</p>
+
+<p>Using <code class="highlighter-rouge">Promises</code> the execution of a complete block of code can be postponed to happen at a later time. This “later time” is usually when async operation has finished execution. Other operations can keep running without any interruption.</p>
+
+<p>3 states for <code class="highlighter-rouge">Promise</code>:</p>
+<ol>
+  <li><code class="highlighter-rouge">pending</code>: beginning state of any promise object. Promise object has not received any information if the ongoing async operation has been completed successfully or not.</li>
+  <li><code class="highlighter-rouge">fulfilled</code>: Promise object changes its state from <code class="highlighter-rouge">pending</code> to <code class="highlighter-rouge">fulfilled</code> when it comes to know that the associated async operation has completed successfully.</li>
+  <li><code class="highlighter-rouge">rejected</code>: Promise object assumes this state when it finds out that the associated async operation has not completed successfully.</li>
+</ol>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">promise</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// code here ...</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p>A code example:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">success</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">info</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">success</span> <span class="o">==</span> <span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">details</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="na">name</span><span class="p">:</span> <span class="s2">"London Coffee House"</span><span class="p">,</span>
+            <span class="na">location</span><span class="p">:</span> <span class="s2">"Downing Street, London"</span><span class="p">,</span>
+            <span class="na">cuisine</span><span class="p">:</span> <span class="s2">"Coffee, Pastries &amp; Desserts"</span>
+        <span class="p">};</span>
+        <span class="nx">resolve</span><span class="p">(</span><span class="nx">details</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">reject</span><span class="p">(</span><span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">"Sorry! Could not fetch data at the moment!"</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="kd">const</span> <span class="nx">display</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">info</span>
+        <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">coffeeShopDetails</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// ... if resolve is called in promise</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Let's go here for coffee!"</span><span class="p">);</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">coffeeShopDetails</span><span class="p">);</span>
+        <span class="p">})</span>
+
+        <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// ... if reject is called in promise</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+        <span class="p">})</span>
+<span class="p">};</span>
+
+<span class="nx">display</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>We make variables <code class="highlighter-rouge">const</code> so their values cannot be changed later.</p>
+
+<p>It is preferred to use <code class="highlighter-rouge">promises</code> over <code class="highlighter-rouge">callbacks</code> as we can have <code class="highlighter-rouge">callback hell</code>, in which a callback function is embedding inside another callback function, which is embedded inside another &amp; so on.</p>
+
+<h2 id="async--await">async / await</h2>
+
+<p>The word <code class="highlighter-rouge">async</code> before a function means the function always returns a <code class="highlighter-rouge">promise</code>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="kd">function</span> <span class="nx">f</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">f</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="nx">alert</span><span class="p">);</span> <span class="c1">// 1</span>
+</code></pre></div></div>
+
+<p>This is equivalent to</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">f</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">f</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="nx">alert</span><span class="p">);</span> <span class="c1">// 1</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">await</code> works only inside <code class="highlighter-rouge">async</code> functions. <code class="highlighter-rouge">await</code> makes JS wait until that <code class="highlighter-rouge">promise</code> settles &amp; returns its result.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="kd">function</span> <span class="nx">f</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">promise</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">resolve</span><span class="p">(</span><span class="s2">"done!"</span><span class="p">)</span>
+        <span class="p">},</span> <span class="mi">1000</span><span class="p">)</span>
+    <span class="p">});</span>
+
+    <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">promise</span><span class="p">;</span>
+
+    <span class="nx">alert</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">f</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>Whatever one can do with <code class="highlighter-rouge">async-await</code> can be done with <code class="highlighter-rouge">promises</code> as well.</p>
+
+<h2 id="comparing-callbacks-promises--asyncawait">Comparing callbacks, promises &amp; async/await</h2>
+
+<p>Suppose we had to print the alphabets a, b &amp; c in this order, after random intervals of time.</p>
+
+<p>We can code something like this:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">print</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
+    <span class="p">},</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">printLetters</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">print</span><span class="p">(</span><span class="s2">"a"</span><span class="p">);</span>
+    <span class="nx">print</span><span class="p">(</span><span class="s2">"b"</span><span class="p">);</span>
+    <span class="nx">print</span><span class="p">(</span><span class="s2">"c"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// this prints in random order!</span>
+<span class="nx">printLetters</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>This is because the <code class="highlighter-rouge">print</code> function defined above is asynchronous!</p>
+
+<p>We can solve this problem using <code class="highlighter-rouge">callbacks</code>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">print</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">func</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+        <span class="nx">func</span><span class="p">();</span>
+    <span class="p">},</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">printLetters</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">print</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">print</span><span class="p">(</span><span class="s2">"b"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">print</span><span class="p">(</span><span class="s2">"c"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="p">})</span>
+        <span class="p">})</span>
+    <span class="p">})</span>
+<span class="p">}</span>
+
+<span class="nx">printLetters</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>But there are so many nested functions that makes the code messy. This is called <code class="highlighter-rouge">callback hell</code>. This must be avoided.</p>
+
+<p>So we can use <code class="highlighter-rouge">Promises</code>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">print</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+            <span class="nx">resolve</span><span class="p">();</span>
+        <span class="p">},</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="p">})</span>
+<span class="p">}</span>
+
+<span class="c1">// create a Promise chain</span>
+<span class="kd">function</span> <span class="nx">printLetters</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">print</span><span class="p">(</span><span class="s2">"a"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">print</span><span class="p">(</span><span class="s2">"b"</span><span class="p">);</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">print</span><span class="p">(</span><span class="s2">"c"</span><span class="p">);</span>
+        <span class="p">})</span>
+<span class="p">}</span>
+
+<span class="nx">printLetters</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>We will now use <code class="highlighter-rouge">async/await</code> to improve readability.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">print</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+            <span class="nx">resolve</span><span class="p">();</span>
+        <span class="p">},</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="p">})</span>
+<span class="p">}</span>
+
+<span class="k">async</span> <span class="kd">function</span> <span class="nx">printLetters</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kr">await</span> <span class="nx">print</span><span class="p">(</span><span class="s2">"a"</span><span class="p">);</span>
+    <span class="kr">await</span> <span class="nx">print</span><span class="p">(</span><span class="s2">"b"</span><span class="p">);</span>
+    <span class="kr">await</span> <span class="nx">print</span><span class="p">(</span><span class="s2">"c"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">printLetters</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="difference-between-es5--es6--babel">Difference between ES5 &amp; ES6 &amp; Babel</h2>
+
+<p><code class="highlighter-rouge">ECMAScript</code> is a coding language standard &amp; JS is simply the implementation of that standard. <code class="highlighter-rouge">ES</code> denotes <code class="highlighter-rouge">ECMAScript</code>. The digit after <code class="highlighter-rouge">ES</code> denotes the version of <code class="highlighter-rouge">ES</code>.</p>
+
+<p>Notable differences between <code class="highlighter-rouge">ES5</code> &amp; <code class="highlighter-rouge">ES6</code> are:</p>
+<ol>
+  <li><code class="highlighter-rouge">=&gt;</code> arrow functions</li>
+  <li><code class="highlighter-rouge">let</code> &amp; <code class="highlighter-rouge">const</code></li>
+  <li>spread operator</li>
+  <li>string manipulation</li>
+  <li>import/export commands</li>
+</ol>
+
+<p>Many old browsers don’t support JS written in ES6. Therefore, <code class="highlighter-rouge">Babel</code> was created which is a <code class="highlighter-rouge">transpiler</code>, a type of compiler that takes source code of a program written in one programming language as its input &amp; produces the equivalent source code in another programming language (also known as a <code class="highlighter-rouge">source-to-source compiler</code>).</p>
+
+<p><code class="highlighter-rouge">Babel</code> converts <code class="highlighter-rouge">ES6</code> to <code class="highlighter-rouge">ES5</code> code.</p>
+
+<ol>
+  <li><code class="highlighter-rouge">let</code> &amp; <code class="highlighter-rouge">const</code> is introduced in <code class="highlighter-rouge">ES6</code>. These are not hoisted unlike <code class="highlighter-rouge">var</code>.</li>
+  <li>Arrow functions, <code class="highlighter-rouge">=&gt;</code>.</li>
+</ol>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">numbers</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>is equivalent to</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">numbers</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">});</span>
+</code></pre></div></div>
+<ol>
+  <li>spread operators, <code class="highlighter-rouge">...</code> in <code class="highlighter-rouge">ES6</code></li>
+</ol>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">63</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">numberNew</span> <span class="o">=</span> <span class="p">[</span><span class="mi">45</span><span class="p">];</span>
+<span class="p">[</span><span class="nx">numberNew</span><span class="p">,</span> <span class="p">...</span><span class="nx">numbers</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>is equivalent to</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">63</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">numberNew</span> <span class="o">=</span> <span class="p">[</span><span class="mi">45</span><span class="p">];</span>
+<span class="p">[</span><span class="nx">numberNew</span><span class="p">].</span><span class="nx">concat</span><span class="p">(</span><span class="nx">numbers</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>So to copy one array to another array, we can do</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">63</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">newArray</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">numbers</span><span class="p">];</span>
+</code></pre></div></div>
+
+<p>which is equivalent to</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">63</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">newArray</span> <span class="o">=</span> <span class="p">[].</span><span class="nx">concat</span><span class="p">(</span><span class="nx">numbers</span><span class="p">);</span>
+</code></pre></div></div>
+
+<ol>
+  <li>String manipulation using template literals</li>
+</ol>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="s2">"new"</span>
+<span class="kd">function</span> <span class="nx">func</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="s2">"Hello!"</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="kd">let</span> <span class="nx">helloString</span> <span class="o">=</span> <span class="s2">`This is a </span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2"> string: </span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2"> </span><span class="p">${</span><span class="nx">func</span><span class="p">(</span><span class="nx">name</span><span class="p">)}</span><span class="s2">`</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Use backtick (`).</p>
+
+<p>The above is equivalent to:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="s2">"new"</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">func</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="s2">"Hello!"</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="kd">var</span> <span class="nx">helloString</span> <span class="o">=</span> <span class="s2">"This is a "</span> <span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="s2">" string: "</span> <span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="nx">func</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span>
+</code></pre></div></div>
+
+<ol>
+  <li><code class="highlighter-rouge">ES6</code> has introduced modular import &amp; export.</li>
+</ol>
+
+<h2 id="lexical-scoping-in-es6">Lexical Scoping in ES6</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ES5</span>
+<span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="s2">"hello board"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">boards</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">name</span><span class="p">:</span> <span class="s2">"new board"</span><span class="p">;</span>
+    <span class="nl">print</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+<span class="c1">// this prints "new board"</span>
+<span class="nx">boards</span><span class="p">.</span><span class="nx">print</span><span class="p">();</span>
+
+<span class="c1">// ES6</span>
+<span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="s2">"hello board"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">boards</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">name</span><span class="p">:</span> <span class="s2">"new board"</span><span class="p">;</span>
+    <span class="nl">print</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="c1">// this prints "hello board"</span>
+<span class="c1">// this takes global scope</span>
+<span class="nx">boards</span><span class="p">.</span><span class="nx">print</span><span class="p">();</span>
+</code></pre></div></div>
+
+<h2 id="oop-in-js">OOP in JS</h2>
+
+<p>OOP in JS is not a full-fledged feature: the classes are merely functions themselves.</p>
+
+<p>Javascript is basically a functional programming language. Even though the class keyword has been introduced in JS as well, but internally the “class” is just a function! So, it is not a true or robust object oriented programming language.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Boards</span> <span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s2">"This is a boards class"</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nx">Projects</span> <span class="kd">extends</span> <span class="nx">Boards</span> <span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// super must be declared within constructor</span>
+        <span class="k">super</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">results</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Projects</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">results</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>That’s it for JS for now!</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">saubhik</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">saubhik</li><li><a class="u-email" href="mailto:saubhik.mukherjee@gmail.com">saubhik.mukherjee@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/saubhik"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">saubhik</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Welcome to my space on the web. Everything is open source.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

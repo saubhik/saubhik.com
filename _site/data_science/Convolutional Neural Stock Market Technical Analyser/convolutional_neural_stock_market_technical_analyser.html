@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>saubhik | Welcome to my space on the web. Everything is open source.</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="saubhik" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Welcome to my space on the web. Everything is open source." />
+<meta property="og:description" content="Welcome to my space on the web. Everything is open source." />
+<link rel="canonical" href="http://localhost:4000/data_science/Convolutional%20Neural%20Stock%20Market%20Technical%20Analyser/convolutional_neural_stock_market_technical_analyser.html" />
+<meta property="og:url" content="http://localhost:4000/data_science/Convolutional%20Neural%20Stock%20Market%20Technical%20Analyser/convolutional_neural_stock_market_technical_analyser.html" />
+<meta property="og:site_name" content="saubhik" />
+<script type="application/ld+json">
+{"description":"Welcome to my space on the web. Everything is open source.","@type":"WebPage","url":"http://localhost:4000/data_science/Convolutional%20Neural%20Stock%20Market%20Technical%20Analyser/convolutional_neural_stock_market_technical_analyser.html","headline":"saubhik","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="saubhik" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper">
+    <!---->
+    <!---->
+    <!-- <a class="site-title" rel="author" href="/">saubhik</a> -->
+		<a class="site-title" rel="author" href="/">saubhik's
+			web space</a>
+
+    <!---->
+    <!--   <nav class="site-nav"> -->
+    <!--     <input type="checkbox" id="nav-trigger" class="nav-trigger" /> -->
+    <!--     <label for="nav-trigger"> -->
+    <!--       <span class="menu-icon"> -->
+    <!--         <svg viewBox="0 0 18 15" width="18px" height="15px"> -->
+    <!--           <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/> -->
+    <!--         </svg> -->
+    <!--       </span> -->
+    <!--     </label> -->
+
+    <!--     <div class="trigger"> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/about/">About</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/">Hello there!</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/posts.html">Personal Blog</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/coursework/">Course Notes</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/coursework/introduction_to_graduate_algorithms/notes/lessons.html">Notes</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/coursework/machine_learning_for_trading/notes/lesson.html">notes - stuff I didn’t know!</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/data_science/Discrete%20Choice%20Models:%20Mixed%20Logit/mixed_logit.html">Mixed Logit</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/data_science/">Data Science</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/deep_learning/EIP_session_1_assignment.html">Some Topics on Deep Learning</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/deep_learning/">Deep Learning</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/epi/">Code commentary on EPI</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/notebooks/">Notebooks</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/papers/EfficientNeuralArchitectureSearchViaParameterSharing.html">Efficient Neural Architecture Search Via Parameter Sharing</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/papers/">Papers</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/advanced_javascript/advanced_javascript.html">Advanced Javascript</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/advanced_javascript/advanced_javascript_2_to_be_merged.html">Scope &amp;amp; Closure</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/agile_and_extreme_programming/agile_and_extreme_programming.html">Agile &amp;amp; Extreme Programming</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/api_backend/api_backend.html">API backend</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/backend_integration/ajax_calls.html">Ajax Calls</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/databases_and_orm/databases_and_orm.html">Databases and ORM</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/design_patterns_and_UML_diagrams/design_patterns_and_UML_diagrams.html">Design Patterns and UML diagrams</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/devops/devops.html">DevOps</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/distributed_systems_and_scalable_architecture/distributed_systems_and_scalable_architecture.html">Distributed Systems &amp;amp; Scalable Architecture</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/html_css/html_css.html">html and css</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/">Software Development</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/javascript/javascript.html">Javascript</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/linux_commands_for_survival/linux_commands_for_survival.html">Linux commands for survival</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/mvc_architecture/mvc.html">MVC architecture</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/react/react.html">React</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/software_requirements/software_requirements.html">Software Requirements</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/unit_testing/unit_testing_and_tdd.html">Unit Testing</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/version_control_and_git/version_control.html">Version Control</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/this_site/">About this website</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/utilities/">Utilities</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/utilities/start_jupyter_notebook_as_service.html">Start jupyter notebook server as service on boot</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--     </div> -->
+    <!--   </nav> -->
+    <!---->
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <!-- <header class="post-header"> -->
+  <!--   <h1 class="post-title"></h1> -->
+  <!-- </header> -->
+
+  <div class="post-content">
+    <h4 id="convolutional-neural-stock-market-technical-analyser">Convolutional Neural Stock Market Technical Analyser</h4>
+
+<p>So this code was forked from a repo written by <a href="wonderphil.net">Philip Xu</a>. There are 3 main 
+python scripts, <code class="highlighter-rouge">loader.py</code>, <code class="highlighter-rouge">ops.py</code>, and <code class="highlighter-rouge">stock_model.py</code>. Going through each one by one.</p>
+
+<p><strong>loader.py</strong></p>
+
+<p>I see a class <code class="highlighter-rouge">DataSet</code> derived from <code class="highlighter-rouge">object</code>, and 2 methods <code class="highlighter-rouge">load_csv()</code> and 
+<code class="highlighter-rouge">load_stock_data()</code>.</p>
+
+<p>Let’s see the class <code class="highlighter-rouge">DataSet</code>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tensorflow.python.framework</span> <span class="kn">import</span> <span class="n">dtypes</span><span class="p">,</span> <span class="n">random_seed</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="k">class</span> <span class="nc">DataSet</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    
+    <span class="c"># Constructor</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> 
+                 <span class="n">images</span><span class="p">,</span>
+                 <span class="n">labels</span><span class="p">,</span>
+                 <span class="n">dtype</span><span class="o">=</span><span class="n">dtypes</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span>
+                 <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>    
+        <span class="bp">self</span><span class="o">.</span><span class="n">check_data</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+        <span class="n">seed1</span><span class="p">,</span> <span class="n">seed2</span> <span class="o">=</span> <span class="n">random_seed</span><span class="o">.</span><span class="n">get_seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_images</span> <span class="o">=</span> <span class="n">images</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_labels</span> <span class="o">=</span> <span class="n">labels</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_epochs_completed</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_index_in_epoch</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_total_batches</span> <span class="o">=</span> <span class="n">images</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    
+    <span class="c"># Check whether the number of images and number of labels are same</span>
+    <span class="k">def</span> <span class="nf">check_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">images</span><span class="p">,</span> <span class="n">labels</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="n">images</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">labels</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">(</span>
+            <span class="s">'images.shape: </span><span class="si">%</span><span class="s">s labels.shape: </span><span class="si">%</span><span class="s">s'</span> <span class="o">%</span> <span class="p">(</span><span class="n">images</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">labels</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+    
+    <span class="c"># Implementing getter methods</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">images</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_images</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">labels</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_labels</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">total_batches</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_total_batches</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">epochs_completed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_epochs_completed</span>
+
+    <span class="k">def</span> <span class="nf">next_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+        <span class="s">"""
+        Takes in batch_size and returns a tuple of batch_size images
+        and batch_size labels, for the next batch.
+        """</span>
+        <span class="n">start</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_index_in_epoch</span>        
+        <span class="c"># first epoch shuffle</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_epochs_completed</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">start</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">shuffle</span><span class="p">:</span>
+            <span class="n">perm0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_total_batches</span><span class="p">)</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">perm0</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_images</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">images</span><span class="p">[</span><span class="n">perm0</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_labels</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">labels</span><span class="p">[</span><span class="n">perm0</span><span class="p">]</span>
+
+        <span class="c"># next epoch</span>
+        <span class="k">if</span> <span class="n">start</span> <span class="o">+</span> <span class="n">batch_size</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_total_batches</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_index_in_epoch</span> <span class="o">+=</span> <span class="n">batch_size</span>
+            <span class="n">end</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_index_in_epoch</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_images</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">_labels</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">]</span>
+
+        <span class="c"># if the epoch is ending</span>
+        <span class="c"># append new images &amp; labels after a full fresh shuffle, to the</span>
+        <span class="c"># left images &amp; labels, and concatenate them to return batch_size</span>
+        <span class="c"># images and labels in a tuple</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_epochs_completed</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="c"># store what is left of this epoch</span>
+            <span class="n">batches_left</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_total_batches</span> <span class="o">-</span> <span class="n">start</span>
+            <span class="n">images_left</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_images</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">_total_batches</span><span class="p">]</span>
+            <span class="n">labels_left</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_labels</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">_total_batches</span><span class="p">]</span>    
+            <span class="c"># shuffle for new epoch</span>
+            <span class="k">if</span> <span class="n">shuffle</span><span class="p">:</span>
+                <span class="n">perm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_total_batches</span><span class="p">)</span>
+                <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">perm</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_images</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">images</span><span class="p">[</span><span class="n">perm</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_labels</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">labels</span><span class="p">[</span><span class="n">perm</span><span class="p">]</span>    
+            <span class="c"># start next epoch</span>
+            <span class="n">start</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_index_in_epoch</span> <span class="o">=</span> <span class="n">batch_size</span> <span class="o">-</span> <span class="n">batches_left</span>
+            <span class="n">end</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_index_in_epoch</span>
+            <span class="n">images_new</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_images</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">]</span>
+            <span class="n">labels_new</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_labels</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">]</span>        
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">images_left</span><span class="p">,</span> <span class="n">images_new</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">labels_left</span><span class="p">,</span> <span class="n">labels_new</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Let’s now look at the next functions.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="k">def</span> <span class="nf">load_csv</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">col_start</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">row_start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">","</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="n">delimiter</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">col_start</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">row_start</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="c"># print(np.transpose(data))</span>
+    <span class="k">return</span> <span class="n">data</span>
+</code></pre></div></div>
+
+<p>Cool. The last one calls everything up.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">tensorflow.contrib.learn.python.learn.datasets</span> <span class="kn">import</span> <span class="n">base</span>
+
+<span class="c"># stock data loading</span>
+<span class="k">def</span> <span class="nf">load_stock_data</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">moving_window</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">train_test_ratio</span><span class="o">=</span><span class="mf">4.0</span><span class="p">):</span>
+    
+    <span class="c"># process a single file's data into usable arrays</span>
+    <span class="k">def</span> <span class="nf">process_data</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+        <span class="n">stock_set</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">moving_window</span><span class="p">,</span> <span class="n">columns</span><span class="p">])</span>
+        <span class="n">label_set</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="n">moving_window</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)):</span>
+            <span class="n">stock_set</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">stock_set</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="nb">range</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">idx</span> <span class="o">+</span> <span class="p">(</span><span class="n">moving_window</span><span class="p">)),</span> <span class="p">:],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="n">idx</span> <span class="o">+</span> <span class="p">(</span><span class="n">moving_window</span> <span class="o">+</span> <span class="mi">5</span><span class="p">),</span> <span class="mi">3</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">data</span><span class="p">[</span><span class="n">idx</span><span class="o">+</span><span class="p">(</span><span class="n">moving_window</span><span class="p">),</span> <span class="mi">3</span><span class="p">]:</span>
+                <span class="n">lbl</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">lbl</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]]</span>
+            <span class="n">label_set</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">label_set</span><span class="p">,</span> <span class="n">lbl</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">stock_set</span><span class="p">,</span> <span class="n">label_set</span>
+    
+    <span class="c"># read a directory of data</span>
+    <span class="n">stocks_set</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">moving_window</span><span class="p">,</span> <span class="n">columns</span><span class="p">])</span>
+    <span class="n">labels_set</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">dir_item</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+        <span class="n">dir_item_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">dir_item</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">dir_item_path</span><span class="p">):</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">dir_item_path</span><span class="p">)</span>
+            <span class="n">ss</span><span class="p">,</span> <span class="n">ls</span> <span class="o">=</span> <span class="n">process_data</span><span class="p">(</span><span class="n">load_csv</span><span class="p">(</span><span class="n">dir_item_path</span><span class="p">))</span>
+            <span class="n">stocks_set</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">stocks_set</span><span class="p">,</span> <span class="n">ss</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">labels_set</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">labels_set</span><span class="p">,</span> <span class="n">ls</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    
+    <span class="c"># shuffling the data</span>
+    <span class="n">perm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">labels_set</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">perm</span><span class="p">)</span>
+    <span class="n">stocks_set</span> <span class="o">=</span> <span class="n">stocks_set</span><span class="p">[</span><span class="n">perm</span><span class="p">]</span>
+    <span class="n">labels_set</span> <span class="o">=</span> <span class="n">labels_set</span><span class="p">[</span><span class="n">perm</span><span class="p">]</span>
+    
+    <span class="c"># normalize the data</span>
+    <span class="n">stocks_set_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">stocks_set</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">stocks_set</span><span class="p">)):</span>
+        <span class="nb">min</span> <span class="o">=</span> <span class="n">stocks_set</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="nb">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="nb">max</span> <span class="o">=</span> <span class="n">stocks_set</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="nb">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">stocks_set_</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">stocks_set</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="nb">min</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="nb">max</span> <span class="o">-</span> <span class="nb">min</span><span class="p">)</span>
+    <span class="n">stocks_set</span> <span class="o">=</span> <span class="n">stocks_set_</span>
+    <span class="c"># labels_set = np.transpose(labels_set)</span>
+    
+    <span class="c"># selecting 1/5 for testing, and 4/5 for training</span>
+    <span class="n">train_test_idx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">train_test_ratio</span> <span class="o">+</span> <span class="mf">1.0</span><span class="p">))</span> <span class="o">*</span> <span class="n">labels_set</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">train_stocks</span> <span class="o">=</span> <span class="n">stocks_set</span><span class="p">[</span><span class="n">train_test_idx</span><span class="p">:,:,:]</span>
+    <span class="n">train_labels</span> <span class="o">=</span> <span class="n">labels_set</span><span class="p">[</span><span class="n">train_test_idx</span><span class="p">:]</span>
+    <span class="n">test_stocks</span> <span class="o">=</span> <span class="n">stocks_set</span><span class="p">[:</span><span class="n">train_test_idx</span><span class="p">,:,:]</span>
+    <span class="n">test_labels</span> <span class="o">=</span> <span class="n">labels_set</span><span class="p">[:</span><span class="n">train_test_idx</span><span class="p">]</span>
+    
+    <span class="n">train</span> <span class="o">=</span> <span class="n">DataSet</span><span class="p">(</span><span class="n">train_stocks</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">)</span>
+    <span class="n">test</span> <span class="o">=</span> <span class="n">DataSet</span><span class="p">(</span><span class="n">test_stocks</span><span class="p">,</span> <span class="n">test_labels</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">base</span><span class="o">.</span><span class="n">Datasets</span><span class="p">(</span><span class="n">train</span><span class="o">=</span><span class="n">train</span><span class="p">,</span> <span class="n">validation</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="n">test</span><span class="p">)</span>
+</code></pre></div></div>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">saubhik</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">saubhik</li><li><a class="u-email" href="mailto:saubhik.mukherjee@gmail.com">saubhik.mukherjee@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/saubhik"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">saubhik</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Welcome to my space on the web. Everything is open source.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

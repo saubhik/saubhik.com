@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>saubhik | Welcome to my space on the web. Everything is open source.</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="saubhik" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Welcome to my space on the web. Everything is open source." />
+<meta property="og:description" content="Welcome to my space on the web. Everything is open source." />
+<link rel="canonical" href="http://localhost:4000/software_development/python/functools.html" />
+<meta property="og:url" content="http://localhost:4000/software_development/python/functools.html" />
+<meta property="og:site_name" content="saubhik" />
+<script type="application/ld+json">
+{"description":"Welcome to my space on the web. Everything is open source.","@type":"WebPage","url":"http://localhost:4000/software_development/python/functools.html","headline":"saubhik","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="saubhik" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper">
+    <!---->
+    <!---->
+    <!-- <a class="site-title" rel="author" href="/">saubhik</a> -->
+		<a class="site-title" rel="author" href="/">saubhik's
+			web space</a>
+
+    <!---->
+    <!--   <nav class="site-nav"> -->
+    <!--     <input type="checkbox" id="nav-trigger" class="nav-trigger" /> -->
+    <!--     <label for="nav-trigger"> -->
+    <!--       <span class="menu-icon"> -->
+    <!--         <svg viewBox="0 0 18 15" width="18px" height="15px"> -->
+    <!--           <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/> -->
+    <!--         </svg> -->
+    <!--       </span> -->
+    <!--     </label> -->
+
+    <!--     <div class="trigger"> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/about/">About</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/">Hello there!</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/posts.html">Personal Blog</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/coursework/">Course Notes</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/coursework/introduction_to_graduate_algorithms/notes/lessons.html">Notes</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/coursework/machine_learning_for_trading/notes/lesson.html">notes - stuff I didn’t know!</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/data_science/Discrete%20Choice%20Models:%20Mixed%20Logit/mixed_logit.html">Mixed Logit</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/data_science/">Data Science</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/deep_learning/EIP_session_1_assignment.html">Some Topics on Deep Learning</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/deep_learning/">Deep Learning</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/epi/">Code commentary on EPI</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/notebooks/">Notebooks</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/papers/EfficientNeuralArchitectureSearchViaParameterSharing.html">Efficient Neural Architecture Search Via Parameter Sharing</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/papers/">Papers</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/advanced_javascript/advanced_javascript.html">Advanced Javascript</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/advanced_javascript/advanced_javascript_2_to_be_merged.html">Scope &amp;amp; Closure</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/agile_and_extreme_programming/agile_and_extreme_programming.html">Agile &amp;amp; Extreme Programming</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/api_backend/api_backend.html">API backend</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/backend_integration/ajax_calls.html">Ajax Calls</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/databases_and_orm/databases_and_orm.html">Databases and ORM</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/design_patterns_and_UML_diagrams/design_patterns_and_UML_diagrams.html">Design Patterns and UML diagrams</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/devops/devops.html">DevOps</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/distributed_systems_and_scalable_architecture/distributed_systems_and_scalable_architecture.html">Distributed Systems &amp;amp; Scalable Architecture</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/html_css/html_css.html">html and css</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/">Software Development</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/javascript/javascript.html">Javascript</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/linux_commands_for_survival/linux_commands_for_survival.html">Linux commands for survival</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/mvc_architecture/mvc.html">MVC architecture</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/react/react.html">React</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/software_requirements/software_requirements.html">Software Requirements</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/unit_testing/unit_testing_and_tdd.html">Unit Testing</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/version_control_and_git/version_control.html">Version Control</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/this_site/">About this website</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/utilities/">Utilities</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/utilities/start_jupyter_notebook_as_service.html">Start jupyter notebook server as service on boot</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--     </div> -->
+    <!--   </nav> -->
+    <!---->
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <!-- <header class="post-header"> -->
+  <!--   <h1 class="post-title"></h1> -->
+  <!-- </header> -->
+
+  <div class="post-content">
+    <h4 id="functools---tools-for-manipulating-functions">functools - tools for manipulating functions</h4>
+
+<p>First, let’s import functools.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">functools</span>
+</code></pre></div></div>
+
+<p>There is something called <code class="highlighter-rouge">partial</code>. This is a class. Let’s see what this does.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">my_func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="s">"Docstring for my_func"</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">' called my_func with:'</span><span class="p">,</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>Okay that is a some function. Whenever someone calls it, it will print something. Let’s see
+where this is going. Let’s move on to the next function.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">show_details</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">is_partial</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="s">"Show details of a callable object"</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'{}:'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">' object:'</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">is_partial</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">' __name__:'</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">__name__</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">is_partial</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">' func:'</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">func</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">' args:'</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">args</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">' keywords:'</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">keywords</span><span class="p">)</span>
+    <span class="k">return</span>
+</code></pre></div></div>
+
+<p>So that was some function. Let’s see how it works.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">show_details</span><span class="p">(</span><span class="s">'my_func'</span><span class="p">,</span> <span class="n">my_func</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Okay, so it printed this:</p>
+
+<pre><code class="language-commandline">my_func:
+ object: &lt;function my_func at 0x7f92d5c05510&gt;
+ __name__: my_func
+</code></pre>
+
+<p>Now let’s try some more code.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">p1</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">my_func</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">show_details</span><span class="p">(</span><span class="s">'partial with named default'</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>I got this now:</p>
+
+<pre><code class="language-commandline">partial with named default:
+ object: functools.partial(&lt;function my_func at 0x7f92d5c05510&gt;, b=4)
+ func: &lt;function my_func at 0x7f92d5c05510&gt;
+ args: ()
+ keywords: {'b': 4}
+</code></pre>
+
+<p>Now <code class="highlighter-rouge">p1</code> is a function. It is actually a <code class="highlighter-rouge">partial</code> object:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">p1</span><span class="p">(</span><span class="s">'passing a'</span><span class="p">)</span>
+<span class="n">p1</span><span class="p">(</span><span class="s">'override b'</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>which gives:</p>
+
+<pre><code class="language-commandline"> called my_func with: ('passing a', 4)
+ called my_func with: ('override b', 5)
+</code></pre>
+
+<p>Good. Now let’s set a partial with both default values.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">p2</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">my_func</span><span class="p">,</span> <span class="s">'default a'</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">99</span><span class="p">)</span>
+<span class="n">show_details</span><span class="p">(</span><span class="s">'partial with defaults'</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>This gives the following output:</p>
+
+<pre><code class="language-commandline">partial with defaults:
+ object: functools.partial(&lt;function my_func at 0x7f92d5c05510&gt;, 'default a', b=99)
+ func: &lt;function my_func at 0x7f92d5c05510&gt;
+ args: ('default a',)
+ keywords: {'b': 99}
+</code></pre>
+
+<p>Okay, so now I get the idea. I can pass some default values to function arguments using <code class="highlighter-rouge">functools.partial</code>. But this
+can also be done easily without using <code class="highlighter-rouge">functools.partial</code>. The main thing is that I can over-ride the default values
+of the arguments in the function. So I can create a host of new functions from the existing function, by using different
+default values for the arguments.</p>
+
+<p>Now, these <code class="highlighter-rouge">functools.partial</code> objects do not have <code class="highlighter-rouge">__name__</code> or <code class="highlighter-rouge">__doc__</code> attributes by default and it seems that these
+decorated functions now become difficult to debug without these attributes. Using <code class="highlighter-rouge">update_wrapper()</code> copies these
+attributes from the original functions to the <code class="highlighter-rouge">partial</code> objects.</p>
+
+<p>Consider the following snippet:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">show_details</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+    <span class="s">"""Show details of a callable object."""</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'{}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">' object:'</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">' name:'</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">__name__</span><span class="p">)</span>
+    <span class="k">except</span> <span class="nb">AttributeError</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">' name:'</span><span class="p">,</span> <span class="s">'(no __name__)'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">' __doc__'</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">__doc__</span><span class="p">)</span>
+    
+<span class="n">show_details</span><span class="p">(</span><span class="s">'my_func'</span><span class="p">,</span> <span class="n">my_func</span><span class="p">)</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">my_func</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">show_details</span><span class="p">(</span><span class="s">'wrapper'</span><span class="p">,</span> <span class="n">p1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>This shows me:</p>
+
+<pre><code class="language-commandline">my_func
+ object: &lt;function my_func at 0x7f92d5c05510&gt;
+ name: my_func
+ __doc__ Docstring for my_func
+wrapper
+ object: functools.partial(&lt;function my_func at 0x7f92d5c05510&gt;, b=5)
+ name: (no __name__)
+ __doc__ partial(func, *args, **keywords) - new function with partial application
+    of the given arguments and keywords.
+</code></pre>
+
+<p>Now, if I use <code class="highlighter-rouge">update_wrapper</code>, using like <code class="highlighter-rouge">functools.update_wrapper(p1, my_func)</code>. Then our wrapper <code class="highlighter-rouge">p1</code> will have the
+concerned attributes <code class="highlighter-rouge">__name__</code> and <code class="highlighter-rouge">__doc__</code> from the original function <code class="highlighter-rouge">my_func</code>.</p>
+
+<p>Now, let’s delve deeper.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">functools</span>
+
+<span class="k">def</span> <span class="nf">simple_decorator</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+    <span class="nd">@functools.wraps</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">decorated</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="s">'decorated defaults'</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">' decorated:'</span><span class="p">,</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="n">b</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">decorated</span>
+    
+    
+<span class="k">def</span> <span class="nf">my_func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="s">"""my_func() is not complicated"""</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">' my_func:'</span><span class="p">,</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+    <span class="k">return</span>
+
+
+<span class="nd">@simple_decorator</span>
+<span class="k">def</span> <span class="nf">decorated_my_func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="s">"""This is docstring."""</span>
+    <span class="n">my_func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+    <span class="k">return</span>
+</code></pre></div></div>
+
+<p>Okay, so we see that <code class="highlighter-rouge">functools.wraps</code> automatically applies the <code class="highlighter-rouge">update_wrapper()</code> which applies the attributes of the
+original function to the decorated function.</p>
+
+<p>That’s it for now.</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">saubhik</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">saubhik</li><li><a class="u-email" href="mailto:saubhik.mukherjee@gmail.com">saubhik.mukherjee@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/saubhik"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">saubhik</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Welcome to my space on the web. Everything is open source.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

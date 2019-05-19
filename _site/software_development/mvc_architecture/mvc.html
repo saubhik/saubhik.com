@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>MVC architecture | saubhik</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="MVC architecture" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Welcome to my space on the web. Everything is open source." />
+<meta property="og:description" content="Welcome to my space on the web. Everything is open source." />
+<link rel="canonical" href="http://localhost:4000/software_development/mvc_architecture/mvc.html" />
+<meta property="og:url" content="http://localhost:4000/software_development/mvc_architecture/mvc.html" />
+<meta property="og:site_name" content="saubhik" />
+<script type="application/ld+json">
+{"description":"Welcome to my space on the web. Everything is open source.","@type":"WebPage","url":"http://localhost:4000/software_development/mvc_architecture/mvc.html","headline":"MVC architecture","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="saubhik" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper">
+    <!---->
+    <!---->
+    <!-- <a class="site-title" rel="author" href="/">saubhik</a> -->
+		<a class="site-title" rel="author" href="/">saubhik's
+			web space</a>
+
+    <!---->
+    <!--   <nav class="site-nav"> -->
+    <!--     <input type="checkbox" id="nav-trigger" class="nav-trigger" /> -->
+    <!--     <label for="nav-trigger"> -->
+    <!--       <span class="menu-icon"> -->
+    <!--         <svg viewBox="0 0 18 15" width="18px" height="15px"> -->
+    <!--           <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/> -->
+    <!--         </svg> -->
+    <!--       </span> -->
+    <!--     </label> -->
+
+    <!--     <div class="trigger"> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/about/">About</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/">Hello there!</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/posts.html">Personal Blog</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/coursework/">Course Notes</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/coursework/introduction_to_graduate_algorithms/notes/lessons.html">Notes</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/coursework/machine_learning_for_trading/notes/lesson.html">notes - stuff I didn’t know!</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/data_science/Discrete%20Choice%20Models:%20Mixed%20Logit/mixed_logit.html">Mixed Logit</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/data_science/">Data Science</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/deep_learning/EIP_session_1_assignment.html">Some Topics on Deep Learning</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/deep_learning/">Deep Learning</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/epi/">Code commentary on EPI</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/notebooks/">Notebooks</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/papers/EfficientNeuralArchitectureSearchViaParameterSharing.html">Efficient Neural Architecture Search Via Parameter Sharing</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/papers/">Papers</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/advanced_javascript/advanced_javascript.html">Advanced Javascript</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/advanced_javascript/advanced_javascript_2_to_be_merged.html">Scope &amp;amp; Closure</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/agile_and_extreme_programming/agile_and_extreme_programming.html">Agile &amp;amp; Extreme Programming</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/api_backend/api_backend.html">API backend</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/backend_integration/ajax_calls.html">Ajax Calls</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/databases_and_orm/databases_and_orm.html">Databases and ORM</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/design_patterns_and_UML_diagrams/design_patterns_and_UML_diagrams.html">Design Patterns and UML diagrams</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/devops/devops.html">DevOps</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/distributed_systems_and_scalable_architecture/distributed_systems_and_scalable_architecture.html">Distributed Systems &amp;amp; Scalable Architecture</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/html_css/html_css.html">html and css</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/">Software Development</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/javascript/javascript.html">Javascript</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/linux_commands_for_survival/linux_commands_for_survival.html">Linux commands for survival</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/mvc_architecture/mvc.html">MVC architecture</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/react/react.html">React</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/software_requirements/software_requirements.html">Software Requirements</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/unit_testing/unit_testing_and_tdd.html">Unit Testing</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/version_control_and_git/version_control.html">Version Control</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/this_site/">About this website</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/utilities/">Utilities</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/utilities/start_jupyter_notebook_as_service.html">Start jupyter notebook server as service on boot</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--     </div> -->
+    <!--   </nav> -->
+    <!---->
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <!-- <header class="post-header"> -->
+  <!--   <h1 class="post-title">MVC architecture</h1> -->
+  <!-- </header> -->
+
+  <div class="post-content">
+    <h3 id="mvc-architecture">MVC architecture</h3>
+
+<p>Servlet: Java program that runs on a web server that responds to client requests, like
+logging in users after verifying credentials. Holds the business logic.</p>
+
+<p>Structure:</p>
+<ol>
+  <li>init() : initialises the servlet, allocates the memory for any process, passes input params</li>
+  <li>service() : doGet(), doPost(), doPut(), doDelete()</li>
+  <li>destroy() : called by container before servlet instance is removed, de-allocates memory.</li>
+</ol>
+
+<p>JSP: Java Server Pages, HTML files consisting of presentation logic, using Java programs to
+render web pages</p>
+
+<p>Servlet Container: Helps to map a specific web address to its corresponding servlet. Also
+interacts with servlet for user requests.</p>
+
+<p>Major disadvantage of servlet approach is tight coupling between the presentation logic
+and the business logic. This decreases maintainability. So we come to MVC architecture.</p>
+
+<p>Model: Data of different components of a website or application. For example, for a blog, the
+model would be posts, post attributes like date-time, comments, author, likes.</p>
+
+<p>View: Presentation logic of the website of the application</p>
+
+<p>Controller: Process data as per user’s request, retrieves required data from model and maps
+the corresponding view needed to present the requested data. Business logic comes here.</p>
+
+<p>Spring Boot helps in developing web application and configuring different classes and
+methods according to their functions in the Spring framework using annotations. Thymeleaf
+is a Java template engine that can process model data and return responses in HTML or XML.
+It is a substitute for JSP, and acts as the View part of MVC.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Controller</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">HomeController</span> <span class="o">{</span>
+    <span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">"/"</span><span class="o">)</span>
+    <span class="nd">@ResponseBody</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">index</span><span class="o">(){</span>    
+        <span class="k">return</span> <span class="s">"Welcome to my blog"</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>The above is an example of a controller. If you remove <code class="highlighter-rouge">@ResponseBody</code>, the dispatcher
+servlet will try to look for an HTML in <code class="highlighter-rouge">resources/template</code> folder. In presence of this
+annotation, it returns the exact string.</p>
+
+<p>The <code class="highlighter-rouge">@Service</code> annotation tells Spring that it can manage the instantiation of the objects 
+of annotated class for us if we use associating Spring annotations in other parts of the 
+program, such as <code class="highlighter-rouge">@Autowired</code>.</p>
+
+<p>Model is a key-value-like class (similar to a hash table) instantiated by the Spring 
+framework, and it helps to pass data from the controller to the view template. In the 
+instruction above, ‘posts’ act as a key, and its corresponding value would be the post 
+data stored in the list. Specifically, Spring would automatically pass the model to the 
+view template and allow you to access and render the post data by using the key ‘posts’ 
+in thymeleaf.</p>
+
+<p>The <code class="highlighter-rouge">@RequestMapping(“/”)</code> instruction will tell Spring to execute the 
+“public String index(Model model)” method when user is requesting for the <code class="highlighter-rouge">/</code> path 
+under the url and port that the Spring application is listening for incoming client 
+requests, which is <code class="highlighter-rouge">localhost:8080</code> in this case. The instruction set inside the 
+method calls the <code class="highlighter-rouge">findAll()</code> function and stores the information of all the posts in the 
+form of a list.</p>
+
+<p>The <code class="highlighter-rouge">model.addAttribute(“posts”, list)</code> instruction would help in passing the data of 
+the posts to the corresponding view template. Then, the method would return to the 
+specific HTML file.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">"/"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="n">String</span> <span class="nf">index</span><span class="o">(</span><span class="n">Model</span> <span class="n">model</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Post</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="n">postService</span><span class="o">.</span><span class="na">findAll</span><span class="o">();</span>
+    <span class="n">model</span><span class="o">.</span><span class="na">addAttribute</span><span class="o">(</span><span class="s">"posts"</span><span class="o">,</span><span class="n">list</span><span class="o">);</span>
+    <span class="k">return</span> <span class="s">"index"</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h4 id="file-operations">File Operations</h4>
+<p>We use <code class="highlighter-rouge">static</code> in Java, when we want a variable or function to be shared across all
+instances of a class. You can use these variables or function even when you haven’t
+instantiated the class.</p>
+
+<p>With <code class="highlighter-rouge">final</code> in Java, we define an entity to be assigned only once. It cannot be
+overwritten.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">FileOperations</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">FileOperations</span> <span class="n">fileoperations</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileOperations</span><span class="o">();</span>
+    <span class="kd">private</span> <span class="nf">FileOperations</span><span class="o">()</span> <span class="o">{}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">FileOperations</span> <span class="nf">getInstance</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">fileOperations</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<p>The above is an example of Singleton Design Pattern.
+We cannot have multiple instances of this class, as then multiple such instances would
+try to read or write from a file. There is only one instance of this class.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">readAllFiles</span><span class="o">(</span><span class="n">String</span> <span class="n">dirPath</span><span class="o">)</span> <span class="o">{</span>
+   <span class="kd">synchronized</span> <span class="o">(</span><span class="n">fileOperations</span><span class="o">)</span> <span class="o">{</span>
+       <span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">arrayList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;();</span>
+       <span class="n">File</span> <span class="n">file</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">dirPath</span><span class="o">);</span>
+       <span class="n">File</span><span class="o">[]</span> <span class="n">files</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="na">listFiles</span><span class="o">();</span>
+       <span class="k">if</span> <span class="o">(</span><span class="n">files</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+           <span class="k">for</span> <span class="o">(</span><span class="n">File</span> <span class="n">f</span> <span class="o">:</span> <span class="n">files</span><span class="o">)</span> <span class="o">{</span>
+               <span class="k">try</span> <span class="o">{</span>
+                   <span class="n">FileInputStream</span> <span class="n">fileInputStream</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileInputStream</span><span class="o">(</span><span class="n">f</span><span class="o">);</span>
+                   <span class="n">ObjectInputStream</span> <span class="n">objectInputStream</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ObjectInputStream</span><span class="o">(</span><span class="n">fileInputStream</span><span class="o">);</span>
+                   <span class="n">T</span> <span class="n">readObject</span> <span class="o">=</span> <span class="o">(</span><span class="n">T</span><span class="o">)</span> <span class="n">objectInputStream</span><span class="o">.</span><span class="na">readObject</span><span class="o">();</span>
+                   <span class="k">if</span> <span class="o">(</span><span class="n">readObject</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                       <span class="n">arrayList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">readObject</span><span class="o">);</span>
+                   <span class="o">}</span>
+               <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">FileNotFoundException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                   <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+               <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                   <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+               <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">ClassNotFoundException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                   <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+               <span class="o">}</span>
+           <span class="o">}</span>
+       <span class="o">}</span>
+       <span class="k">return</span> <span class="n">arrayList</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Observe the <code class="highlighter-rouge">synchronized</code>. This helps in situations where multiple threads are trying
+to access the same resource at the same time. It lets only one thread access the
+<code class="highlighter-rouge">fileOperations</code> object.</p>
+
+<p>All synchronized blocks synchronized on the same object can only have one thread 
+executing inside them at a time.</p>
+
+<p>To <code class="highlighter-rouge">serialize</code> an object is to convert its state to a byte stream so that the byte
+stream can be reverted back into a copy of the object. <code class="highlighter-rouge">ObjectInputStream</code> is a Java 
+built-in class that converts byte streams from the <code class="highlighter-rouge">fileInputStream</code> variable into 
+Java objects. This process is called deserialization.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">readRecentFiles</span><span class="o">(</span><span class="kd">final</span> <span class="kt">int</span> <span class="n">numberOfFiles</span><span class="o">,</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">DirLocation</span><span class="o">)</span> <span class="o">{</span>
+   <span class="kd">synchronized</span> <span class="o">(</span><span class="n">fileOperations</span><span class="o">)</span> <span class="o">{</span>
+       <span class="n">Map</span><span class="o">&lt;</span><span class="n">Long</span><span class="o">,</span> <span class="n">File</span><span class="o">&gt;</span> <span class="n">sortByModificationDate</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeMap</span><span class="o">&lt;</span><span class="n">Long</span><span class="o">,</span> <span class="n">File</span><span class="o">&gt;(</span><span class="n">Collections</span><span class="o">.</span><span class="na">reverseOrder</span><span class="o">());</span>
+       <span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">arrayList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;();</span>
+       <span class="k">try</span> <span class="o">{</span>
+           <span class="n">File</span> <span class="n">file</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">DirLocation</span><span class="o">);</span>
+           <span class="n">File</span><span class="o">[]</span> <span class="n">files</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="na">listFiles</span><span class="o">();</span>
+           <span class="k">if</span> <span class="o">(</span><span class="n">files</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+               <span class="k">for</span> <span class="o">(</span><span class="n">File</span> <span class="n">f</span> <span class="o">:</span> <span class="n">files</span><span class="o">)</span> <span class="o">{</span>
+                   <span class="n">sortByModificationDate</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">f</span><span class="o">.</span><span class="na">lastModified</span><span class="o">(),</span> <span class="n">f</span><span class="o">);</span>
+               <span class="o">}</span>
+               <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="n">numberOfFiles</span><span class="o">;</span>
+               <span class="k">for</span> <span class="o">(</span><span class="n">Long</span> <span class="n">modifiedOn</span> <span class="o">:</span> <span class="n">sortByModificationDate</span><span class="o">.</span><span class="na">keySet</span><span class="o">())</span> <span class="o">{</span>
+                   <span class="n">FileInputStream</span> <span class="n">fileInputStream</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileInputStream</span><span class="o">(</span><span class="n">sortByModificationDate</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">modifiedOn</span><span class="o">));</span>
+                   <span class="n">ObjectInputStream</span> <span class="n">objectInputStream</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ObjectInputStream</span><span class="o">(</span><span class="n">fileInputStream</span><span class="o">);</span>
+                   <span class="n">T</span> <span class="n">readObject</span> <span class="o">=</span> <span class="o">(</span><span class="n">T</span><span class="o">)</span> <span class="n">objectInputStream</span><span class="o">.</span><span class="na">readObject</span><span class="o">();</span>
+                   <span class="k">if</span> <span class="o">(</span><span class="n">readObject</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                       <span class="n">arrayList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">readObject</span><span class="o">);</span>
+                   <span class="o">}</span>
+                   <span class="n">count</span><span class="o">--;</span>
+                   <span class="k">if</span> <span class="o">(</span><span class="n">count</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="o">)</span> <span class="k">break</span><span class="o">;</span>
+               <span class="o">}</span>
+           <span class="o">}</span>
+       <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+           <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Error "</span> <span class="o">+</span> <span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+       <span class="o">}</span>
+       <span class="k">return</span> <span class="n">arrayList</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="n">T</span> <span class="nf">readFile</span><span class="o">(</span><span class="kd">final</span> <span class="n">String</span> <span class="n">filePrefix</span><span class="o">,</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">uniqueId</span><span class="o">)</span> <span class="o">{</span>
+   <span class="kd">synchronized</span> <span class="o">(</span><span class="n">fileOperations</span><span class="o">)</span> <span class="o">{</span>
+       <span class="n">T</span> <span class="n">readObject</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+       <span class="k">try</span> <span class="o">{</span>
+           <span class="n">FileInputStream</span> <span class="n">fileInputStream</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileInputStream</span><span class="o">(</span><span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">filePrefix</span> <span class="o">+</span> <span class="n">uniqueId</span><span class="o">));</span>
+           <span class="n">ObjectInputStream</span> <span class="n">objectInputStream</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ObjectInputStream</span><span class="o">(</span><span class="n">fileInputStream</span><span class="o">);</span>
+           <span class="n">readObject</span> <span class="o">=</span> <span class="o">(</span><span class="n">T</span><span class="o">)</span> <span class="n">objectInputStream</span><span class="o">.</span><span class="na">readObject</span><span class="o">();</span>
+       <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+           <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Error "</span> <span class="o">+</span> <span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+       <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">ClassNotFoundException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+           <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Error "</span> <span class="o">+</span> <span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+       <span class="o">}</span>
+       <span class="k">return</span> <span class="n">readObject</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kt">boolean</span> <span class="nf">deleteFile</span><span class="o">(</span><span class="kd">final</span> <span class="n">String</span> <span class="n">filePrefix</span><span class="o">,</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">uniqueId</span><span class="o">)</span> <span class="o">{</span>
+   <span class="kd">synchronized</span> <span class="o">(</span><span class="n">fileOperations</span><span class="o">)</span> <span class="o">{</span>
+       <span class="n">File</span> <span class="n">file</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">filePrefix</span> <span class="o">+</span> <span class="n">uniqueId</span><span class="o">);</span>
+       <span class="k">return</span> <span class="n">file</span><span class="o">.</span><span class="na">delete</span><span class="o">();</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="n">T</span> <span class="nf">writeToFile</span><span class="o">(</span><span class="kd">final</span> <span class="n">String</span> <span class="n">filePrefix</span><span class="o">,</span> <span class="kd">final</span> <span class="n">T</span> <span class="n">object</span><span class="o">,</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">suffix</span><span class="o">)</span> <span class="o">{</span>
+   <span class="kd">synchronized</span> <span class="o">(</span><span class="n">fileOperations</span><span class="o">)</span> <span class="o">{</span>
+       <span class="k">try</span> <span class="o">{</span>
+
+           <span class="n">FileOutputStream</span> <span class="n">fileOutputStream</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileOutputStream</span><span class="o">(</span><span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">filePrefix</span> <span class="o">+</span> <span class="n">suffix</span><span class="o">),</span> <span class="kc">true</span><span class="o">);</span>
+           <span class="n">ObjectOutputStream</span> <span class="n">objectOutputStream</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ObjectOutputStream</span><span class="o">(</span><span class="n">fileOutputStream</span><span class="o">);</span>
+           <span class="n">objectOutputStream</span><span class="o">.</span><span class="na">writeObject</span><span class="o">(</span><span class="n">object</span><span class="o">);</span>
+           <span class="n">objectOutputStream</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+           <span class="n">fileOutputStream</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+       <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+           <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Error "</span> <span class="o">+</span> <span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+       <span class="o">}</span>
+       <span class="k">return</span> <span class="n">object</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">saubhik</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">saubhik</li><li><a class="u-email" href="mailto:saubhik.mukherjee@gmail.com">saubhik.mukherjee@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/saubhik"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">saubhik</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Welcome to my space on the web. Everything is open source.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

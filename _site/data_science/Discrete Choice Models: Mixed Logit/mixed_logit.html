@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Mixed Logit | saubhik</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Mixed Logit" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Welcome to my space on the web. Everything is open source." />
+<meta property="og:description" content="Welcome to my space on the web. Everything is open source." />
+<link rel="canonical" href="http://localhost:4000/data_science/Discrete%20Choice%20Models:%20Mixed%20Logit/mixed_logit.html" />
+<meta property="og:url" content="http://localhost:4000/data_science/Discrete%20Choice%20Models:%20Mixed%20Logit/mixed_logit.html" />
+<meta property="og:site_name" content="saubhik" />
+<script type="application/ld+json">
+{"description":"Welcome to my space on the web. Everything is open source.","@type":"WebPage","url":"http://localhost:4000/data_science/Discrete%20Choice%20Models:%20Mixed%20Logit/mixed_logit.html","headline":"Mixed Logit","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="saubhik" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper">
+    <!---->
+    <!---->
+    <!-- <a class="site-title" rel="author" href="/">saubhik</a> -->
+		<a class="site-title" rel="author" href="/">saubhik's
+			web space</a>
+
+    <!---->
+    <!--   <nav class="site-nav"> -->
+    <!--     <input type="checkbox" id="nav-trigger" class="nav-trigger" /> -->
+    <!--     <label for="nav-trigger"> -->
+    <!--       <span class="menu-icon"> -->
+    <!--         <svg viewBox="0 0 18 15" width="18px" height="15px"> -->
+    <!--           <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/> -->
+    <!--         </svg> -->
+    <!--       </span> -->
+    <!--     </label> -->
+
+    <!--     <div class="trigger"> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/about/">About</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/">Hello there!</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/posts.html">Personal Blog</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/coursework/">Course Notes</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/coursework/introduction_to_graduate_algorithms/notes/lessons.html">Notes</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/coursework/machine_learning_for_trading/notes/lesson.html">notes - stuff I didn’t know!</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/data_science/Discrete%20Choice%20Models:%20Mixed%20Logit/mixed_logit.html">Mixed Logit</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/data_science/">Data Science</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/deep_learning/EIP_session_1_assignment.html">Some Topics on Deep Learning</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/deep_learning/">Deep Learning</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/epi/">Code commentary on EPI</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/notebooks/">Notebooks</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/papers/EfficientNeuralArchitectureSearchViaParameterSharing.html">Efficient Neural Architecture Search Via Parameter Sharing</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/papers/">Papers</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/advanced_javascript/advanced_javascript.html">Advanced Javascript</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/advanced_javascript/advanced_javascript_2_to_be_merged.html">Scope &amp;amp; Closure</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/agile_and_extreme_programming/agile_and_extreme_programming.html">Agile &amp;amp; Extreme Programming</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/api_backend/api_backend.html">API backend</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/backend_integration/ajax_calls.html">Ajax Calls</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/databases_and_orm/databases_and_orm.html">Databases and ORM</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/design_patterns_and_UML_diagrams/design_patterns_and_UML_diagrams.html">Design Patterns and UML diagrams</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/devops/devops.html">DevOps</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/distributed_systems_and_scalable_architecture/distributed_systems_and_scalable_architecture.html">Distributed Systems &amp;amp; Scalable Architecture</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/html_css/html_css.html">html and css</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/">Software Development</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/javascript/javascript.html">Javascript</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/linux_commands_for_survival/linux_commands_for_survival.html">Linux commands for survival</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/mvc_architecture/mvc.html">MVC architecture</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/react/react.html">React</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/software_requirements/software_requirements.html">Software Requirements</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/unit_testing/unit_testing_and_tdd.html">Unit Testing</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/version_control_and_git/version_control.html">Version Control</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/this_site/">About this website</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/utilities/">Utilities</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/utilities/start_jupyter_notebook_as_service.html">Start jupyter notebook server as service on boot</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--     </div> -->
+    <!--   </nav> -->
+    <!---->
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <!-- <header class="post-header"> -->
+  <!--   <h1 class="post-title">Mixed Logit</h1> -->
+  <!-- </header> -->
+
+  <div class="post-content">
+    <h1 id="mixed-logit">Mixed Logit</h1>
+
+<p>Some notes for people already familiar with multinomial logit model
+also known as softmax regression or multinomial logistic models.</p>
+
+<p>These models are known as Discrete Choice Models, mostly studied
+in Econometrics.</p>
+
+<p>These notes are from Kenneth Train’s book on <a href="https://eml.berkeley.edu/books/choice2.html">Discrete Choice Methods
+with Simulation</a>.</p>
+
+<hr />
+
+<p>Three limitations of standard logit:</p>
+
+<ol>
+  <li>
+    <p>Random taste variation</p>
+  </li>
+  <li>
+    <p>Unrestricted substitution patterns</p>
+  </li>
+  <li>
+    <p>Correlation in unobserved factors over time</p>
+  </li>
+</ol>
+
+<p>Choice probabilities are given by:
+<script type="math/tex">P_{ni} = \int L_{ni}(\beta)f(\beta)d\beta</script>
+is the probability of respondent $n$ choosing product $i$.</p>
+
+<p>$L_{ni}(\beta) = \frac{\exp(V_{ni}(\beta))}{\sum_{j}\exp(V_{nj}(\beta))}$ is called the logit probability at $\beta$.</p>
+
+<p>We could have $V_{ni}(\beta) = {\beta}’{x_{ni}}$.</p>
+
+<p>This form of $P_{ni}$ is called a <strong>mixed</strong> form, with $f(.)$ as the <strong>mixing distribution</strong>.
+It is like taking the weighted average of the logit probabilities, $L_{ni}$ at different
+$\beta$s, with $f(\beta)$ as the weights. Hence, the name <strong>mixed logit</strong>.</p>
+
+<p>Note that we get standard logit when $f(\beta) = I(\beta = b)$. So this is more general.</p>
+
+<p>We could take $f(\beta) = \phi(\beta | b, W)$. This is normal density with mean vector $b$
+and covariance matrix $W$.</p>
+
+<p>In Hierarchical Bayesian estimation techniques, we assume prior distributions for $b$ and 
+$W$. There is a hierarchy of priors. And we use Bayes’ Theorem. Hence the name <strong>Hierarchical Bayes</strong>.</p>
+
+<h3 id="motivations">Motivations</h3>
+<h4 id="random-coefficients">Random Coefficients</h4>
+<p>Decision maker $n$ faces a choice task among $J$ alternatives. We model utility that $n$ gets from alternative $j$ as <script type="math/tex">U_{nj} = \beta_{n}'x_{nj} + \epsilon_{nj}</script> where 
+$\epsilon_{nj}$ are i.i.d extreme value.</p>
+
+<p>Decision maker knows $\beta_{n}$ and $\epsilon_{nj}$ for all $j$, and chooses alternative
+$i$ that maximises his utility from $i$, $U_{ni} &gt; U_{nj}$ for all $j \neq i$.</p>
+
+<p>Researcher doesn’t observe $\beta_{n}$ and $\epsilon_{nj}$, but observes $x_{nj}$. So he 
+does the math and finds out:
+<script type="math/tex">P_{ni} = P(U_{ni} > U_{nj} \forall j \neq i) = \int L_{ni}(\beta)f(\beta)d\beta.</script></p>
+
+<h4 id="error-components">Error Components</h4>
+<p>Utility is modeled as <script type="math/tex">U_{ni} = \alpha'x_{nj} + \eta_{nj}</script> where $\eta_{nj}$ is unobserved
+part of the utility.
+It is natural that errors $\eta_{nj}$ won’t be independent over respondents, $n$ and also
+over the alternatives $j$, because obviously we cannot observe <em>everything</em>.
+So, we introduce correlation, <script type="math/tex">\eta_{nj} = \mu_{n}'z_{nj} + \epsilon_{nj}</script> where $\mu_{n}$ are random terms with mean $0$ and $\epsilon_{nj}$ are i.i.d. extreme value.</p>
+
+<p>$\alpha$ is a vector of fixed coefficients. $z_{nj}$ could be $x_{nj}$.</p>
+
+<p>Some math:
+<script type="math/tex">Cov(\eta_{ni}, \eta_{nj}) = \mathbb{E}[(\mu_{n}'z_{ni} + \epsilon_{ni})(\mu_{n}'z_{nj} + \epsilon_{nj})] = z_{ni}'Wz_{nj}</script> where W is the covariance matrix of $\mu_{n}$. This shows that the unobserved utility components are correlated over alternatives.</p>
+
+<p>See that even when $W$ is diagonal, i.e. the $\mu_{nj}$ are independent over $j$, the covariance above is not $0$.</p>
+
+<p>You get the standard logit when you take $z_{nj} = 0$. There is no correlation in utility among alternatives. This gives rise to IIA property and its restrictive substitution patterns.</p>
+
+<p>To get nested logit with $K$ nests, take $\mu_{n}’z_{nj} = \sum_{k}\mu_{nk}I(j \in k)$. That is $z_{nj}$ will be a $K$ dimensional binary vector, with only one $1$ at the position corresponding to the nest it belongs to. We take $\mu_{nk}$ to be $N(0, \sigma_k)$, all independent over $n, k$. This $\mu_{nk}$ enters into utility of each alternative in nest $k$ inducing correlation among alternatives in $k$.</p>
+
+<p>But $\mu_{nk}$ does not enter into utility of any alternative in other nests. So we have
+IIN and its restrictive substitution patterns.</p>
+
+<p>So mixed logit is more general.</p>
+
+<h3 id="substitution-patterns">Substitution Patterns</h3>
+<p>There is no IIA or IIN.</p>
+
+<p>Percentage change in the probability for one alternative $i$ given a percentage change in the $m$th attribute of another alternative $j$ is
+<script type="math/tex">E_{nix_{nj}^{m}} = -x_{nj}^{m}\int{\beta^{m}L_{nj}(\beta)\frac{L_{ni}(\beta)}{P_{ni}}f(\beta)d\beta}.</script></p>
+
+<p>This elasticity is different for each $i$. A $10\%$ reduction in probability for one alternative need not imply a $10\%$ reduction in probability for each other alternative, unlike logit.</p>
+
+<h3 id="simulation">Simulation</h3>
+<p>The choice probabilities are:
+<script type="math/tex">P_{ni} = \int L_{ni}(\beta)f(\beta | \theta)d\beta</script>
+and <script type="math/tex">L_{ni}(\beta) = \frac{\exp(V_{ni}(\beta))}{\sum_{j}\exp(V_{nj}(\beta))}.</script></p>
+
+<p>For any given value of $\theta$.</p>
+
+<ol>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Draw a value of $\beta$ from $f(\beta</td>
+          <td>\theta)$. Call it $\beta^{r}$ for $r$th draw.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <p>Calculate $L_{ni}(\beta^{r})$.</p>
+  </li>
+  <li>Repeat steps 1 and 2 many times, say $R$ times, and average the results.</li>
+</ol>
+
+<p>So we are using Law of Large Numbers.</p>
+
+<p>The average is the simulated probability: <script type="math/tex">\hat{P}_{ni} = \frac{1}{R}\sum_{r}L_{ni}(\beta^{r}).</script></p>
+
+<p>We now maximise the SLL, the simulated log-likelihood: <script type="math/tex">SLL = \sum_{n}\sum_{j}d_{nj}\log{\hat{P}_{nj}}</script> where $d_{nj}$ is $1$ if $n$ chose alternative $j$, otherwise $0$.</p>
+
+<p>The $\theta$ which maximises the SLL, is the MSLE, Maximum Simulated Likelihood Estimator.</p>
+
+<p>But we cannot use this estimation for our projects. Think about what would happen when we consider new price scenarios.</p>
+
+<p>Read the case study (page 147, page 14 of the PDF) <a href="https://eml.berkeley.edu/books/choice2nd/Ch06_p134-150.pdf">here</a>, for a practical example.</p>
+
+<hr />
+
+<h2 id="hierarchical-bayesian-estimation">Hierarchical Bayesian estimation</h2>
+
+<p>Let the utility that person $n$ obtains from alternative $j$ in time period $t$ be
+<script type="math/tex">U_{njt} = \beta_{n}'x_{njt} + \epsilon_{njt}</script> where $\epsilon_{njt}$ is i.i.d. extreme value and $\beta_{n}$ follows $N(b, W)$.</p>
+
+<p>There is a normal prior on $b$ with large variance.
+There is an inverted wishart prior on $W$.
+$b$ and $W$ are called hyper-parameters.</p>
+
+<p>We observe a sample of $N$ people. The chosen alternatives for person $n$ is $y_n’ = (y_{n1}, …, y_{nT})$. The choices of the entire sample is $Y = (y_1, …, y_N)$.</p>
+
+<p>The probability of person $n$’s observed choices, conditional on $\beta$ is
+<script type="math/tex">L(y_n | \beta) = \prod_{t}{\frac{exp(\beta'x_{ny_{nt}t})}{\sum_{j}exp(\beta'x_{njt})}}.</script></p>
+
+<p>The unconditional probability of person $n$’s observed choices is
+<script type="math/tex">L(y_n | b, W) = \int L(y_n | \beta) \phi(\beta | b, W) d\beta.</script></p>
+
+<p>This is the mixed logit probability, with $f(.)$ being the normal density.</p>
+
+<p>Now, use Bayes’ Theorem,
+<script type="math/tex">K(b, W | Y) \propto \prod_{n} L(y_n | b, W) k(b, W)</script>
+where $k(b, W)$ is the product of normal density for $b$ and the inverted wishart for $W$. That is, the product of priors.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>We want to draw from the <strong>posterior</strong> distribution $K(b, W</td>
+      <td>Y)$. So that we can average the draws to get the estimates for $b$ and $W$, using Law of Large Numbers.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>But $L(y_n</td>
+      <td>b, W)$ is an expression involving an integral and it does not have a closed form and therfore, must be approximated through simulation. This makes estimation using MCMC algorithms like Metropolis-Hastings very time consuming.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>That is why we use this set up:
+<script type="math/tex">K(b, W, \beta_{n} \forall n | Y) \propto \prod_{n} L(y_n | \beta_n) \phi(\beta_n | b, W) k(b, W).</script></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Here, $L(y_n</td>
+      <td>\beta_n)$ is the logit formula.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Then we use Gibbs sampling. We keep drawing $b, W, \beta_n \forall n$, one at a time, conditioning the others. The resulting draws converge to draws from the joint posterior $K(b, W, \beta_{n} \forall n</td>
+      <td>Y)$.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Once the converged draws are obtained, the mean and standard deviation of the draws can be calculated. This gives the estimates and standard errors of the parameters.</p>
+
+<p>This procedure also gives $\beta_n \forall n$. So this estimation technique can be used for our projects where we keep changing pricing scenarios.</p>
+
+<p>Thumb rule: A total of $20000$ iterations can be used for $1000$ draws: $10000$ for burn-in and $10000$ after convergence, of which every 10th draw is retained to calculate the estimates and standard errors to remove correlations over iterations.</p>
+
+<p>Read <a href="https://cran.r-project.org/web/packages/bayesm/vignettes/Constrained_MNL_Vignette.html">this</a> for the prior used in <code class="highlighter-rouge">bayesm</code> package.</p>
+
+<hr />
+
+<h3 id="remaining-stuff">Remaining stuff:</h3>
+<p>Implementation of the following have not yet been done:</p>
+
+<ul>
+  <li>
+    <p>Determining whether convergence has achieved</p>
+  </li>
+  <li>
+    <p>MCMC diagnostics like Gelman-Rubin test statistic</p>
+  </li>
+  <li>
+    <p>More performance diagnostics (as mentioned <a href="http://rsginc.com/files/news/Understanding%20How%20Covariates%20Perform%20Across%20Different%20HB%20Packages%20-%20Poster.pdf">here</a>)</p>
+  </li>
+</ul>
+
+<hr />
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">saubhik</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">saubhik</li><li><a class="u-email" href="mailto:saubhik.mukherjee@gmail.com">saubhik.mukherjee@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/saubhik"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">saubhik</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Welcome to my space on the web. Everything is open source.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

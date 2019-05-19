@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Distributed Systems &amp; Scalable Architecture | saubhik</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Distributed Systems &amp; Scalable Architecture" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Welcome to my space on the web. Everything is open source." />
+<meta property="og:description" content="Welcome to my space on the web. Everything is open source." />
+<link rel="canonical" href="http://localhost:4000/software_development/distributed_systems_and_scalable_architecture/distributed_systems_and_scalable_architecture.html" />
+<meta property="og:url" content="http://localhost:4000/software_development/distributed_systems_and_scalable_architecture/distributed_systems_and_scalable_architecture.html" />
+<meta property="og:site_name" content="saubhik" />
+<script type="application/ld+json">
+{"description":"Welcome to my space on the web. Everything is open source.","@type":"WebPage","url":"http://localhost:4000/software_development/distributed_systems_and_scalable_architecture/distributed_systems_and_scalable_architecture.html","headline":"Distributed Systems &amp; Scalable Architecture","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="saubhik" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper">
+    <!---->
+    <!---->
+    <!-- <a class="site-title" rel="author" href="/">saubhik</a> -->
+		<a class="site-title" rel="author" href="/">saubhik's
+			web space</a>
+
+    <!---->
+    <!--   <nav class="site-nav"> -->
+    <!--     <input type="checkbox" id="nav-trigger" class="nav-trigger" /> -->
+    <!--     <label for="nav-trigger"> -->
+    <!--       <span class="menu-icon"> -->
+    <!--         <svg viewBox="0 0 18 15" width="18px" height="15px"> -->
+    <!--           <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/> -->
+    <!--         </svg> -->
+    <!--       </span> -->
+    <!--     </label> -->
+
+    <!--     <div class="trigger"> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/about/">About</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/">Hello there!</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/posts.html">Personal Blog</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/coursework/">Course Notes</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/coursework/introduction_to_graduate_algorithms/notes/lessons.html">Notes</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/coursework/machine_learning_for_trading/notes/lesson.html">notes - stuff I didn’t know!</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/data_science/Discrete%20Choice%20Models:%20Mixed%20Logit/mixed_logit.html">Mixed Logit</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/data_science/">Data Science</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/deep_learning/EIP_session_1_assignment.html">Some Topics on Deep Learning</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/deep_learning/">Deep Learning</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/epi/">Code commentary on EPI</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/notebooks/">Notebooks</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/papers/EfficientNeuralArchitectureSearchViaParameterSharing.html">Efficient Neural Architecture Search Via Parameter Sharing</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/papers/">Papers</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/advanced_javascript/advanced_javascript.html">Advanced Javascript</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/advanced_javascript/advanced_javascript_2_to_be_merged.html">Scope &amp;amp; Closure</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/agile_and_extreme_programming/agile_and_extreme_programming.html">Agile &amp;amp; Extreme Programming</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/api_backend/api_backend.html">API backend</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/backend_integration/ajax_calls.html">Ajax Calls</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/databases_and_orm/databases_and_orm.html">Databases and ORM</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/design_patterns_and_UML_diagrams/design_patterns_and_UML_diagrams.html">Design Patterns and UML diagrams</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/devops/devops.html">DevOps</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/distributed_systems_and_scalable_architecture/distributed_systems_and_scalable_architecture.html">Distributed Systems &amp;amp; Scalable Architecture</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/html_css/html_css.html">html and css</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/">Software Development</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/javascript/javascript.html">Javascript</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/linux_commands_for_survival/linux_commands_for_survival.html">Linux commands for survival</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/mvc_architecture/mvc.html">MVC architecture</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/react/react.html">React</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/software_requirements/software_requirements.html">Software Requirements</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/unit_testing/unit_testing_and_tdd.html">Unit Testing</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/software_development/version_control_and_git/version_control.html">Version Control</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/this_site/">About this website</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/utilities/">Utilities</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--         <a class="page-link" href="/utilities/start_jupyter_notebook_as_service.html">Start jupyter notebook server as service on boot</a> -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--     </div> -->
+    <!--   </nav> -->
+    <!---->
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <!-- <header class="post-header"> -->
+  <!--   <h1 class="post-title">Distributed Systems &amp;amp; Scalable Architecture</h1> -->
+  <!-- </header> -->
+
+  <div class="post-content">
+    <h3 id="distributed-systems--scalable-architecture">Distributed Systems &amp; Scalable Architecture</h3>
+
+<p><strong>Scalability</strong>: The ability to scale the system as the user demand rises.
+<strong>Distributed system</strong>: The user load is distributed across various server systems. 
+How to efficiently manage user traffic?</p>
+
+<p>We focus on:</p>
+<ol>
+  <li>Improve efficiency of system without hardware changes. (Techniques - Caching, Indexing, 
+Denormalisation)</li>
+  <li>Horizontal Scaling (load balancers, service bus &amp; queues, microservices, global caches 
+e.g. Redis) and Vertical scaling</li>
+</ol>
+
+<p><em>Monolithic</em> applications does not need communication mechanisms since all of the application is 
+written as a single entity to a single platform, as opposed to <em>distributed</em> applications.</p>
+
+<p>Features of a distributed system:</p>
+<ol>
+  <li><strong>Scalability</strong> - ability to handle a lot of users concurrently, and expand when demand rises.</li>
+  <li><strong>Availability</strong> - application should be up and running at all times so to give users the best 
+experience. (Up-time)</li>
+  <li><strong>Performance</strong> - (low latency, performance) System should be able to return the required results 
+within the earliest possible time.
+Latency is the time or lag required to perform some action or to produce some result.</li>
+  <li><strong>Throughput</strong> - System should be able to address to maximum number of requests per second.
+Throughput is the number of such actions executed or results produced per unit of time.</li>
+  <li><strong>Reliability</strong> - System should try to create a reliable connection between users and system. 
+(connect to different server if current server gets disconnected)</li>
+</ol>
+
+<h4 id="software-development-techniques">Software development techniques:</h4>
+<ul>
+  <li><strong>caching</strong> is the process of storing frequently or recently used data in the main memory of 
+the system or RAM so as to make the repeated retrieval of the requested data faster. 
+Cache the data that is frequently accessed and hardly changes.</li>
+</ul>
+
+<p><code class="highlighter-rouge">@EnableCaching</code>: This annotation triggers the post processor that inspects every spring bean for 
+the presence of caching annotations (<code class="highlighter-rouge">Cachable</code>, <code class="highlighter-rouge">CachePut</code>, <code class="highlighter-rouge">CacheEvict</code>) on public methods.</p>
+
+<p><code class="highlighter-rouge">@Cacheable</code>: It creates a cache with the name specified as the parameter to the annotation and 
+stores the returned result of the method in this cache for fast retrieval the next time the 
+method is called.</p>
+
+<p><code class="highlighter-rouge">@CachePut</code>: With the @CachePut annotation, a method updates the contents of the cache with the 
+value which is passed as the parameter to the annotation every time the method is called.</p>
+
+<p><code class="highlighter-rouge">@CachePut</code> updates the contents of the cache each time the method is called, i.e. it doesn’t 
+interfere with the execution of the method, whereas the <code class="highlighter-rouge">@Cacheable</code> annotation doesn’t update the 
+cache. It simply stores the return result of the method the first time that method is called, and 
+then it simply returns the data stored in the cache instead of executing the method on future 
+calls to the method. This process continues until the contents of the cache are cleared using the 
+<code class="highlighter-rouge">@CacheEvict</code> annotation.</p>
+
+<ul>
+  <li><strong>indexing</strong> optimises the performance of a system by making the searching of records from 
+database effectively fast. Index table comprises of indexed key, data reference columns.</li>
+</ul>
+
+<p><strong>Primary index</strong>: The entries in index and table are sorted according to the key on which the 
+indexing is done. Usually primary key is chosen in primary indexing.</p>
+
+<p><strong>Clustered index</strong>: Grouping done on the basis of some secondary key in the table so that the 
+index table is much smaller than any original table in the database.</p>
+
+<ul>
+  <li><strong>de-normalisation</strong>
+Database normalisation is organising columns and tables of a relational database in order to 
+minimise redundancy. De-normalisation is the process of attempting to optimise the read performance 
+of a database by adding redundant data or by grouping data so that the database can find the 
+information it seeks quickly. Tables are merged to store different attributes of the records 
+together.</li>
+</ul>
+
+<blockquote>
+  <p>More transactions, then go for normalisation.
+More reads than inserts &amp; updates &amp; deletions, then go for denormalisation.</p>
+</blockquote>
+
+<h4 id="hardware-related-techniques">Hardware related techniques:</h4>
+<ul>
+  <li><strong>Vertical scaling</strong> (scaling up)
+The process of adding more physical resources such as memory storage, CPU and RAM to an 
+existing server for improving the performance.</li>
+  <li><strong>Horizontal scaling</strong> (scaling out)
+The process of adding more servers to existing system is scaling out.</li>
+</ul>
+
+<p>microservices
+load balancers
+message queues
+global cache</p>
+
+<p>Advantages of vertical scaling</p>
+<ol>
+  <li>consumes less power</li>
+  <li>easy setup</li>
+  <li>optimal use of network resources</li>
+  <li>easy debugging - identify points of failure</li>
+</ol>
+
+<p>Disadvantages of vertical scaling</p>
+<ol>
+  <li>server is single point of failure</li>
+  <li>vendor lock in</li>
+  <li>after a certain point, adding expensive hardware may only provide diminishing returns and a
+minimal increase in performance</li>
+</ol>
+
+<p>Advantages of horizontal scaling</p>
+<ol>
+  <li>more fault tolerant - no single point of failure</li>
+  <li>improves availability of application</li>
+  <li>easier to upgrade</li>
+</ol>
+
+<p>Disadvantages of horizontal scaling</p>
+<ol>
+  <li>difficult to debug</li>
+  <li>increase in utility costs</li>
+  <li>requires more networking resources</li>
+</ol>
+
+<h3 id="horizontal-scaling">Horizontal Scaling</h3>
+
+<p><strong>Monolithic application</strong>: This refers to a single-tiered software application in which the user 
+interface, business logic and data access codes are combined into a single program on a 
+single platform.</p>
+
+<p><strong>Microservices architecture</strong>: (SOA - Service Oriented Architecture) Architectural style in 
+which the application is structured as a collection of small autonomous services that are decided 
+based on the needs of business domain.</p>
+
+<ul>
+  <li>
+    <p>The microservices architecture divides a large complex application into smaller independent 
+components and helps to develop and deploy them individually, whereas a large complex monolithic 
+application makes it difficult to develop the application because all the functions are tightly 
+coupled.</p>
+  </li>
+  <li>
+    <p>Also, each service can be developed in different technologies as per the requirement and 
+integrated into one single application. Whereas in a monolithic application, all the functions 
+have to be developed using the same technology stack</p>
+  </li>
+  <li>
+    <p>In microservices, if there has to be some development or version change of one of the services, 
+then the specific service can be updated and deployed without affecting other parts of the 
+microservices. Whereas in a monolithic application, the complete application needs to be taken 
+down for any simple change that is required.</p>
+  </li>
+</ul>
+
+<p><strong>Scaling Out with Load Balancers</strong>
+Select the appropriate server to serve a client’s request.
+A load balancer:</p>
+<ol>
+  <li>Distributes client requests efficiently across multiple servers</li>
+  <li>Ensures high availability and reliability of servers</li>
+  <li>Provides flexibility of adding and removing servers from the server pool</li>
+</ol>
+
+<p>The various algorithms that load balancers employ are:</p>
+<ol>
+  <li><strong>round-robin algorithm</strong>: Client requests are assigned to the servers in the order they 
+are received by the load balancer.</li>
+  <li><strong>weighted round-robin algorithm</strong>: The architecture assigns weights to servers, according 
+to which they are allotted to serve the incoming requests, i.e. if the weights of two servers — 
+server 1 and server 2 — are 4 and 1, respectively, then server 1 would serve four requests only, 
+after which, server 2 would get one request.</li>
+  <li><strong>least connected algorithm</strong>: In this algorithm, the server with the least active 
+connections serves the new incoming request, i.e. the server that is serving the least number of 
+requests will serve the new incoming request.</li>
+  <li><strong>random algorithm</strong>: This algorithm selects a random server from the pool of servers and 
+passes the new client request to this server.</li>
+  <li><strong>IP hash algorithm</strong>: This algorithm becomes particularly useful when requests from a 
+similar network need to be assigned to the same server across server sessions. In this algorithm, 
+the IP address is hashed and based on that the server is decided. This way, the requests from the 
+same network get served by the same server every time. These sessions are also known as <strong>sticky 
+sessions</strong>.</li>
+</ol>
+
+<p><strong>Message Queues &amp; Topics for IPC (Inter-Process Communication) &amp; Inter-Thread 
+Communication, Scaling out with Queues</strong></p>
+
+<p>A message queue is a system that stores messages as they travel between various components of 
+application architecture.</p>
+
+<blockquote>
+  <p>Queues are point to point model, maintains order of delivery, acknowledgement is 
+prevalent, only one consumer receives the message.</p>
+</blockquote>
+
+<blockquote>
+  <p>Topics are publish-subscribe model, multiple clients can subscribe to a message, no
+order is maintained, no acknowledgement.</p>
+</blockquote>
+
+<p><strong>Topics</strong>:
+In queues, each message is processed by a single consumer, topics and subscriptions provide a 
+one-to-many form of communication in a publish-subscribe pattern (pub-sub model). Doesn’t 
+maintain order. No acknowledgement.</p>
+
+<p><strong>Scaling out with Global Caches</strong></p>
+
+<p>Caching. If required data is in cache, it’s called Cache Hit. If absent, its called Cache Miss.
+To remove stale cached data, we use Cache Eviction.</p>
+
+<p>Cache Eviction Policies:</p>
+<ol>
+  <li>TTL Time To Live</li>
+  <li>LRU Least Recently Used</li>
+</ol>
+
+<p>Data that can be cached: Read often, but not changed. Examples:
+Configuration settings, Localisation and Internalisation data, Session data, Application objects.</p>
+
+<p>Caches are typically stored in the server memory, such as the RAM. However, in a distributed system,
+several servers may exist in the server pool. Therefore, you need to employ a scaling technique that
+stores data in the global cache in order to provide a centralised caching mechanism that is globally
+available to all the servers in the distributed system. 
+Redis is an open source data store that is commonly used in the industry as a global cache.</p>
+
+<p>REDIS: (written in ANSI C)</p>
+<ol>
+  <li>All data is stored in RAM, optimised for speed</li>
+  <li>Atomicity of operations &amp; transactions</li>
+  <li>Data expiration</li>
+  <li>Configurable eviction policies when memory is running low</li>
+</ol>
+
+<p>Redis is a data structure store that you can use to store various data structures such as sets, 
+hash-maps, integers, lists, strings and so on.</p>
+
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">saubhik</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">saubhik</li><li><a class="u-email" href="mailto:saubhik.mukherjee@gmail.com">saubhik.mukherjee@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/saubhik"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">saubhik</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Welcome to my space on the web. Everything is open source.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
