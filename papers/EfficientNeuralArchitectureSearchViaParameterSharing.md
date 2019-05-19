@@ -19,6 +19,6 @@ ENAS's controller is an RNN that decides:
 * which edges are activated
 * which computations are performed at each node in the DAG
 
-To create a recurrent cell, the controller RNN samples $$a^2 = b^2 + c^2$$ blocks of decisions.
+To create a recurrent cell, the controller RNN samples \\(a^2 = b^2 + c^2\\) blocks of decisions.
 
 $$ P_{ni} = \int L_{ni}(\beta)f(\beta)d\beta $$

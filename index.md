@@ -23,7 +23,9 @@ grew after completing my undergraduation degree.
 
 You can find my resume [here](resume/resume.pdf).
 
-## Notes
+__Beware__: These are dumps of unfinished projects!
+
+## Links
 - [Comments on deep learning papers](/papers/index.md)
 - [Elements Of Programming Interviews](/epi/index.md)
 - [Software Development](/software_development/index.md)
@@ -33,5 +35,6 @@ You can find my resume [here](resume/resume.pdf).
 - [Deep Learning](/deep_learning/index.md)
 - [CS courses notes](/coursework/index.html)
 - [Inspirations](/inspirations/index.html)
+- [About this website](this_site/index.md)
 
 [Here](posts.md) is my personal blog.
