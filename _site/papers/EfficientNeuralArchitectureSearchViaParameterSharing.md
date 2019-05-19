@@ -19,6 +19,31 @@ ENAS's controller is an RNN that decides:
 * which edges are activated
 * which computations are performed at each node in the DAG
 
-To create a recurrent cell, the controller RNN samples \\(a^2 = b^2 + c^2\\) blocks of decisions.
+To create a recurrent cell, the controller RNN samples $$N$$ blocks of
+decisions.
 
-$$ P_{ni} = \int L_{ni}(\beta)f(\beta)d\beta $$
+An example illustation via a simple example recurrent cell with $$N=4$$
+computational nodes:
+Let \\( x_t \\) be the input signal for a recurrent cell, and \\(h_{t-1}\\) be the
+output from the previous time step.
+
+1. The controller first samples an activation function. If controller chooses
+	 \\(tanh\\) activation function, which means node \\(1\\) of the recurrent
+	 cell should compute \\(h_1=tanh(x_t \cdot W^{x} + h_{t-1} \cdot W_{1}^{h})\\).
+
+2. At other nodes, the controller samples a previous index (say \\( j \\) ), and
+	 an activation function, (say \\( ReLU \\) ). We have \\( h_i = ReLU(h_j \cdot
+	 W^{h}_{i,j}) \\).
+
+3. For output, we average the nodes that are not selected as previous index.
+
+For each pair \\( (i,j) \\) of nodes, there is an independent parameter matrix
+\\( W^{h}_{i,j} \\) which are shared by all recurrent cells in ENAS.
+
+If the recurrent cell has \\( N \\) nodes, and we allow \\( 4 \\) activation
+functions (like `tanh`, `ReLU`, `identity`, `sigmoid`), then the search space
+has \\( 4^N \times N! \\) configurations, i.e. architectures.
+
+The paper uses \\( N = 12 \\).
+
+### Training ENAS and Deriving Architectures
