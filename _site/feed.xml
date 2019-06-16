@@ -1,4 +1,35 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-05-19T19:59:12+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">saubhik</title><subtitle>Made with ❤️using vim &amp; jekyll. Everything is open source.</subtitle><author><name>Saubhik Mukherjee</name></author><entry><title type="html">New targets</title><link href="http://localhost:4000/targets/2019/05/19/welcome-to-jekyll.html" rel="alternate" type="text/html" title="New targets" /><published>2019-05-19T13:54:47+09:00</published><updated>2019-05-19T13:54:47+09:00</updated><id>http://localhost:4000/targets/2019/05/19/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/targets/2019/05/19/welcome-to-jekyll.html">&lt;p&gt;I will try to set up monthly targets, and a blog each month will mention them.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-06-16T15:24:29+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">saubhik</title><subtitle>Made with ❤️using vim &amp; jekyll. Everything is open source.</subtitle><author><name>Saubhik Mukherjee</name></author><entry><title type="html">June</title><link href="http://localhost:4000/targets/2019/06/16/june.html" rel="alternate" type="text/html" title="June" /><published>2019-06-16T00:00:00+09:00</published><updated>2019-06-16T00:00:00+09:00</updated><id>http://localhost:4000/targets/2019/06/16/june</id><content type="html" xml:base="http://localhost:4000/targets/2019/06/16/june.html">&lt;p&gt;This month I would like to focus on:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;write about the DARTS &lt;a href=&quot;https://github.com/saubhik/darts&quot;&gt;code&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;competitive programming&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;apart from usual work.&lt;/p&gt;
+
+&lt;h3 id=&quot;personal&quot;&gt;Personal&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;strengthen your will power.&lt;/li&gt;
+  &lt;li&gt;eat more fruits &amp;amp; veggies, organic diet.&lt;/li&gt;
+  &lt;li&gt;run at least 5 days in a week.&lt;/li&gt;
+  &lt;li&gt;bi-classified life: code(includes reading/writing) or run.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;books&quot;&gt;Books&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cses.fi/book/&quot;&gt;Competitive Programmer’s Handbook&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Elements-Programming-Interviews-Python-Insiders/dp/1537713949&quot;&gt;Elements of Programming Interviews&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I would like to read and blog about &lt;a href=&quot;https://www.amazon.com/Design-Patterns-Object-Oriented-Addison-Wesley-Professional-ebook/dp/B000SEIBB8&quot;&gt;Design Patterns&lt;/a&gt;.
+But maybe it will not be possible to accommodate it this month.
+Higher priority to getting started in sport programming.&lt;/p&gt;
+
+&lt;p&gt;To the self who says that I am too old for contest programming:&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Time is just an illusion.
+If you give the hours, you will become better.&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>Saubhik Mukherjee</name></author><summary type="html">This month I would like to focus on:</summary></entry><entry><title type="html">New targets</title><link href="http://localhost:4000/targets/2019/05/19/new-targets.html" rel="alternate" type="text/html" title="New targets" /><published>2019-05-19T13:54:47+09:00</published><updated>2019-05-19T13:54:47+09:00</updated><id>http://localhost:4000/targets/2019/05/19/new-targets</id><content type="html" xml:base="http://localhost:4000/targets/2019/05/19/new-targets.html">&lt;p&gt;I will try to set up monthly targets, and a blog each month will mention them.
 These monthly targets are separated from my daily work targets.
 This month my targets are:&lt;/p&gt;
 

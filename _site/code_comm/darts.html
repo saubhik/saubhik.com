@@ -3,18 +3,18 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>Start jupyter notebook server as service on boot | saubhik</title>
+<title>Understanding DARTS code | saubhik</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Start jupyter notebook server as service on boot" />
+<meta property="og:title" content="Understanding DARTS code" />
 <meta name="author" content="Saubhik Mukherjee" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Made with ❤️using vim &amp; jekyll. Everything is open source." />
 <meta property="og:description" content="Made with ❤️using vim &amp; jekyll. Everything is open source." />
-<link rel="canonical" href="http://localhost:4000/utilities/start_jupyter_notebook_as_service.html" />
-<meta property="og:url" content="http://localhost:4000/utilities/start_jupyter_notebook_as_service.html" />
+<link rel="canonical" href="http://localhost:4000/code_comm/darts.html" />
+<meta property="og:url" content="http://localhost:4000/code_comm/darts.html" />
 <meta property="og:site_name" content="saubhik" />
 <script type="application/ld+json">
-{"description":"Made with ❤️using vim &amp; jekyll. Everything is open source.","author":{"@type":"Person","name":"Saubhik Mukherjee"},"@type":"WebPage","url":"http://localhost:4000/utilities/start_jupyter_notebook_as_service.html","headline":"Start jupyter notebook server as service on boot","@context":"http://schema.org"}</script>
+{"description":"Made with ❤️using vim &amp; jekyll. Everything is open source.","author":{"@type":"Person","name":"Saubhik Mukherjee"},"@type":"WebPage","url":"http://localhost:4000/code_comm/darts.html","headline":"Understanding DARTS code","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="saubhik" /><script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
 </head>
@@ -257,94 +257,13 @@
         <article class="post">
 
   <!-- <header class="post-header"> -->
-  <!--   <h1 class="post-title">Start jupyter notebook server as service on boot</h1> -->
+  <!--   <h1 class="post-title">Understanding DARTS code</h1> -->
   <!-- </header> -->
 
   <div class="post-content">
-    <h1 id="start-jupyter-notebook-server-as-service-on-boot">Start jupyter notebook server as service on boot</h1>
+    <h1 id="understanding-darts-code">Understanding DARTS code</h1>
 
-<p>I am working in Fedora 28, so the instructions are according to this platform.</p>
-
-<p>This might work on any Linux distribution using <code class="highlighter-rouge">systemd</code> as its process manager.</p>
-
-<p>Steps:</p>
-<ol>
-  <li>
-    <p>Create the systemd unit file as root: <code class="highlighter-rouge">sudo vim /usr/lib/systemd/system/jupyter-notebook.service</code></p>
-  </li>
-  <li>
-    <p>Write the following into it:</p>
-  </li>
-</ol>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>Unit]
-<span class="nv">Description</span><span class="o">=</span>jupyter notebook
-
-<span class="o">[</span>Service]
-<span class="nv">Type</span><span class="o">=</span>simple
-<span class="nv">PIDFile</span><span class="o">=</span>/var/run/jupyter-notebook.pid
-<span class="nv">ExecStart</span><span class="o">=</span>/py3env/bin/jupyter-notebook <span class="nt">--no-browser</span> <span class="nt">--port</span><span class="o">=</span>8000
-<span class="nv">User</span><span class="o">=</span>ipynb
-<span class="nv">Group</span><span class="o">=</span>ipynb
-<span class="nv">WorkingDirectory</span><span class="o">=</span>/home/ipynb/notebooks
-
-<span class="o">[</span>Install]
-<span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
-</code></pre></div></div>
-
-<ol>
-  <li>Create the user <code class="highlighter-rouge">ipynb</code>:</li>
-</ol>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>useradd ipynb
-</code></pre></div></div>
-
-<p>Set password using <code class="highlighter-rouge">sudo passwd ipynb</code> and login as <code class="highlighter-rouge">ipynb</code> &amp; do <code class="highlighter-rouge">mkdir notebooks</code>.</p>
-
-<ol>
-  <li>Start the jupyter notebook service.</li>
-</ol>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl daemon-reload
-<span class="nb">sudo </span>systemctl <span class="nb">enable </span>jupyter-notebook
-<span class="nb">sudo </span>systemctl start jupyter-notebook
-</code></pre></div></div>
-
-<p>To check the status one can do <code class="highlighter-rouge">sudo systemctl status jupyter-notebook</code>.</p>
-
-<p>To stop the service one can do <code class="highlighter-rouge">sudo systemctl stop jupyter-notebook</code>.</p>
-
-<h2 id="start-jupyterhub-as-a-system-service">Start jupyterhub as a system service</h2>
-
-<p>The process is very similar:</p>
-<ol>
-  <li><code class="highlighter-rouge">sudo vim /usr/lib/systemd/system/jupyter.service</code></li>
-  <li>Write the following:</li>
-</ol>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>Unit]
-<span class="nv">Description</span><span class="o">=</span>jupyterhub
-
-<span class="o">[</span>Service]
-<span class="nv">Type</span><span class="o">=</span>simple
-<span class="nv">PIDFile</span><span class="o">=</span>/var/run/jupyterhub.pid
-<span class="nv">ExecStart</span><span class="o">=</span>/usr/local/bin/jupyterhub <span class="nt">--port</span> 8000
-
-<span class="o">[</span>Install]
-<span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
-</code></pre></div></div>
-<ol>
-  <li>Do the following</li>
-</ol>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>chmod +x /usr/lib/systemd/system/jupyter.service
-<span class="nb">sudo </span>systemctl daemon reload
-<span class="nb">sudo </span>systemctl <span class="nb">enable </span>jupyter.service
-<span class="nb">sudo </span>systemctl start jupyter.service
-</code></pre></div></div>
-
-<p>And we are done!
-I did not find any SELinux problems while doing the above 3 steps in our linux box. To check if there could be issues with SELinux, then type <code class="highlighter-rouge">ls -l</code> and see if the permissions end with a <code class="highlighter-rouge">.</code> (SELinux enforced) or not.</p>
+<p>I want to understand the <code class="highlighter-rouge">DARTS</code> code for <code class="highlighter-rouge">cnn</code>.</p>
 
   </div>
 
