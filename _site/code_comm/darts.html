@@ -263,7 +263,129 @@
   <div class="post-content">
     <h1 id="understanding-darts-code">Understanding DARTS code</h1>
 
-<p>I want to understand the <code class="highlighter-rouge">DARTS</code> code for <code class="highlighter-rouge">cnn</code>.</p>
+<p>Here is the <a href="https://github.com/quark0/darts">source</a>.
+I want to understand the <code class="highlighter-rouge">DARTS</code> code for <code class="highlighter-rouge">cnn</code>.</p>
+
+<p>I start with the <code class="highlighter-rouge">train_search.py</code> script. Let’s start with the entry point, <code class="highlighter-rouge">main()</code> method:</p>
+
+<h2 id="train_searchpy">train_search.py</h2>
+<p>Methods:</p>
+
+<h3 id="main">main()</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">():</span>
+		<span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">'no gpu device available'</span><span class="p">)</span>
+		<span class="n">sys</span><span class="o">.</span><span class="nb">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+	<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">seed</span><span class="p">)</span>
+	<span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">set_device</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">gpu</span><span class="p">)</span>
+	<span class="n">cudnn</span><span class="o">.</span><span class="n">benchmark</span> <span class="o">=</span> <span class="bp">True</span>
+	<span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">seed</span><span class="p">)</span>
+	<span class="n">cudnn</span><span class="o">.</span><span class="n">enabled</span><span class="o">=</span><span class="bp">True</span>
+	<span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">seed</span><span class="p">)</span>
+	<span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">'gpu device = </span><span class="si">%</span><span class="s">d'</span> <span class="o">%</span> <span class="n">args</span><span class="o">.</span><span class="n">gpu</span><span class="p">)</span>
+	<span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">"args = </span><span class="si">%</span><span class="s">s"</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+	<span class="o">...</span>
+</code></pre></div></div>
+<p>This partly mostly deals with setting numpy &amp; torch seeds from the argument <code class="highlighter-rouge">args.seed</code>.
+TODO: Fair enough, notice the <code class="highlighter-rouge">cudnn.enabled=True</code>.
+Moving on,</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>
+<span class="n">criterion</span> <span class="o">=</span> <span class="n">criterion</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">Network</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">init_channels</span><span class="p">,</span> <span class="n">CIFAR_CLASSES</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">layers</span><span class="p">,</span> <span class="n">criterion</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">"param size = </span><span class="si">%</span><span class="s">fMB"</span><span class="p">,</span> <span class="n">utils</span><span class="o">.</span><span class="n">count_parameters_in_MB</span><span class="p">(</span><span class="n">model</span><span class="p">))</span>
+</code></pre></div></div>
+<p><code class="highlighter-rouge">Network(...)</code> returns a model based on <code class="highlighter-rouge">CIFAR_CLASSES=10</code>, <code class="highlighter-rouge">args.init_channels</code>
+which is 16 by default, <code class="highlighter-rouge">args.layers</code> which is 8 by default, and
+<code class="highlighter-rouge">criterion=nn.CrossEntropyLoss()</code>.</p>
+<blockquote>
+  <p>We have to understand <code class="highlighter-rouge">model_search.Network</code></p>
+</blockquote>
+
+<p>Moving on,</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span>
+  <span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span>
+  <span class="n">args</span><span class="o">.</span><span class="n">learning_rate</span><span class="p">,</span>
+  <span class="n">momentum</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">momentum</span><span class="p">,</span>
+  <span class="n">weight_decay</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">weight_decay</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>This is our standard SGD optimizer with <code class="highlighter-rouge">args.learning_rate=0.025</code>,
+<code class="highlighter-rouge">args.momentum=0.9</code>, <code class="highlighter-rouge">args.weight_decay=3e-4</code> as default values.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">train_transform</span><span class="p">,</span> <span class="n">valid_transform</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">_data_transforms_cifar10</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+<span class="n">train_data</span> <span class="o">=</span> <span class="n">dset</span><span class="o">.</span><span class="n">CIFAR10</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">train_transform</span><span class="p">)</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>We have to understand <code class="highlighter-rouge">utils._data_transforms_cifar10()</code></p>
+</blockquote>
+
+<p>We get <code class="highlighter-rouge">train_data</code> from <code class="highlighter-rouge">torchvision.datasets.CIFAR10</code>. I am hoping there are
+some transformations in <code class="highlighter-rouge">train_transform</code> &amp; <code class="highlighter-rouge">valid_transform</code>.</p>
+
+<p>Then we split the <code class="highlighter-rouge">train_data</code> based on <code class="highlighter-rouge">args.train_portion</code> which is 0.5 by
+default. We split into training set and validation set.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">num_train</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_data</span><span class="p">)</span>
+<span class="n">indices</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">num_train</span><span class="p">))</span>
+<span class="n">split</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">train_portion</span> <span class="o">*</span> <span class="n">num_train</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>We get the <code class="highlighter-rouge">train_queue</code> and <code class="highlighter-rouge">valid_queue</code> using the
+<code class="highlighter-rouge">sampler.SubsetRandomSampler</code>. Notice <code class="highlighter-rouge">pin_memory=True</code>. We also set
+<code class="highlighter-rouge">lr_scheduler.CosineAnnealingLR()</code> with <code class="highlighter-rouge">args.epochs</code> as 50 by default and
+<code class="highlighter-rouge">args.learning_rate_min</code> 0.001 by default:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">num_train</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_data</span><span class="p">)</span>
+<span class="n">indices</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">num_train</span><span class="p">))</span>
+<span class="n">split</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">train_portion</span> <span class="o">*</span> <span class="n">num_train</span><span class="p">))</span>
+
+<span class="n">train_queue</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+  <span class="n">train_data</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">batch_size</span><span class="p">,</span>
+  <span class="n">sampler</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">sampler</span><span class="o">.</span><span class="n">SubsetRandomSampler</span><span class="p">(</span><span class="n">indices</span><span class="p">[:</span><span class="n">split</span><span class="p">]),</span>
+  <span class="n">pin_memory</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">num_workers</span><span class="o">=</span><span class="mi">2</span>
+<span class="p">)</span>
+
+<span class="n">valid_queue</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+  <span class="n">train_data</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">batch_size</span><span class="p">,</span>
+  <span class="n">sampler</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">sampler</span><span class="o">.</span><span class="n">SubsetRandomSampler</span><span class="p">(</span><span class="n">indices</span><span class="p">[</span><span class="n">split</span><span class="p">:</span><span class="n">num_train</span><span class="p">]),</span>
+  <span class="n">pin_memory</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">num_workers</span><span class="o">=</span><span class="mi">2</span>
+<span class="p">)</span>
+
+<span class="n">scheduler</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">lr_scheduler</span><span class="o">.</span><span class="n">CosineAnnealingLR</span><span class="p">(</span>
+  <span class="n">optimizer</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">epochs</span><span class="p">),</span> <span class="n">eta_min</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">learning_rate_min</span>
+<span class="p">)</span>
+</code></pre></div></div>
+<blockquote>
+  <p>What is <code class="highlighter-rouge">CosineAnnealingLR</code>?</p>
+</blockquote>
+
+<p>Then we have our usual training <code class="highlighter-rouge">for</code> loop:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">epochs</span><span class="p">):</span>
+  <span class="n">scheduler</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+  <span class="n">lr</span> <span class="o">=</span> <span class="n">scheduler</span><span class="o">.</span><span class="n">get_lr</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+  <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">'epoch </span><span class="si">%</span><span class="s">d lr </span><span class="si">%</span><span class="s">e'</span><span class="p">,</span> <span class="n">epoch</span><span class="p">,</span> <span class="n">lr</span><span class="p">)</span>
+
+  <span class="n">genotype</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">genotype</span><span class="p">()</span>
+  <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">'genotype = </span><span class="si">%</span><span class="s">s'</span><span class="p">,</span> <span class="n">genotype</span><span class="p">)</span>
+
+  <span class="k">print</span><span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">alphas_normal</span><span class="p">,</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">))</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">alphas_reduce</span><span class="p">,</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">))</span>
+
+  <span class="c"># training</span>
+  <span class="n">train_acc</span><span class="p">,</span> <span class="n">train_obj</span> <span class="o">=</span> <span class="n">train</span><span class="p">(</span><span class="n">train_queue</span><span class="p">,</span> <span class="n">valid_queue</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">architect</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">lr</span><span class="p">)</span>
+  <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">'train_acc </span><span class="si">%</span><span class="s">f'</span><span class="p">,</span> <span class="n">train_acc</span><span class="p">)</span>
+
+  <span class="c"># validation</span>
+  <span class="n">valid_acc</span><span class="p">,</span> <span class="n">valid_obj</span> <span class="o">=</span> <span class="n">infer</span><span class="p">(</span><span class="n">valid_queue</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">criterion</span><span class="p">)</span>
+  <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">'valid_acc </span><span class="si">%</span><span class="s">f'</span><span class="p">,</span> <span class="n">valid_acc</span><span class="p">)</span>
+
+  <span class="n">utils</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">save</span><span class="p">,</span> <span class="s">'weights.pt'</span><span class="p">))</span>
+</code></pre></div></div>
 
   </div>
 
