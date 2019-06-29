@@ -38,5 +38,3 @@ __Beware__: These are dumps of unfinished projects!
 - [About this website](this_site/index.md)
 
 [Here](posts.md) is my personal blog.
-
-[This](/code_comm/darts.md) is something I am working on right now.

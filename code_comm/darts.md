@@ -11,18 +11,18 @@ Methods:
 ### main()
 ```python
 def main():
-	if not torch.cuda.is_available():
-		logging.info('no gpu device available')
-		sys.exit(1)
+  if not torch.cuda.is_available():
+    logging.info('no gpu device available')
+    sys.exit(1)
 
-	np.random.seed(args.seed)
-	torch.cuda.set_device(args.gpu)
-	cudnn.benchmark = True
-	torch.manual_seed(args.seed)
-	cudnn.enabled=True
-	torch.cuda.manual_seed(args.seed)
-	logging.info('gpu device = %d' % args.gpu)
-	logging.info("args = %s", args)
+  np.random.seed(args.seed)
+  torch.cuda.set_device(args.gpu)
+  cudnn.benchmark = True
+  torch.manual_seed(args.seed)
+  cudnn.enabled=True
+  torch.cuda.manual_seed(args.seed)
+  logging.info('gpu device = %d' % args.gpu)
+  logging.info("args = %s", args)
 	...
 ```
 This partly mostly deals with setting numpy & torch seeds from the argument `args.seed`.
@@ -124,3 +124,6 @@ for epoch in range(args.epochs):
 
   utils.save(model, os.path.join(args.save, 'weights.pt'))
 ```
+
+### train()
+
