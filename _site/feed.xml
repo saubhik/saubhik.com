@@ -1,4 +1,97 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-06-29T14:19:10+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">saubhik</title><subtitle>Made with ❤️using vim &amp; jekyll. Everything is open source.</subtitle><author><name>Saubhik Mukherjee</name></author><entry><title type="html">Evolution</title><link href="http://localhost:4000/targets/2019/06/29/evolution.html" rel="alternate" type="text/html" title="Evolution" /><published>2019-06-29T00:00:00+09:00</published><updated>2019-06-29T00:00:00+09:00</updated><id>http://localhost:4000/targets/2019/06/29/evolution</id><content type="html" xml:base="http://localhost:4000/targets/2019/06/29/evolution.html">&lt;p&gt;It seems that I did not do anything that I planned to do in the last blog.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-07-06T16:44:42+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">saubhik</title><subtitle>Made with ❤️using vim &amp; jekyll. Everything is open source.</subtitle><author><name>Saubhik Mukherjee</name></author><entry><title type="html">Full Stack Development</title><link href="http://localhost:4000/targets/2019/07/06/full-stack.html" rel="alternate" type="text/html" title="Full Stack Development" /><published>2019-07-06T00:00:00+09:00</published><updated>2019-07-06T00:00:00+09:00</updated><id>http://localhost:4000/targets/2019/07/06/full-stack</id><content type="html" xml:base="http://localhost:4000/targets/2019/07/06/full-stack.html">&lt;p&gt;I decide to spend the next few weeks learning the MEAN development stack, from
+an udemy &lt;a href=&quot;https://www.udemy.com/mern-stack-front-to-back/&quot;&gt;course&lt;/a&gt;. It is always
+fun to hack something new.&lt;/p&gt;
+
+&lt;p&gt;The technology stack I want to learn is MFRN (Mongo DB, Fastify JS, React and
+Node.js).&lt;/p&gt;
+
+&lt;h2 id=&quot;to-do&quot;&gt;To Do&lt;/h2&gt;
+&lt;p&gt;I am just jotting down some topics I need to know:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;MongoDB:
+    &lt;ul&gt;
+      &lt;li&gt;Wired Tiger Storage Engine&lt;/li&gt;
+      &lt;li&gt;Replica Sets&lt;/li&gt;
+      &lt;li&gt;Sharding&lt;/li&gt;
+      &lt;li&gt;Clusters&lt;/li&gt;
+      &lt;li&gt;Indexing&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;FastifyJS&lt;/li&gt;
+  &lt;li&gt;React:
+    &lt;ul&gt;
+      &lt;li&gt;Redux&lt;/li&gt;
+      &lt;li&gt;react-router 4&lt;/li&gt;
+      &lt;li&gt;semantic UI&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Node.js:
+    &lt;ul&gt;
+      &lt;li&gt;streams&lt;/li&gt;
+      &lt;li&gt;I/O&lt;/li&gt;
+      &lt;li&gt;web frameworks:
+        &lt;ul&gt;
+          &lt;li&gt;Express&lt;/li&gt;
+          &lt;li&gt;Loopback&lt;/li&gt;
+          &lt;li&gt;Fastify&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Javascript:
+    &lt;ul&gt;
+      &lt;li&gt;closure&lt;/li&gt;
+      &lt;li&gt;prototypes&lt;/li&gt;
+      &lt;li&gt;design patterns&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;AWS:
+    &lt;ul&gt;
+      &lt;li&gt;EC2&lt;/li&gt;
+      &lt;li&gt;ELB&lt;/li&gt;
+      &lt;li&gt;Cloudfront&lt;/li&gt;
+      &lt;li&gt;S3&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;HTTP layer:
+    &lt;ul&gt;
+      &lt;li&gt;sockets&lt;/li&gt;
+      &lt;li&gt;WebRTC&lt;/li&gt;
+      &lt;li&gt;security&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I know a bit of JS and React, a bit of S3, some DB concepts. Time to fix the
+missing pieces.&lt;/p&gt;
+
+&lt;h2 id=&quot;action-plan&quot;&gt;Action Plan&lt;/h2&gt;
+&lt;p&gt;My plan of action is:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Step 1: Understand the MEAN stack by working through the course.&lt;/li&gt;
+  &lt;li&gt;Step 2: Go for advanced course, or figure out MFRN stack by myself.&lt;/li&gt;
+  &lt;li&gt;Step 3: Build a better app. Re-iterate.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;some-googling-based-research&quot;&gt;Some Googling-based research&lt;/h2&gt;
+&lt;p&gt;Some googling &amp;amp; fooling around yielded me some useful information:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/DimiMikadze/Mean-Blog&quot;&gt;Mean-Blog&lt;/a&gt; : Blog using Nodejs,
+  Expressjs, Angularjs and Mongodb. MEAN Javascript Fullstack application.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.udemy.com/mern-stack-front-to-back/&quot;&gt;MERN Stack Course&lt;/a&gt; : MERN
+  Stack Front to Back: Full Stack React, Redux &amp;amp; Node.js. The course helps in
+  building and deploying a social network with Node.js, Express, React, Redux &amp;amp;
+  MongoDB.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://thepiratebay.org/user/tuts756/&quot;&gt;tuts756&lt;/a&gt; : Blessed be this guy’s
+  life.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://freshman.tech/vim-javascript/&quot;&gt;Vimming JS&lt;/a&gt; : Make VIM sing in
+  JavaScript.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Going through the course seems like the best thing that I can do right now.
+Once, I make a web-application using MERN stack, I can go ahead and tinker
+stuff, or move on to further.&lt;/p&gt;</content><author><name>Saubhik Mukherjee</name></author><summary type="html">I decide to spend the next few weeks learning the MEAN development stack, from an udemy course. It is always fun to hack something new.</summary></entry><entry><title type="html">Evolution</title><link href="http://localhost:4000/targets/2019/06/29/evolution.html" rel="alternate" type="text/html" title="Evolution" /><published>2019-06-29T00:00:00+09:00</published><updated>2019-06-29T00:00:00+09:00</updated><id>http://localhost:4000/targets/2019/06/29/evolution</id><content type="html" xml:base="http://localhost:4000/targets/2019/06/29/evolution.html">&lt;p&gt;It seems that I did not do anything that I planned to do in the last blog.&lt;/p&gt;
 
 &lt;p&gt;There are some things I need to do. Some points:&lt;/p&gt;
 

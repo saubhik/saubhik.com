@@ -3,18 +3,20 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>Unit Testing | saubhik</title>
+<title>Full Stack Development | saubhik</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Unit Testing" />
+<meta property="og:title" content="Full Stack Development" />
 <meta name="author" content="Saubhik Mukherjee" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Made with ❤️using vim &amp; jekyll. Everything is open source." />
-<meta property="og:description" content="Made with ❤️using vim &amp; jekyll. Everything is open source." />
-<link rel="canonical" href="http://localhost:4000/software_development/unit_testing/unit_testing_and_tdd.html" />
-<meta property="og:url" content="http://localhost:4000/software_development/unit_testing/unit_testing_and_tdd.html" />
+<meta name="description" content="I decide to spend the next few weeks learning the MEAN development stack, from an udemy course. It is always fun to hack something new." />
+<meta property="og:description" content="I decide to spend the next few weeks learning the MEAN development stack, from an udemy course. It is always fun to hack something new." />
+<link rel="canonical" href="http://localhost:4000/targets/2019/07/06/full-stack.html" />
+<meta property="og:url" content="http://localhost:4000/targets/2019/07/06/full-stack.html" />
 <meta property="og:site_name" content="saubhik" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-07-06T00:00:00+09:00" />
 <script type="application/ld+json">
-{"description":"Made with ❤️using vim &amp; jekyll. Everything is open source.","author":{"@type":"Person","name":"Saubhik Mukherjee"},"@type":"WebPage","url":"http://localhost:4000/software_development/unit_testing/unit_testing_and_tdd.html","headline":"Unit Testing","@context":"http://schema.org"}</script>
+{"description":"I decide to spend the next few weeks learning the MEAN development stack, from an udemy course. It is always fun to hack something new.","author":{"@type":"Person","name":"Saubhik Mukherjee"},"@type":"BlogPosting","url":"http://localhost:4000/targets/2019/07/06/full-stack.html","headline":"Full Stack Development","dateModified":"2019-07-06T00:00:00+09:00","datePublished":"2019-07-06T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/targets/2019/07/06/full-stack.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="saubhik" /><script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
 </head>
@@ -254,114 +256,112 @@
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <article class="post">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <!-- <header class="post-header"> -->
-  <!--   <h1 class="post-title">Unit Testing</h1> -->
-  <!-- </header> -->
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Full Stack Development</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2019-07-06T00:00:00+09:00" itemprop="datePublished">Jul 6, 2019
+      </time></p>
+  </header>
 
-  <div class="post-content">
-    <h3 id="unit-testing">Unit Testing</h3>
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>I decide to spend the next few weeks learning the MEAN development stack, from
+an udemy <a href="https://www.udemy.com/mern-stack-front-to-back/">course</a>. It is always
+fun to hack something new.</p>
 
-<p>A unit in a code could be a method, class, sequence of methods, sequence of classes.
-Testing individual units in a code is important for a working software which is an integration
-of these units.</p>
+<p>The technology stack I want to learn is MFRN (Mongo DB, Fastify JS, React and
+Node.js).</p>
 
-<p>3 different kinds of test case scenarios:</p>
-<ol>
-  <li>pass case scenario</li>
-  <li>fail case scenario</li>
-  <li>edge case scenario</li>
-</ol>
+<h2 id="to-do">To Do</h2>
+<p>I am just jotting down some topics I need to know:</p>
 
-<p>Test cases should be fast, repeatable, trustworthy, maintainable &amp; isolated.
-An object under test can have dependencies on other objects. We replace the other objects
-by mocks to simulate their behavior. This is <em>object mocking</em>.</p>
-
-<p>JUnit is an open source regression testing tool. Set up a Maven project to include JUnit.
-Project Object Model file (POM.xml) is an xml file consisting of all Maven configuration
-details used for building the project. Include the following in POM for JUnit:</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">dependencies</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">dependency</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">groupId</span><span class="o">&gt;</span><span class="n">org</span><span class="o">.</span><span class="na">junit</span><span class="o">&lt;/</span><span class="n">groupId</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">artifactId</span><span class="o">&gt;</span><span class="n">junit</span><span class="o">-</span><span class="n">api</span><span class="o">&lt;/</span><span class="n">artifactId</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">version</span><span class="o">&gt;</span><span class="mf">5.0</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="n">ALPHA</span><span class="o">&lt;/</span><span class="n">version</span><span class="o">&gt;</span>
-    <span class="o">&lt;/</span><span class="n">dependency</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">dependencies</span><span class="o">&gt;</span>
-</code></pre></div></div>
-
-<p>Assertions are methods to determine the pass or fail status of a unit test case.
-Import <code class="highlighter-rouge">import org.junit.Assertions</code> and <code class="highlighter-rouge">import org.junit.Test</code>. Annotate the test method
-with <code class="highlighter-rouge">@Test</code>. It should be <code class="highlighter-rouge">void</code> with no parameters.</p>
-
-<p>3 A’s of unit testing:</p>
-<ol>
-  <li>Arrange the code</li>
-  <li>Act i.e. invoke the target code</li>
-  <li>Assert i.e. verify the code through assertions</li>
-</ol>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">org.junit.*</span><span class="o">;</span>
-
-<span class="kd">class</span> <span class="nc">Example</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="n">bool</span> <span class="nf">prime</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">sqrt</span><span class="o">(</span><span class="n">n</span><span class="o">);</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
-            <span class="k">if</span> <span class="o">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-                <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-            <span class="o">}</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-
-<span class="kd">class</span> <span class="nc">Test</span> <span class="o">{</span>
-    <span class="nd">@Test</span>
-    <span class="nd">@DisplayName</span><span class="o">(</span><span class="s">"test prime method"</span><span class="o">)</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testPrime</span><span class="o">()</span> <span class="o">{</span>
-        <span class="c1">// arrange</span>
-        <span class="n">bool</span> <span class="n">temp</span><span class="o">;</span>
-        <span class="n">Example</span> <span class="n">example</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Example</span><span class="o">();</span>
-        <span class="c1">// act</span>
-        <span class="n">temp</span> <span class="o">=</span> <span class="n">example</span><span class="o">.</span><span class="na">prime</span><span class="o">(</span><span class="mi">11</span><span class="o">);</span>
-        <span class="c1">// assert</span>
-        <span class="n">Assertions</span><span class="o">.</span><span class="na">assertTrue</span><span class="o">(</span><span class="n">temp</span><span class="o">)</span><span class="err">''</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
-<p>Use the annotations <code class="highlighter-rouge">@BeforeEach</code>, <code class="highlighter-rouge">@AfterEach</code>, <code class="highlighter-rouge">@BeforeAll</code>, <code class="highlighter-rouge">@AfterAll</code> for methods
-which has to run before each or all test methods, or after each or all test methods. Some
-assertions are <code class="highlighter-rouge">assertTrue()</code>, <code class="highlighter-rouge">assertNull()</code>, <code class="highlighter-rouge">assertnotNull()</code>, <code class="highlighter-rouge">assertEquals()</code>.</p>
-
-<p>TDD, Test-Driven Development is a philosophy where you write the test code first, and then
-write the code to make the test pass. Re-iterate. Finally refactor the code.</p>
-
-<p>Good test cases should have:</p>
-<ol>
-  <li>high code coverage</li>
-  <li>multiple assertions to verify results from multiple angles</li>
-  <li>if something in the code breaks, should be able to catch it with some assertion</li>
-</ol>
-
-<p>Refactoring is changing the code structure without affecting the code functionality.
-Refactoring can be done by:</p>
-<ol>
-  <li>changing variable name</li>
-  <li>changing method name</li>
-  <li>splitting a method into smaller ones</li>
-</ol>
-
-<p>Some refactoring practices:</p>
 <ul>
-  <li>Extract Variables: Instead of hard-coding the values, extract the values as a variable</li>
-  <li>Extract Class: Create a new class and move the relevant fields and methods from old class
-to new class</li>
+  <li>MongoDB:
+    <ul>
+      <li>Wired Tiger Storage Engine</li>
+      <li>Replica Sets</li>
+      <li>Sharding</li>
+      <li>Clusters</li>
+      <li>Indexing</li>
+    </ul>
+  </li>
+  <li>FastifyJS</li>
+  <li>React:
+    <ul>
+      <li>Redux</li>
+      <li>react-router 4</li>
+      <li>semantic UI</li>
+    </ul>
+  </li>
+  <li>Node.js:
+    <ul>
+      <li>streams</li>
+      <li>I/O</li>
+      <li>web frameworks:
+        <ul>
+          <li>Express</li>
+          <li>Loopback</li>
+          <li>Fastify</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Javascript:
+    <ul>
+      <li>closure</li>
+      <li>prototypes</li>
+      <li>design patterns</li>
+    </ul>
+  </li>
+  <li>AWS:
+    <ul>
+      <li>EC2</li>
+      <li>ELB</li>
+      <li>Cloudfront</li>
+      <li>S3</li>
+    </ul>
+  </li>
+  <li>HTTP layer:
+    <ul>
+      <li>sockets</li>
+      <li>WebRTC</li>
+      <li>security</li>
+    </ul>
+  </li>
 </ul>
 
+<p>I know a bit of JS and React, a bit of S3, some DB concepts. Time to fix the
+missing pieces.</p>
 
-  </div>
+<h2 id="action-plan">Action Plan</h2>
+<p>My plan of action is:</p>
+<ul>
+  <li>Step 1: Understand the MEAN stack by working through the course.</li>
+  <li>Step 2: Go for advanced course, or figure out MFRN stack by myself.</li>
+  <li>Step 3: Build a better app. Re-iterate.</li>
+</ul>
 
+<h2 id="some-googling-based-research">Some Googling-based research</h2>
+<p>Some googling &amp; fooling around yielded me some useful information:</p>
+<ul>
+  <li><a href="https://github.com/DimiMikadze/Mean-Blog">Mean-Blog</a> : Blog using Nodejs,
+  Expressjs, Angularjs and Mongodb. MEAN Javascript Fullstack application.</li>
+  <li><a href="https://www.udemy.com/mern-stack-front-to-back/">MERN Stack Course</a> : MERN
+  Stack Front to Back: Full Stack React, Redux &amp; Node.js. The course helps in
+  building and deploying a social network with Node.js, Express, React, Redux &amp;
+  MongoDB.</li>
+  <li><a href="https://thepiratebay.org/user/tuts756/">tuts756</a> : Blessed be this guy’s
+  life.</li>
+  <li><a href="https://freshman.tech/vim-javascript/">Vimming JS</a> : Make VIM sing in
+  JavaScript.</li>
+</ul>
+
+<p>Going through the course seems like the best thing that I can do right now.
+Once, I make a web-application using MERN stack, I can go ahead and tinker
+stuff, or move on to further.</p>
+
+  </div><a class="u-url" href="/targets/2019/07/06/full-stack.html" hidden></a>
 </article>
 
       </div>
