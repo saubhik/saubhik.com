@@ -16,7 +16,7 @@ community-first ideals.
 
 You will find notes on software engineering, web development, computer science
 course-work, deep learning papers, data science, programming challenges et
-cetera. 
+cetera.
 
 I studied mathematics and computer science in undergraduate college for 3 years,
 and economics in graduate school for 2 years. My love for computer programming
@@ -49,5 +49,6 @@ __Beware__: These are dumps of unfinished projects!
 - [CS courses notes](/coursework/index.html)
 - [Inspirations](/inspirations/index.html)
 - [About this website](this_site/index.md)
+- [Practice Javascript](practice-javascript/index.md)
 
 [Here](posts.md) is my personal blog.

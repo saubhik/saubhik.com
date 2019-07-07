@@ -131,6 +131,9 @@
     <!---->
     <!---->
     <!---->
+    <!---->
+    <!---->
+    <!---->
     <!--         <a class="page-link" href="/software_development/advanced_javascript/advanced_javascript.html">Advanced Javascript</a> -->
     <!---->
     <!---->
@@ -360,6 +363,95 @@ missing pieces.</p>
 <p>Going through the course seems like the best thing that I can do right now.
 Once, I make a web-application using MERN stack, I can go ahead and tinker
 stuff, or move on to further.</p>
+
+<h2 id="coursework">Coursework</h2>
+
+<h3 id="introduction">Introduction</h3>
+<p>Technologies covered: ES6+, async/await, react hooks, redux with DevTools, JWT
+(JSON Web Tokens), Postman HTTP Client, Mongoose/MongoDB/Atlas, Bcrypt Password
+Hashing, Heroku &amp; Git Deployment.</p>
+
+<p>Course will be of 2 halves:</p>
+<ol>
+  <li>Backend (using postman, mongoose for DB interactions, node, express)</li>
+  <li>Frontend (React, Redux for state management)</li>
+</ol>
+
+<p>Initial steps:</p>
+<ul>
+  <li>Install NodeJS.</li>
+  <li>I will not use VS Text. Go to hell.</li>
+  <li>I already have git.</li>
+  <li>Install Postman for all the API requests. Cool. Done.</li>
+  <li>Add ReactDevTools, &amp; ReduxDevTools chrome extensions.</li>
+</ul>
+
+<h3 id="express--mongodb-setup">Express &amp; MongoDB setup</h3>
+<p>Lets use MongoDB Atlas.
+MongoDB is a NoSQL DB, no relations, tables - document-oriented database program.</p>
+
+<h3 id="installing-dependencies">Installing dependencies</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install express express-validator bcryptjs config gravatar jsonwebtoken mongoose request
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">express</code> is our main web framework for our backend.</p>
+
+<p><code class="highlighter-rouge">express-validator</code> for data validation - when we make a POST request to our
+API if there are are fields that need to be there that aren’t there, it will
+raise an error.</p>
+
+<p><code class="highlighter-rouge">bcryptjs</code> is used for password encryption, before storing in DB.</p>
+
+<p><code class="highlighter-rouge">config</code> is used for global variables.</p>
+
+<p><code class="highlighter-rouge">gravatar</code> for profile avatars - if a user signs up they can use an email that
+is associated with a gravatar account and it will automatically show their
+profile image.</p>
+
+<p><code class="highlighter-rouge">jsonwebtoken</code> for using JWT to pass along a token for validation.</p>
+
+<p><code class="highlighter-rouge">mongoose</code> is a layer that sits on top of the database so we can interact with
+it.</p>
+
+<p><code class="highlighter-rouge">request</code> is just a small module that will allow us to make HTTP request to
+another API. We want our profiles to be able to have GitHub repositories listed
+on them. So we’re going to make that request from our backend so that we can
+hide our API key and stuff like that.</p>
+
+<p>These are our regular dependencies.</p>
+
+<p>Now we will install couple dev dependencies.</p>
+
+<p><code class="highlighter-rouge">npm install -D nodemon concurrently</code></p>
+
+<p><code class="highlighter-rouge">nodemon</code> will constantly watch our server so that we do not have to refresh it
+every time we make a change.</p>
+
+<p><code class="highlighter-rouge">concurrently</code> will allow us to run our backend express server and our frontend
+react dev server at the same time with one single command.</p>
+
+<h3 id="progress-checking">Progress Checking</h3>
+<p>I have the following topics left:</p>
+
+<ul>
+  <li>User API Routes &amp; JWT Authentication:
+    <ul>
+      <li>6 lectures, ~ 2 days</li>
+    </ul>
+  </li>
+  <li>Profile API Routes:
+    <ul>
+      <li>9 lectures, ~ 2 days</li>
+    </ul>
+  </li>
+  <li>Post API Routes:
+    <ul>
+      <li>5 lectures, ~ 2 days</li>
+    </ul>
+  </li>
+</ul>
+
+<p>I think I might be able to finish the backend part by next weekend.</p>
 
   </div><a class="u-url" href="/targets/2019/07/06/full-stack.html" hidden></a>
 </article>

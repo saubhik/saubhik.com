@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-07-06T16:53:12+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">saubhik</title><subtitle>Made with ❤️using vim &amp; jekyll. Everything is open source.</subtitle><author><name>Saubhik Mukherjee</name></author><entry><title type="html">Full Stack Development</title><link href="http://localhost:4000/targets/2019/07/06/full-stack.html" rel="alternate" type="text/html" title="Full Stack Development" /><published>2019-07-06T00:00:00+09:00</published><updated>2019-07-06T00:00:00+09:00</updated><id>http://localhost:4000/targets/2019/07/06/full-stack</id><content type="html" xml:base="http://localhost:4000/targets/2019/07/06/full-stack.html">&lt;p&gt;I decide to spend the next few weeks learning the MEAN development stack, from
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-07-07T18:32:20+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">saubhik</title><subtitle>Made with ❤️using vim &amp; jekyll. Everything is open source.</subtitle><author><name>Saubhik Mukherjee</name></author><entry><title type="html">Full Stack Development</title><link href="http://localhost:4000/targets/2019/07/06/full-stack.html" rel="alternate" type="text/html" title="Full Stack Development" /><published>2019-07-06T00:00:00+09:00</published><updated>2019-07-06T00:00:00+09:00</updated><id>http://localhost:4000/targets/2019/07/06/full-stack</id><content type="html" xml:base="http://localhost:4000/targets/2019/07/06/full-stack.html">&lt;p&gt;I decide to spend the next few weeks learning the MEAN development stack, from
 an udemy &lt;a href=&quot;https://www.udemy.com/mern-stack-front-to-back/&quot;&gt;course&lt;/a&gt;. It is always
 fun to hack something new.&lt;/p&gt;
 
@@ -91,7 +91,96 @@ missing pieces.&lt;/p&gt;
 
 &lt;p&gt;Going through the course seems like the best thing that I can do right now.
 Once, I make a web-application using MERN stack, I can go ahead and tinker
-stuff, or move on to further.&lt;/p&gt;</content><author><name>Saubhik Mukherjee</name></author><summary type="html">I decide to spend the next few weeks learning the MEAN development stack, from an udemy course. It is always fun to hack something new.</summary></entry><entry><title type="html">Evolution</title><link href="http://localhost:4000/targets/2019/06/29/evolution.html" rel="alternate" type="text/html" title="Evolution" /><published>2019-06-29T00:00:00+09:00</published><updated>2019-06-29T00:00:00+09:00</updated><id>http://localhost:4000/targets/2019/06/29/evolution</id><content type="html" xml:base="http://localhost:4000/targets/2019/06/29/evolution.html">&lt;p&gt;It seems that I did not do anything that I planned to do in the last blog.&lt;/p&gt;
+stuff, or move on to further.&lt;/p&gt;
+
+&lt;h2 id=&quot;coursework&quot;&gt;Coursework&lt;/h2&gt;
+
+&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;Technologies covered: ES6+, async/await, react hooks, redux with DevTools, JWT
+(JSON Web Tokens), Postman HTTP Client, Mongoose/MongoDB/Atlas, Bcrypt Password
+Hashing, Heroku &amp;amp; Git Deployment.&lt;/p&gt;
+
+&lt;p&gt;Course will be of 2 halves:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Backend (using postman, mongoose for DB interactions, node, express)&lt;/li&gt;
+  &lt;li&gt;Frontend (React, Redux for state management)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Initial steps:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Install NodeJS.&lt;/li&gt;
+  &lt;li&gt;I will not use VS Text. Go to hell.&lt;/li&gt;
+  &lt;li&gt;I already have git.&lt;/li&gt;
+  &lt;li&gt;Install Postman for all the API requests. Cool. Done.&lt;/li&gt;
+  &lt;li&gt;Add ReactDevTools, &amp;amp; ReduxDevTools chrome extensions.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;express--mongodb-setup&quot;&gt;Express &amp;amp; MongoDB setup&lt;/h3&gt;
+&lt;p&gt;Lets use MongoDB Atlas.
+MongoDB is a NoSQL DB, no relations, tables - document-oriented database program.&lt;/p&gt;
+
+&lt;h3 id=&quot;installing-dependencies&quot;&gt;Installing dependencies&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install express express-validator bcryptjs config gravatar jsonwebtoken mongoose request
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;express&lt;/code&gt; is our main web framework for our backend.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;express-validator&lt;/code&gt; for data validation - when we make a POST request to our
+API if there are are fields that need to be there that aren’t there, it will
+raise an error.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bcryptjs&lt;/code&gt; is used for password encryption, before storing in DB.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;config&lt;/code&gt; is used for global variables.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gravatar&lt;/code&gt; for profile avatars - if a user signs up they can use an email that
+is associated with a gravatar account and it will automatically show their
+profile image.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;jsonwebtoken&lt;/code&gt; for using JWT to pass along a token for validation.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mongoose&lt;/code&gt; is a layer that sits on top of the database so we can interact with
+it.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;request&lt;/code&gt; is just a small module that will allow us to make HTTP request to
+another API. We want our profiles to be able to have GitHub repositories listed
+on them. So we’re going to make that request from our backend so that we can
+hide our API key and stuff like that.&lt;/p&gt;
+
+&lt;p&gt;These are our regular dependencies.&lt;/p&gt;
+
+&lt;p&gt;Now we will install couple dev dependencies.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm install -D nodemon concurrently&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;nodemon&lt;/code&gt; will constantly watch our server so that we do not have to refresh it
+every time we make a change.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;concurrently&lt;/code&gt; will allow us to run our backend express server and our frontend
+react dev server at the same time with one single command.&lt;/p&gt;
+
+&lt;h3 id=&quot;progress-checking&quot;&gt;Progress Checking&lt;/h3&gt;
+&lt;p&gt;I have the following topics left:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;User API Routes &amp;amp; JWT Authentication:
+    &lt;ul&gt;
+      &lt;li&gt;6 lectures, ~ 2 days&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Profile API Routes:
+    &lt;ul&gt;
+      &lt;li&gt;9 lectures, ~ 2 days&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Post API Routes:
+    &lt;ul&gt;
+      &lt;li&gt;5 lectures, ~ 2 days&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I think I might be able to finish the backend part by next weekend.&lt;/p&gt;</content><author><name>Saubhik Mukherjee</name></author><summary type="html">I decide to spend the next few weeks learning the MEAN development stack, from an udemy course. It is always fun to hack something new.</summary></entry><entry><title type="html">Evolution</title><link href="http://localhost:4000/targets/2019/06/29/evolution.html" rel="alternate" type="text/html" title="Evolution" /><published>2019-06-29T00:00:00+09:00</published><updated>2019-06-29T00:00:00+09:00</updated><id>http://localhost:4000/targets/2019/06/29/evolution</id><content type="html" xml:base="http://localhost:4000/targets/2019/06/29/evolution.html">&lt;p&gt;It seems that I did not do anything that I planned to do in the last blog.&lt;/p&gt;
 
 &lt;p&gt;There are some things I need to do. Some points:&lt;/p&gt;
 
