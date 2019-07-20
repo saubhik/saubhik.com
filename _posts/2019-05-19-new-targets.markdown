@@ -2,7 +2,7 @@
 layout: post
 title:  "New targets"
 date:   2019-05-19 13:54:47 +0900
-categories: targets
+tags: targets
 ---
 
 I will try to set up monthly targets, and a blog each month will mention them.

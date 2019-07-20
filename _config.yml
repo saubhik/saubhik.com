@@ -17,17 +17,17 @@
 title: saubhik
 author: Saubhik Mukherjee
 email: saubhik.mukherjee@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Made with ❤️using vim & jekyll. Everything is open source.
+description: "Personal cyber-space dump."
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://saubhik.com" # the base hostname & protocol for your site, e.g.
 # http://example.com
 # twitter_username: jekyllrb
 github_username:  saubhik
+show_downloads: false
 
 # Build settings
 markdown: kramdown
-theme: minima
+theme: jekyll-theme-minimal
 plugins:
   - jekyll-feed
 

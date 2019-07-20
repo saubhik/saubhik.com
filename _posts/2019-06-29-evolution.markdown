@@ -2,7 +2,7 @@
 layout: post
 title:  "Evolution"
 date:   2019-06-29
-categories: targets
+tags: targets
 ---
 
 It seems that I did not do anything that I planned to do in the last blog.

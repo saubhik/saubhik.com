@@ -2,7 +2,7 @@
 layout: post
 title:  "Full Stack Development"
 date:   2019-07-06
-categories: targets
+tags: targets
 ---
 
 I decide to spend the next few weeks learning the MEAN development stack, from
