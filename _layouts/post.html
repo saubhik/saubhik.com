@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<!-- Ref: http://docs.mathjax.org/en/latest/web/start.html#configure-mathjax -->
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+<h1>{{ page.title }}</h1>
+<p>{{ page.date | date_to_string }}</p>
+
+{{ content }}

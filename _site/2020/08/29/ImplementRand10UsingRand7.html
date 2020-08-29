@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Implement rand10() using rand7() | saubhik</title>
+<meta name="generator" content="Jekyll v3.8.7" />
+<meta property="og:title" content="Implement rand10() using rand7()" />
+<meta name="author" content="Saubhik Mukherjee" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This is challenge for day 29 of August Leetcoding Challenge. Two approaches are discussed, Rejection Sampling and Utilizing out-of-range samples." />
+<meta property="og:description" content="This is challenge for day 29 of August Leetcoding Challenge. Two approaches are discussed, Rejection Sampling and Utilizing out-of-range samples." />
+<link rel="canonical" href="http://localhost:4000/2020/08/29/ImplementRand10UsingRand7.html" />
+<meta property="og:url" content="http://localhost:4000/2020/08/29/ImplementRand10UsingRand7.html" />
+<meta property="og:site_name" content="saubhik" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-08-29T00:00:00+09:00" />
+<script type="application/ld+json">
+{"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2020/08/29/ImplementRand10UsingRand7.html"},"url":"http://localhost:4000/2020/08/29/ImplementRand10UsingRand7.html","headline":"Implement rand10() using rand7()","dateModified":"2020-08-29T00:00:00+09:00","datePublished":"2020-08-29T00:00:00+09:00","author":{"@type":"Person","name":"Saubhik Mukherjee"},"description":"This is challenge for day 29 of August Leetcoding Challenge. Two approaches are discussed, Rejection Sampling and Utilizing out-of-range samples.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="http://localhost:4000/">saubhik</a></h1>
+        
+        
+
+        <p>Personal cyber-space dump</p>
+
+        
+
+        
+
+        
+      </header>
+      <section>
+
+      <!-- Ref: http://docs.mathjax.org/en/latest/web/start.html#configure-mathjax -->
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+<h1>Implement rand10() using rand7()</h1>
+<p>29 Aug 2020</p>
+
+<p>This is challenge for day 29 of August Leetcoding Challenge. Two approaches are discussed, <em>Rejection Sampling</em> and <em>Utilizing out-of-range samples</em>.</p>
+
+<h2 id="rejection-sampling">Rejection Sampling</h2>
+
+<p>If we could generate a number in the desired range, output it immediately. Otherwise, reject it and re-sample.</p>
+
+<p>We need to ensure uniform distribution.</p>
+
+<p>Sample 2 times. It gives us <code class="highlighter-rouge">i</code> and <code class="highlighter-rouge">j</code> indices for:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>8</td>
+      <td>9</td>
+      <td>10</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+      <td>10</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>9</td>
+      <td>10</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+      <td>10</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>When we encounter <code class="highlighter-rouge">i</code>, <code class="highlighter-rouge">j</code> corresponding to blank box, re-sample.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">rand10</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+            <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="n">rand7</span><span class="p">(),</span> <span class="n">rand7</span><span class="p">()</span>
+            <span class="n">idx</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">7</span> <span class="o">+</span> <span class="n">j</span>
+            <span class="k">if</span> <span class="n">idx</span> <span class="o">&lt;</span> <span class="mi">41</span><span class="p">:</span>
+                <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="n">idx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">10</span>
+</code></pre></div></div>
+
+<p>This is $O(1)$ average time. And $O(\infty)$ in worst case. Space is $O(1)$.</p>
+
+<p>The following was my first attempt, but does not get accepted since it’s not uniform. Check the code comments.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="k">def</span> <span class="nf">rand7</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="c1"># abs(randint(1, 7) -  randint(1, 7)) is in [0, 6]
+</span>    <span class="c1"># Need [0, 3].
+</span>    <span class="c1"># int(abs(randint(1, 7) - randint(1, 7)) / 2) is in [0, 3]
+</span>    <span class="c1"># 0/2=0, 1/2=0, 2/2=1, 3/2=1, 4/2=2, 5/2=2, 6/2=3
+</span>    <span class="c1"># 3 has less probability of happening, so it is not uniform.
+</span>    <span class="k">def</span> <span class="nf">rand10</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">rand7</span><span class="p">()</span> <span class="o">-</span> <span class="n">rand7</span><span class="p">())</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">rand7</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="utilizing-out-of-range-samples">Utilizing out-of-range samples</h2>
+
+<p>When we get an integer in the range $[41, 49]$; we have actually sampled uniformly from the range $[1, 9]$. Now, we can re-sample to get an integer in the range $[1, 63]$.</p>
+
+<p>If we get an integer between 1 to 60, we’re done. If not, we have actually sampled uniformly from the range $[1, 3]$. We re-sample again to get an integer in the range $[1, 21]$.</p>
+
+<p>If we get an integer between 1 to 20, we’re done. If not, we re-start the entire process.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">SolutionTwo</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">rand10</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+            <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="n">rand7</span><span class="p">(),</span> <span class="n">rand7</span><span class="p">()</span>
+            <span class="n">idx</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">7</span> <span class="o">+</span> <span class="n">j</span>
+            <span class="k">if</span> <span class="n">idx</span> <span class="o">&lt;</span> <span class="mi">41</span><span class="p">:</span>
+                <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="n">idx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">10</span>
+
+            <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="n">idx</span> <span class="o">-</span> <span class="mi">40</span><span class="p">,</span> <span class="n">rand7</span><span class="p">()</span>
+            <span class="c1"># i is in 1 to 9
+</span>            <span class="n">idx</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">7</span> <span class="o">+</span> <span class="n">j</span>
+            <span class="k">if</span> <span class="n">idx</span> <span class="o">&lt;</span> <span class="mi">61</span><span class="p">:</span>
+                <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="n">idx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">10</span>
+
+            <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="n">idx</span> <span class="o">-</span> <span class="mi">60</span><span class="p">,</span> <span class="n">rand7</span><span class="p">()</span>
+            <span class="c1"># i is in 1 to 3
+</span>            <span class="n">idx</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">7</span> <span class="o">+</span> <span class="n">j</span>
+            <span class="k">if</span> <span class="n">idx</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">:</span>
+                <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="n">idx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">10</span>
+</code></pre></div></div>
+
+
+
+      </section>
+      <footer>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+</html>
